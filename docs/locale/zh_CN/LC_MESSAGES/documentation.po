@@ -1,0 +1,441 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, VyOS maintainers and contributors
+# This file is distributed under the same license as the VyOS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VyOS 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-08 11:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../documentation.rst:5
+msgid "Documentation"
+msgstr ""
+
+#: ../documentation.rst:7
+msgid ""
+"As most software projects we also have a lack in documentation. We "
+"encourage every VyOS user to help us improve our documentation. This will"
+" not only be beneficial for you (when reading something up) but also for "
+"the whole world."
+msgstr ""
+
+#: ../documentation.rst:11
+msgid ""
+"If you are willing to contribute to our documentation this is the "
+"definite guide how to do so."
+msgstr ""
+
+#: ../documentation.rst:14
+msgid ""
+"In contrast to submitting code patches, there is no requirement that you "
+"open up a Phabricator_ task prior to submitting a Pull-Request to the "
+"documentation."
+msgstr ""
+
+#: ../documentation.rst:19
+msgid "Forking Workflow"
+msgstr ""
+
+#: ../documentation.rst:21
+msgid ""
+"The Forking Workflow is fundamentally different than other popular Git "
+"workflows. Instead of using a single server-side repository to act as the"
+" \"central\" codebase, it gives every developer their own server-side "
+"repository. This means that each contributor has not one, but two Git "
+"repositories: a private local one and a public server-side one."
+msgstr ""
+
+#: ../documentation.rst:27
+msgid ""
+"The main advantage of the Forking Workflow is that contributions can be "
+"integrated without the need for everybody to push to a single central "
+"repository. Developers push to their own server-side repositories, and "
+"only the project maintainer can push to the official repository. This "
+"allows the maintainer to accept commits from any developer without giving"
+" them write access to the official codebase."
+msgstr ""
+
+#: ../documentation.rst:34
+msgid ""
+"Updates to our documentation should be delivered by a GitHub pull-"
+"request. This requires you already have a GitHub account."
+msgstr ""
+
+#: ../documentation.rst:37
+msgid ""
+"Fork this project on GitHub https://github.com/vyos/vyos-"
+"documentation/fork"
+msgstr ""
+
+#: ../documentation.rst:39
+msgid ""
+"Clone fork to local machine, then change to that directory ``$ cd vyos-"
+"documentation``"
+msgstr ""
+
+#: ../documentation.rst:42
+msgid ""
+"Install the requirements ``$ pip install -r requirements.txt`` (or "
+"something similar)"
+msgstr ""
+
+#: ../documentation.rst:45
+msgid ""
+"Create new branch for your work, use a descriptive name of your work: ``$"
+" git checkout -b <branch-name>``"
+msgstr ""
+
+#: ../documentation.rst:48
+msgid ""
+"Make all your changes - please keep our commit rules in mind "
+"(:ref:`prepare_commit`). This mainly applies to proper commit messages "
+"describing your change (how and why). Please check out the documentation "
+"of Sphinx-doc_ or reStructuredText_ if you are not familiar with it. This"
+" is used for writing our docs. Additional directives how to write in RST "
+"can be obtained from reStructuredTextDirectives_."
+msgstr ""
+
+#: ../documentation.rst:55
+msgid ""
+"Check your changes by locally building the documentation ``$ make html``."
+" Sphinx will build the html files in the ``docs/_build`` folder. We "
+"provide you with a Docker container for an easy to use user experience. "
+"Check the README.md_ file of this repository."
+msgstr ""
+
+#: ../documentation.rst:60
+msgid ""
+"View modified files by calling ``$ git status``. You will get an overview"
+" of all files modified by you. You can add individual files to the Git "
+"Index in the next step."
+msgstr ""
+
+#: ../documentation.rst:64
+msgid ""
+"Add modified files to Git index ``$ git add path/to/filename`` or add all"
+" unstaged files ``$ git add .``. All files added to the Git index will be"
+" part of you following Git commit."
+msgstr ""
+
+#: ../documentation.rst:68
+msgid ""
+"Commit your changes with the message, ``$ git commit -m \"<commit "
+"message>\"`` or  use ``$ git commit -v`` to have your configured editor "
+"launched. You can type in a commit message. Again please make yourself "
+"comfortable with out rules (:ref:`prepare_commit`)."
+msgstr ""
+
+#: ../documentation.rst:73
+msgid ""
+"Push commits to your GitHub project: ``$ git push -u origin <branch-"
+"name>``"
+msgstr ""
+
+#: ../documentation.rst:75
+msgid ""
+"Submit pull-request. In GitHub visit the main repository and you should "
+"see a banner suggesting to make a pull request. Fill out the form and "
+"describe what you do."
+msgstr ""
+
+#: ../documentation.rst:79
+msgid ""
+"Once pull resquests have been approved, you may want to locally update "
+"your forked repository too. First you'll have to add a second remote "
+"called `upstream` which points to our main repository. ``$ git remote add"
+" upstream https://github.com/vyos/vyos-documentation.git``"
+msgstr ""
+
+#: ../documentation.rst:84
+msgid "Check your configured remote repositories:"
+msgstr ""
+
+#: ../documentation.rst:94
+msgid ""
+"Your remote repo on Github is called ``origin``, while the original repo "
+"you have forked is called ``upstream``. Now you can locally update your "
+"forked repo."
+msgstr ""
+
+#: ../documentation.rst:104
+msgid ""
+"If you want to update your fork on GitHub, too use the following: ``$ git"
+" push origin master``"
+msgstr ""
+
+#: ../documentation.rst:108
+msgid "Style Guide"
+msgstr ""
+
+#: ../documentation.rst:111
+msgid "Formating and Sphinxmarkup"
+msgstr ""
+
+#: ../documentation.rst:114
+msgid "TOC Level"
+msgstr ""
+
+#: ../documentation.rst:116
+msgid "We use the following syntax for Headlines."
+msgstr ""
+
+#: ../documentation.rst:141
+msgid "Address space"
+msgstr ""
+
+#: ../documentation.rst:143
+msgid ""
+"Note the following RFCs (:rfc:`5737`, :rfc:`3849`, :rfc:`5389` and "
+":rfc:`7042`), which describe the reserved public IP addresses and "
+"autonomous system numbers for the documentation:"
+msgstr ""
+
+#: ../documentation.rst:147
+msgid "``192.0.2.0/24``"
+msgstr ""
+
+#: ../documentation.rst:148
+msgid "``198.51.100.0/24``"
+msgstr ""
+
+#: ../documentation.rst:149
+msgid "``203.0.113.0/24``"
+msgstr ""
+
+#: ../documentation.rst:150
+msgid "``2001:db8::/32``"
+msgstr ""
+
+#: ../documentation.rst:151
+msgid "16bit ASN: ``64496 - 64511``"
+msgstr ""
+
+#: ../documentation.rst:152
+msgid "32bit ASN: ``65536 - 65551``"
+msgstr ""
+
+#: ../documentation.rst:153
+msgid "Unicast MAC Addresses: ``00-53-00`` to ``00-53-FF``"
+msgstr ""
+
+#: ../documentation.rst:154
+msgid "Multicast MAC-Addresses: ``90-10-00`` to ``90-10-FF``"
+msgstr ""
+
+#: ../documentation.rst:156
+msgid "Please don't use other public address space."
+msgstr ""
+
+#: ../documentation.rst:160
+msgid "Line length"
+msgstr ""
+
+#: ../documentation.rst:162
+msgid "Limit all lines to a maximum of 80 characters."
+msgstr ""
+
+#: ../documentation.rst:164
+msgid ""
+"Except in ``.. code-block::`` because it will use  the html tag ``<pre>``"
+" which have the save line format as in the rst file."
+msgstr ""
+
+#: ../documentation.rst:169
+msgid "Autolinter"
+msgstr ""
+
+#: ../documentation.rst:171
+msgid ""
+"Each GitHub Pull request will automatically lint against the Address "
+"space and line length."
+msgstr ""
+
+#: ../documentation.rst:174
+msgid ""
+"Sometimes it is necessary to provide real IP Addresses like in the "
+":ref:`examples`. For this please use the sphinx comment syntax ``.. "
+"stop_vyoslinter`` to stop the linter and ``.. start_vyoslinter`` to "
+"start."
+msgstr ""
+
+#: ../documentation.rst:180
+msgid "Custom Sphinx-doc Markup"
+msgstr ""
+
+#: ../documentation.rst:182
+msgid ""
+"When writing the documentation custom commands have been developed. "
+"Please make yourself comfortable with those commands as this eases the "
+"way we render the documentation."
+msgstr ""
+
+#: ../documentation.rst:187
+msgid "cfgcmd"
+msgstr ""
+
+#: ../documentation.rst:189
+msgid ""
+"When documenting CLI commands use the ``.. cfgcmd::`` directive for all "
+"configuration mode commands. An explanation of the described command "
+"should be added below this statement. Replace all variable contents with "
+"<value> or somthing similar."
+msgstr ""
+
+#: ../documentation.rst:194 ../documentation.rst:216
+msgid ""
+"With those custom commands it will be possible to render them in a more "
+"descriptive way in the resulting HTML/PDF manual."
+msgstr ""
+
+#: ../documentation.rst:204
+msgid "For a inline configuration level command use ``:cfgcmd:``"
+msgstr ""
+
+#: ../documentation.rst:211
+msgid "opcmd"
+msgstr ""
+
+#: ../documentation.rst:213
+msgid ""
+"When documenting operational level command use the ``.. opcmd::`` "
+"directive. An explanation of the described command should be added below "
+"this statement."
+msgstr ""
+
+#: ../documentation.rst:225
+msgid "For a inline operational level command use ``:opcmd:``"
+msgstr ""
+
+#: ../documentation.rst:232
+msgid "cmdinclude"
+msgstr ""
+
+#: ../documentation.rst:234
+msgid ""
+"To minimize redundancy there is a special include directive. It include a"
+" txt file and replace the ``{{ var0 }}`` - ``{{ var9 }}`` with the "
+"correct value"
+msgstr ""
+
+#: ../documentation.rst:243
+msgid "the content of interface-address.txt looks like this"
+msgstr ""
+
+#: ../documentation.rst:270
+msgid "vytask"
+msgstr ""
+
+#: ../documentation.rst:272
+msgid ""
+"When referencing to VyOS Phabricator Tasks, there is a custom Sphinx "
+"Markup command called ``vytask`` which automatically renders to a proper "
+"Phabricator URL. This is heavily used in the :ref:`release-notes` "
+"section."
+msgstr ""
+
+#: ../documentation.rst:282
+msgid "Page content"
+msgstr ""
+
+#: ../documentation.rst:284
+msgid ""
+"The documentation have 3 different types of pages, the same kind of pages"
+" must have the same structure to achieve a recognition factor."
+msgstr ""
+
+#: ../documentation.rst:287
+msgid "All RST files must follow the same TOC Level syntax and have to start with"
+msgstr ""
+
+#: ../documentation.rst:296
+msgid "Configuration mode pages"
+msgstr ""
+
+#: ../documentation.rst:298
+msgid ""
+"A configuration mode folder and article covers a specific level of a "
+"command. The exact level depends on the command. This should provide "
+"stability for URLs used in the forum or blogpost."
+msgstr ""
+
+#: ../documentation.rst:302
+msgid "For example:"
+msgstr ""
+
+#: ../documentation.rst:304
+msgid "``set zone-policy`` is written in ``zone-policy/index.rst``"
+msgstr ""
+
+#: ../documentation.rst:305
+msgid "``set interfaces ethernet`` is written in ``interfaces/ethernet.rst``"
+msgstr ""
+
+#: ../documentation.rst:307
+msgid ""
+"The article starts with a short intruducing about the command or the "
+"technologie. Please include some helpfull links or background "
+"informations."
+msgstr ""
+
+#: ../documentation.rst:310
+msgid ""
+"After this a optional section follows. Some commands have requirements "
+"like the compatible hardware (e.g. Wifi) or some commands you have to set"
+" before. For example it is recommended to set a route-map before "
+"configure bgp."
+msgstr ""
+
+#: ../documentation.rst:314
+msgid ""
+"In the configuration part of the page all possible confiuration options "
+"should be documented. Use ``.. cfgcmd::`` like described above."
+msgstr ""
+
+#: ../documentation.rst:317
+msgid ""
+"Related Operation command must be documented in the next part of the "
+"article. Use ``::opcmd..`` for these commands."
+msgstr ""
+
+#: ../documentation.rst:320
+msgid ""
+"If there some troubleshooting guides releated to the commands. Explain it"
+" in the next optional part."
+msgstr ""
+
+#: ../documentation.rst:324
+msgid "Operation mode pages"
+msgstr ""
+
+#: ../documentation.rst:326
+msgid ""
+"Operation mode commands, which didn't fit in a related configuraton mode "
+"command must documented in this part of the documentation."
+msgstr ""
+
+#: ../documentation.rst:329
+msgid ""
+"General concepts for troubleshooting belong here as well as detailed "
+"process descriptions."
+msgstr ""
+
+#: ../documentation.rst:333
+msgid "Anything else"
+msgstr ""
+
+#: ../documentation.rst:335
+msgid ""
+"Anything else what is not a configuration or a operation command have no "
+"predefined structure."
+msgstr ""
+

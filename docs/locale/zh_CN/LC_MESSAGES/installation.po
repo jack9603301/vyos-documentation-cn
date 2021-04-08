@@ -1,0 +1,1997 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, VyOS maintainers and contributors
+# This file is distributed under the same license as the VyOS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VyOS 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-08 11:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../installation/cloud/aws.rst:3
+msgid "Amazon AWS"
+msgstr ""
+
+#: ../installation/cloud/aws.rst:6 ../installation/cloud/azure.rst:6
+#: ../installation/cloud/gcp.rst:6
+msgid "Deploy VM"
+msgstr ""
+
+#: ../installation/cloud/aws.rst:8
+msgid "Deploy VyOS on Amazon :abbr:`AWS (Amazon Web Services)`"
+msgstr ""
+
+#: ../installation/cloud/aws.rst:10
+msgid "Click to ``Instances`` and ``Launch Instance``"
+msgstr ""
+
+#: ../installation/cloud/aws.rst:14
+msgid "On the marketplace search \"VyOS\""
+msgstr ""
+
+#: ../installation/cloud/aws.rst:18
+msgid "Choose the instance type. Minimum recommendation start from ``m3.medium``"
+msgstr ""
+
+#: ../installation/cloud/aws.rst:22
+msgid ""
+"Configure instance for your requirements. Select number of instances / "
+"network / subnet"
+msgstr ""
+
+#: ../installation/cloud/aws.rst:27
+msgid ""
+"Additional storage. You can remove additional storage ``/dev/sdb``. First"
+" root device will be ``/dev/xvda``. You can skeep this step."
+msgstr ""
+
+#: ../installation/cloud/aws.rst:32
+msgid ""
+"Configure Security Group. It's recommended that you configure ssh access "
+"only from certain address sources. Or permit any (by default)."
+msgstr ""
+
+#: ../installation/cloud/aws.rst:37
+msgid "Select SSH key pair and click ``Launch Instances``"
+msgstr ""
+
+#: ../installation/cloud/aws.rst:41
+msgid "Find out your public IP address."
+msgstr ""
+
+#: ../installation/cloud/aws.rst:45 ../installation/cloud/azure.rst:37
+msgid "Connect to the instance by SSH key."
+msgstr ""
+
+#: ../installation/cloud/aws.rst:56 ../installation/cloud/azure.rst:71
+#: ../installation/cloud/gcp.rst:57 ../installation/cloud/oracel.rst:7
+#: ../installation/virtual/eve-ng.rst:6 ../installation/virtual/proxmox.rst:6
+#: ../installation/virtual/vmware.rst:40
+msgid "References"
+msgstr ""
+
+#: ../installation/cloud/aws.rst:57
+msgid "https://console.aws.amazon.com/"
+msgstr ""
+
+#: ../installation/cloud/azure.rst:3
+msgid "Azure"
+msgstr ""
+
+#: ../installation/cloud/azure.rst:8
+msgid "Deploy VyOS on Azure."
+msgstr ""
+
+#: ../installation/cloud/azure.rst:10
+msgid "Go to the Azure services and Click to **Add new Virtual machine**"
+msgstr ""
+
+#: ../installation/cloud/azure.rst:12
+msgid ""
+"Choose vm name, resource group, region and click **Browse all public and "
+"private images**"
+msgstr ""
+
+#: ../installation/cloud/azure.rst:17
+msgid "On the marketplace search ``VyOS`` and choose the appropriate subscription"
+msgstr ""
+
+#: ../installation/cloud/azure.rst:21
+msgid "Generate new SSH key pair or use existing."
+msgstr ""
+
+#: ../installation/cloud/azure.rst:25
+msgid "Define network, subnet, Public IP. Or it will be created by default."
+msgstr ""
+
+#: ../installation/cloud/azure.rst:29
+msgid ""
+"Click ``Review + create``. After a few seconds your deployment will be "
+"complete"
+msgstr ""
+
+#: ../installation/cloud/azure.rst:33
+msgid "Click to your new vm and find out your Public IP address."
+msgstr ""
+
+#: ../installation/cloud/azure.rst:45
+msgid "Add interface"
+msgstr ""
+
+#: ../installation/cloud/azure.rst:47
+msgid ""
+"If instance was deployed with one **eth0** ``WAN`` interface and want to "
+"add new one. To add new interface an example **eth1** ``LAN`` you need "
+"shutdown the instance. Attach the interface in the Azure portal and then "
+"start the instance."
+msgstr ""
+
+#: ../installation/cloud/azure.rst:51
+msgid ""
+"Azure does not allow you attach interface when the instance in the "
+"**Running** state."
+msgstr ""
+
+#: ../installation/cloud/azure.rst:55
+msgid "Absorbing Routes"
+msgstr ""
+
+#: ../installation/cloud/azure.rst:57
+msgid ""
+"If using as a router, you will want your LAN interface to absorb some or "
+"all of the traffic from your VNET by using a route table applied to the "
+"subnet."
+msgstr ""
+
+#: ../installation/cloud/azure.rst:59
+msgid "Create a route table and browse to **Configuration**"
+msgstr ""
+
+#: ../installation/cloud/azure.rst:61
+msgid ""
+"Add one or more routes for networks you want to pass through the VyOS VM."
+" Next hop type **Virtual Appliance** with the **Next Hop Address** of the"
+" VyOS ``LAN`` interface."
+msgstr ""
+
+#: ../installation/cloud/azure.rst:63
+msgid ""
+"If you want to create a new default route for VMs on the subnet, use "
+"**Address Prefix** ``0.0.0.0/0`` Also note that if you want to use this "
+"as a typical edge device, you'll want masquerade NAT for the ``WAN`` "
+"interface."
+msgstr ""
+
+#: ../installation/cloud/azure.rst:66
+msgid "Serial Console"
+msgstr ""
+
+#: ../installation/cloud/azure.rst:68
+msgid ""
+"Azure has a way to access the serial console of a VM, but this needs to "
+"be configured on the VyOS. It's there by default, but keep it in mind if "
+"you are replacing config.boot and rebooting: ``set system console device "
+"ttyS0 speed '9600'``"
+msgstr ""
+
+#: ../installation/cloud/azure.rst:72
+msgid "https://azure.microsoft.com"
+msgstr ""
+
+#: ../installation/cloud/gcp.rst:3
+msgid "Google Cloud Platform"
+msgstr ""
+
+#: ../installation/cloud/gcp.rst:8
+msgid "To deploy VyOS on GCP (Google Cloud Platform)"
+msgstr ""
+
+#: ../installation/cloud/gcp.rst:10
+msgid ""
+"Generate SSH key pair type **ssh-rsa** from the host that will connect to"
+" VyOS."
+msgstr ""
+
+#: ../installation/cloud/gcp.rst:13
+msgid "Example:"
+msgstr ""
+
+#: ../installation/cloud/gcp.rst:20
+msgid ""
+"In name \"vyos@mypc\" The first value must be \"**vyos**\". Because "
+"default user is vyos and google api uses this option."
+msgstr ""
+
+#: ../installation/cloud/gcp.rst:24
+msgid ""
+"Open GCP console and navigate to the menu **Metadata**. Choose **SSH "
+"Keys** and click ``edit``."
+msgstr ""
+
+#: ../installation/cloud/gcp.rst:30
+msgid "Click **Add item** and paste your public ssh key. Click ``Save``."
+msgstr ""
+
+#: ../installation/cloud/gcp.rst:35
+msgid "On marketplace search \"VyOS\""
+msgstr ""
+
+#: ../installation/cloud/gcp.rst:37
+msgid "Change Deployment name/Zone/Machine type and click ``Deploy``"
+msgstr ""
+
+#: ../installation/cloud/gcp.rst:41
+msgid "After fiew seconds click to ``instance``"
+msgstr ""
+
+#: ../installation/cloud/gcp.rst:45
+msgid "Find out your external IP address"
+msgstr ""
+
+#: ../installation/cloud/gcp.rst:49
+msgid "Connect to the instance. SSH key was generated in the first step."
+msgstr ""
+
+#: ../installation/cloud/gcp.rst:58
+msgid "https://console.cloud.google.com/"
+msgstr ""
+
+#: ../installation/cloud/index.rst:7 ../installation/index.rst:7
+#: ../installation/virtual/index.rst:5
+msgid "Content"
+msgstr ""
+
+#: ../installation/cloud/index.rst:3
+msgid "Running VyOS in Cloud Environments"
+msgstr ""
+
+#: ../installation/cloud/oracel.rst:3
+msgid "Oracle"
+msgstr ""
+
+#: ../installation/cloud/oracel.rst:8
+msgid "https://www.oracle.com/cloud/"
+msgstr ""
+
+#: ../installation/image.rst:5
+msgid "Image Management"
+msgstr ""
+
+#: ../installation/image.rst:7
+msgid ""
+"The VyOS image-based installation is implemented by creating a directory "
+"for each image on the storage device selected during the install process."
+msgstr ""
+
+#: ../installation/image.rst:10
+msgid "The directory structure of the boot device:"
+msgstr ""
+
+#: ../installation/image.rst:19
+msgid ""
+"The image directory contains the system kernel, a compressed image of the"
+" root filesystem for the OS, and a directory for persistent storage, such"
+" as configuration. On boot, the system will extract the OS image into "
+"memory and mount the appropriate live-rw sub-directories to provide "
+"persistent storage system configuration."
+msgstr ""
+
+#: ../installation/image.rst:25
+msgid ""
+"This process allows for a system to always boot to a known working state,"
+" as the OS image is fixed and non-persistent. It also allows for multiple"
+" releases of VyOS to be installed on the same storage device. The image "
+"can be selected manually at boot if needed, but the system will otherwise"
+" boot the image configured to be the default."
+msgstr ""
+
+#: ../installation/image.rst:33
+msgid ""
+"List all available system images which can be booted on the current "
+"system."
+msgstr ""
+
+#: ../installation/image.rst:47
+msgid ""
+"Delete no longer needed images from the system. You can specify an "
+"optional image name to delete, the image name can be retrieved via a list"
+" of available images can be shown using the :opcmd:`show system image`."
+msgstr ""
+
+#: ../installation/image.rst:70
+msgid "Show current system image version."
+msgstr ""
+
+#: ../installation/image.rst:97
+msgid "System rollback"
+msgstr ""
+
+#: ../installation/image.rst:99
+msgid ""
+"If you need to rollback to a previous image, you can easily do so. First "
+"check the available images through the :opcmd:`show system image` command"
+" and then select your image with the following command:"
+msgstr ""
+
+#: ../installation/image.rst:105
+msgid ""
+"Select the default boot image which will be started on the next boot of "
+"the system."
+msgstr ""
+
+#: ../installation/image.rst:108
+msgid "Then reboot the system."
+msgstr ""
+
+#: ../installation/image.rst:110
+msgid ""
+"VyOS automatically associates the configuration to the image, so you "
+"don't need to worry about that. Each image has a unique copy of its "
+"configuration."
+msgstr ""
+
+#: ../installation/image.rst:114
+msgid ""
+"If you have access to the console, there is a another way to select your "
+"booting image: reboot and use the GRUB menu at startup."
+msgstr ""
+
+#: ../installation/index.rst:3
+msgid "Installation and Image Management"
+msgstr ""
+
+#: ../installation/install.rst:5 ../installation/vyos-on-baremetal.rst:346
+msgid "Installation"
+msgstr ""
+
+#: ../installation/install.rst:7
+msgid ""
+"VyOS installation requires to download a VyOS .iso file. That file is a "
+"live install image that lets you boot a live VyOS. From that live system "
+"you can proceed to the permanent installation on a hard drive or any "
+"other type of storage."
+msgstr ""
+
+#: ../installation/install.rst:14
+msgid "Hardware requirements"
+msgstr ""
+
+#: ../installation/install.rst:16
+msgid ""
+"The minimum system requirements are 512 MiB RAM and 2 GiB storage. "
+"Depending on your use you might need additional RAM and CPU resources "
+"e.g. when having multiple BGP full tables in your system."
+msgstr ""
+
+#: ../installation/install.rst:21
+msgid "Download"
+msgstr ""
+
+#: ../installation/install.rst:24
+msgid "Registered Subscribers"
+msgstr ""
+
+#: ../installation/install.rst:26
+msgid ""
+"Registered subscribers can log into https://support.vyos.io/ to have "
+"access to a variety of different downloads via the \"Downloads\" link. "
+"These downloads include LTS (Long-Term-Support) and associated hot-fix "
+"releases, early public access releases, pre-built VM images, as well as "
+"device specific installation ISOs."
+msgstr ""
+
+#: ../installation/install.rst:35
+msgid "Building from source"
+msgstr ""
+
+#: ../installation/install.rst:37
+msgid ""
+"Non-subscribers can always get the LTS release by building it from "
+"source. Instruction can be found in the :ref:`build` section of this "
+"manual. VyOS source code repository is available for everyone at "
+"https://github.com/vyos/vyos-build."
+msgstr ""
+
+#: ../installation/install.rst:43
+msgid "Rolling Release"
+msgstr ""
+
+#: ../installation/install.rst:45
+msgid ""
+"Everyone can download bleeding-edge VyOS rolling images from: "
+"https://downloads.vyos.io/"
+msgstr ""
+
+#: ../installation/install.rst:48
+msgid ""
+"Rolling releases contain all the latest enhancements and fixes. This "
+"means that there will be new bugs of course. If you think you hit a bug "
+"please follow the guide at :ref:`bug_report`. To improve VyOS we depend "
+"on your feedback!"
+msgstr ""
+
+#: ../installation/install.rst:53
+msgid ""
+"The following link will always fetch the most recent VyOS build for AMD64"
+" systems from the current branch: "
+"https://downloads.vyos.io/rolling/current/amd64/vyos-rolling-latest.iso"
+msgstr ""
+
+#: ../installation/install.rst:59
+msgid "Download Verification"
+msgstr ""
+
+#: ../installation/install.rst:61
+msgid ""
+"LTS images are signed by VyOS lead package-maintainer private key. With "
+"the official public key, the authenticity of the package can be verified."
+" :abbr:`GPG (GNU Privacy Guard)` is used for verification."
+msgstr ""
+
+#: ../installation/install.rst:65
+msgid ""
+"This subsection only applies e applies to LTS images, for Rolling images "
+"please jump to :ref:`live_installation`."
+msgstr ""
+
+#: ../installation/install.rst:69
+msgid "Preparing for the verification"
+msgstr ""
+
+#: ../installation/install.rst:71
+msgid ""
+"First, install GPG or another OpenPGP implementation. On most GNU+Linux "
+"distributions it is installed by default as package managers use it to "
+"verify package signatures. If not pre-installed, it will need to be "
+"downloaded and installed."
+msgstr ""
+
+#: ../installation/install.rst:76
+msgid ""
+"The official VyOS public key can be retrieved in a number of ways. Skip "
+"to :ref:`gpg-verification` if the key is already present."
+msgstr ""
+
+#: ../installation/install.rst:79
+msgid "It can be retrieved directly from a key server:"
+msgstr ""
+
+#: ../installation/install.rst:81
+msgid "``gpg --recv-keys FD220285A0FE6D7E``"
+msgstr ""
+
+#: ../installation/install.rst:83
+msgid "Or it can be accessed via a web browser:"
+msgstr ""
+
+#: ../installation/install.rst:85
+msgid "https://pgp.mit.edu/pks/lookup?op=get&search=0xFD220285A0FE6D7E"
+msgstr ""
+
+#: ../installation/install.rst:87
+msgid "Or from the following block:"
+msgstr ""
+
+#: ../installation/install.rst:144
+msgid ""
+"Store the key in a new text file and import it into GPG via: ``gpg "
+"--import file_with_the_public_key``"
+msgstr ""
+
+#: ../installation/install.rst:147
+msgid "The import can be verified with:"
+msgstr ""
+
+#: ../installation/install.rst:161
+msgid "GPG verification"
+msgstr ""
+
+#: ../installation/install.rst:163
+msgid ""
+"With the public key imported, the signature for the desired image needs "
+"to be downloaded."
+msgstr ""
+
+#: ../installation/install.rst:166
+msgid ""
+"The signature can be downloaded by appending `.asc` to the URL of the "
+"downloaded VyOS image. That small *.asc* file is the signature for the "
+"associated image."
+msgstr ""
+
+#: ../installation/install.rst:170
+msgid "Finally, verify the authenticity of the downloaded image:"
+msgstr ""
+
+#: ../installation/install.rst:183
+msgid "Live installation"
+msgstr ""
+
+#: ../installation/install.rst:185
+msgid ""
+"A permanent VyOS installation always requires to go first through a live "
+"installation."
+msgstr ""
+
+#: ../installation/install.rst:188
+msgid ""
+"VyOS, as other GNU+Linux distributions, can be tested without installing "
+"it in your hard drive. **With your downloaded VyOS .iso file you can "
+"create a bootable USB drive that will let you boot into a fully "
+"functional VyOS system**. Once you have tested it, you can either decide "
+"to begin a :ref:`permanent_installation` in your hard drive or power your"
+" system off, remove the USB drive, and leave everythng as it was."
+msgstr ""
+
+#: ../installation/install.rst:196
+msgid ""
+"If you have a GNU+Linux system, you can create your VyOS bootable USB "
+"stick with with the ``dd`` command:"
+msgstr ""
+
+#: ../installation/install.rst:199
+msgid "Open your terminal emulator."
+msgstr ""
+
+#: ../installation/install.rst:201
+msgid ""
+"Find out the device name of your USB drive (you can use the ``lsblk`` "
+"command)"
+msgstr ""
+
+#: ../installation/install.rst:204
+msgid ""
+"Unmount the USB drive. Replace X in the example below with the letter of "
+"your device and keep the asterisk (wildcard) to unmount all partitions."
+msgstr ""
+
+#: ../installation/install.rst:212
+msgid ""
+"Write the image (your VyOS .iso file) to the USB drive. Note that here "
+"you want to use the device name (e.g. /dev/sdb), not the partition name "
+"(e.g. /dev/sdb1)."
+msgstr ""
+
+#: ../installation/install.rst:216
+msgid "**Warning**: This will destroy all data on the USB drive!"
+msgstr ""
+
+#: ../installation/install.rst:222
+msgid ""
+"Wait until you get the outcome (bytes copied). Be patient, in some "
+"computers it might take more than one minute."
+msgstr ""
+
+#: ../installation/install.rst:225
+msgid ""
+"Once ``dd`` has finished, pull the USB drive out and plug it into the "
+"powered-off computer where you want to install (or test) VyOS."
+msgstr ""
+
+#: ../installation/install.rst:228
+msgid ""
+"Power the computer on, making sure it boots from the USB drive (you might"
+" need to select booting device or change booting settings)."
+msgstr ""
+
+#: ../installation/install.rst:231
+msgid ""
+"Once VyOS is completely loaded, enter the default credentials (login: "
+"vyos, password: vyos)."
+msgstr ""
+
+#: ../installation/install.rst:235
+msgid ""
+"If you find difficulties with this method, prefer to use a GUI program, "
+"or have a different operating system, there are other programs you can "
+"use to create a bootable USB drive, like balenaEtcher_ (for GNU/Linux, "
+"macOS and Windows), Rufus_ (for Windows) and `many others`_. You can "
+"follow their instructions to create a bootable USB drive from an .iso "
+"file."
+msgstr ""
+
+#: ../installation/install.rst:242
+msgid "The default username and password for the live system is *vyos*."
+msgstr ""
+
+#: ../installation/install.rst:248
+msgid "Permanent installation"
+msgstr ""
+
+#: ../installation/install.rst:250
+msgid "Before a permanent installation, VyOS requires a :ref:`live_installation`."
+msgstr ""
+
+#: ../installation/install.rst:253
+msgid ""
+"Unlike general purpose Linux distributions, VyOS uses \"image "
+"installation\" that mimics the user experience of traditional hardware "
+"routers and allows keeping multiple VyOS versions installed "
+"simultaneously. This makes it possible to switch to a previous version if"
+" something breaks or miss-behaves after an image upgrade."
+msgstr ""
+
+#: ../installation/install.rst:259
+msgid ""
+"Every version is contained in its own squashfs image that is mounted in a"
+" union filesystem together with a directory for mutable data such as "
+"configurations, keys, or custom scripts."
+msgstr ""
+
+#: ../installation/install.rst:263
+msgid ""
+"Older versions (prior to VyOS 1.1) used to support non-image installation"
+" (``install system`` command). Support for this has been removed from "
+"VyOS 1.2 and newer releases. Older releases can still be upgraded via the"
+" general ``add system image <image_path>`` upgrade command (consult :ref"
+":`image-mgmt` for further information)."
+msgstr ""
+
+#: ../installation/install.rst:270
+msgid "In order to proceed with a permanent installation:"
+msgstr ""
+
+#: ../installation/install.rst:272
+msgid "Log into the VyOS live system (use the default credentials: vyos, vyos)"
+msgstr ""
+
+#: ../installation/install.rst:275
+msgid "Run the ``install image`` command and follow the wizard:"
+msgstr ""
+
+#: ../installation/install.rst:329
+msgid "After the installation is complete, remove the live USB stick or CD."
+msgstr ""
+
+#: ../installation/install.rst:332
+msgid "Reboot the system."
+msgstr ""
+
+#: ../installation/install.rst:339
+msgid "You will boot now into a permanent VyOS system."
+msgstr ""
+
+#: ../installation/install.rst:343
+msgid "PXE Boot"
+msgstr ""
+
+#: ../installation/install.rst:345
+msgid ""
+"VyOS can also be installed through PXE. This is a more complex "
+"installation method which allows deploying VyOS through the network."
+msgstr ""
+
+#: ../installation/install.rst:348
+msgid "**Requirements**"
+msgstr ""
+
+#: ../installation/install.rst:350
+msgid "Clients (where VyOS is to be installed) with a PXE-enabled NIC"
+msgstr ""
+
+#: ../installation/install.rst:351
+msgid ":ref:`dhcp-server`"
+msgstr ""
+
+#: ../installation/install.rst:352
+msgid ":ref:`tftp-server`"
+msgstr ""
+
+#: ../installation/install.rst:353
+msgid "Webserver (HTTP) - optional, but we will use it to speed up installation"
+msgstr ""
+
+#: ../installation/install.rst:354
+msgid "VyOS ISO image to be installed (do not use images prior to VyOS 1.2.3)"
+msgstr ""
+
+#: ../installation/install.rst:355
+msgid ""
+"Files *pxelinux.0* and *ldlinux.c32* `from the Syslinux distribution "
+"<https://kernel.org/pub/linux/utils/boot/syslinux/>`_"
+msgstr ""
+
+#: ../installation/install.rst:359
+msgid "Configuration"
+msgstr ""
+
+#: ../installation/install.rst:362
+msgid "Step 1: DHCP"
+msgstr ""
+
+#: ../installation/install.rst:364
+msgid "Configure a DHCP server to provide the client with:"
+msgstr ""
+
+#: ../installation/install.rst:366
+msgid "An IP address"
+msgstr ""
+
+#: ../installation/install.rst:367
+msgid ""
+"The TFTP server address (DHCP option 66). Sometimes referred as *boot "
+"server*"
+msgstr ""
+
+#: ../installation/install.rst:368
+msgid "The *bootfile name* (DHCP option 67), which is *pxelinux.0*"
+msgstr ""
+
+#: ../installation/install.rst:370
+msgid "In this example we configured an existent VyOS as the DHCP server:"
+msgstr ""
+
+#: ../installation/install.rst:390
+msgid "Step 2: TFTP"
+msgstr ""
+
+#: ../installation/install.rst:392
+msgid "Configure a TFTP server so that it serves the following:"
+msgstr ""
+
+#: ../installation/install.rst:394
+msgid "The *pxelinux.0* file from the Syslinux distribution"
+msgstr ""
+
+#: ../installation/install.rst:395
+msgid "The *ldlinux.c32* file from the Syslinux distribution"
+msgstr ""
+
+#: ../installation/install.rst:396
+msgid ""
+"The kernel of the VyOS software you want to deploy. That is the *vmlinuz*"
+" file inside the */live* directory of the extracted contents from the ISO"
+" file."
+msgstr ""
+
+#: ../installation/install.rst:399
+msgid ""
+"The initial ramdisk of the VyOS ISO you want to deploy. That is the "
+"*initrd.img* file inside the */live* directory of the extracted contents "
+"from the ISO file. Do not use an empty (0 bytes) initrd.img file you "
+"might find, the correct file may have a longer name."
+msgstr ""
+
+#: ../installation/install.rst:403
+msgid ""
+"A directory named pxelinux.cfg which must contain the configuration file."
+" We will use the configuration_ file shown below, which we named "
+"default_."
+msgstr ""
+
+#: ../installation/install.rst:407
+msgid "In the example we configured our existent VyOS as the TFTP server too:"
+msgstr ""
+
+#: ../installation/install.rst:415
+msgid "Example of the contents of the TFTP server:"
+msgstr ""
+
+#: ../installation/install.rst:435
+msgid "Example of simple (no menu) configuration file:"
+msgstr ""
+
+#: ../installation/install.rst:447
+msgid "Step 3: HTTP"
+msgstr ""
+
+#: ../installation/install.rst:449
+msgid ""
+"We also need to provide the *filesystem.squashfs* file. That is a heavy "
+"file and TFTP is slow, so you could send it through HTTP to speed up the "
+"transfer. That is how it is done in our example, you can find that in the"
+" configuration file above."
+msgstr ""
+
+#: ../installation/install.rst:454
+msgid ""
+"**First** run a web server - you can use a simple one like `Python's "
+"SimpleHTTPServer`_ and start serving the `filesystem.squashfs` file. The "
+"file can be found inside the `/live` directory of the extracted contents "
+"of the ISO file."
+msgstr ""
+
+#: ../installation/install.rst:459
+msgid ""
+"**Second**, edit the configuration file of the :ref:`install_from_tftp` "
+"so that it shows the correct URL at "
+"``fetch=http://<address_of_your_HTTP_server>/filesystem.squashfs``."
+msgstr ""
+
+#: ../installation/install.rst:463
+msgid ""
+"Do not change the name of the *filesystem.squashfs* file. If you are "
+"working with different versions, you can create different directories "
+"instead."
+msgstr ""
+
+#: ../installation/install.rst:467
+msgid ""
+"And **third**, restart the TFTP service. If you are using VyOS as your "
+"TFTP Server, you can restart the service with ``sudo service tftpd-hpa "
+"restart``."
+msgstr ""
+
+#: ../installation/install.rst:471
+msgid ""
+"Make sure the available directories and files in both TFTP and HTTP "
+"server have the right permissions to be accessed from the booting "
+"clients."
+msgstr ""
+
+#: ../installation/install.rst:478
+msgid "Client Boot"
+msgstr ""
+
+#: ../installation/install.rst:480
+msgid ""
+"Finally, turn on your PXE-enabled client or clients. They will "
+"automatically get an IP address from the DHCP server and start booting "
+"into VyOS live from the files automatically taken from the TFTP and HTTP "
+"servers."
+msgstr ""
+
+#: ../installation/install.rst:485
+msgid ""
+"Once finished you will be able to proceed with the ``install image`` "
+"command as in a regular VyOS installation."
+msgstr ""
+
+#: ../installation/install.rst:491
+msgid "Known Issues"
+msgstr ""
+
+#: ../installation/install.rst:493
+msgid "This is a list of known issues that can arise during installation."
+msgstr ""
+
+#: ../installation/install.rst:496
+msgid "Black screen on install"
+msgstr ""
+
+#: ../installation/install.rst:498
+msgid ""
+"GRUB attempts to redirect all output to a serial port for ease of "
+"installation on headless hosts. This appears to cause an hard lockup on "
+"some hardware that lacks a serial port, with the result being a black "
+"screen after selecting the `Live system` option from the installation "
+"image."
+msgstr ""
+
+#: ../installation/install.rst:503
+msgid ""
+"The workaround is to type `e` when the boot menu appears and edit the "
+"GRUB boot options.  Specifically, remove the:"
+msgstr ""
+
+#: ../installation/install.rst:506
+msgid "`console=ttyS0,115200`"
+msgstr ""
+
+#: ../installation/install.rst:508
+msgid "option, and type CTRL-X to boot."
+msgstr ""
+
+#: ../installation/install.rst:510
+msgid "Installation can then continue as outlined above."
+msgstr ""
+
+#: ../installation/migrate-from-vyatta.rst:4
+msgid "Migrate from Vyatta Core"
+msgstr ""
+
+#: ../installation/migrate-from-vyatta.rst:6
+msgid ""
+"VyOS 1.x line aims to preserve backward compatibility and provide a safe "
+"upgrade path for existing Vyatta Core users. You may think of VyOS 1.0.0 "
+"as VC7.0."
+msgstr ""
+
+#: ../installation/migrate-from-vyatta.rst:11
+msgid "Vyatta release compatibility"
+msgstr ""
+
+#: ../installation/migrate-from-vyatta.rst:13
+#, python-format
+msgid "Vyatta Core releases from 6.5 to 6.6 should be 100% compatible."
+msgstr ""
+
+#: ../installation/migrate-from-vyatta.rst:15
+msgid ""
+"Vyatta Core 6.4 and earlier may have incompatibilities. In Vyatta 6.5 the"
+" \"modify\" firewall was removed and replaced with the ``set policy "
+"route`` command family, old configs can not be automatically converted. "
+"You will have to adapt it to post-6.5 Vyatta syntax manually."
+msgstr ""
+
+#: ../installation/migrate-from-vyatta.rst:20
+msgid ""
+"Also, in Vyatta Core 6.5 remote access VPN interfaces have been renamed "
+"from ``pppX``  to ``l2tpX`` and ``pptpX``. If you are using zone based "
+"firewalling in Vyatta Core pre-6.5 versions, make sure to change "
+"interface names in rules for remote access VPN."
+msgstr ""
+
+#: ../installation/migrate-from-vyatta.rst:26
+msgid "Upgrade procedure"
+msgstr ""
+
+#: ../installation/migrate-from-vyatta.rst:28
+msgid ""
+"You just use ``add system image``, as if it was a new VC release (see "
+":ref:`update_vyos` for additional information). The only thing you want "
+"to do is to verify the new images digital signature. You will have to add"
+" the public key manually once as it is not shipped the first time."
+msgstr ""
+
+#: ../installation/migrate-from-vyatta.rst:42
+msgid ""
+"For completion the key below corresponds to the key listed in the URL "
+"above."
+msgstr ""
+
+#: ../installation/migrate-from-vyatta.rst:99
+msgid "Next add the VyOS image."
+msgstr ""
+
+#: ../installation/migrate-from-vyatta.rst:101
+msgid ""
+"This example uses VyOS 1.0.0, however, it's better to install the latest "
+"release."
+msgstr ""
+
+#: ../installation/migrate-from-vyatta.rst:156
+msgid "Upon reboot, you should have a working installation of VyOS."
+msgstr ""
+
+#: ../installation/migrate-from-vyatta.rst:158
+msgid ""
+"You can go back to your Vyatta install using the ``set system image "
+"default-boot`` command and selecting the your previous Vyatta Core image."
+msgstr ""
+
+#: ../installation/migrate-from-vyatta.rst:161
+msgid ""
+"Future releases of VyOS will break the direct upgrade path from Vyatta "
+"core. Please upgrade through an intermediate VyOS version e.g. VyOS 1.2. "
+"After this you can continue upgrading to newer releases once you bootet "
+"into VyOS 1.2 once."
+msgstr ""
+
+#: ../installation/update.rst:4
+msgid "Update VyOS"
+msgstr ""
+
+#: ../installation/update.rst:6
+msgid ""
+"New system images can be added using the :opcmd:`add system image` "
+"command. The command will extract the chosen image and will prompt you to"
+" use the current system configuration and SSH security keys, allowing for"
+" the new image to boot using the current configuration."
+msgstr ""
+
+#: ../installation/update.rst:11
+msgid "Only LTS releases are PGP-signed."
+msgstr ""
+
+#: ../installation/update.rst:16
+msgid ""
+"Use this command to install a new system image. You can reach the image "
+"from the web (http://, https://) or from your local system, e.g.  "
+"/tmp/vyos-1.2.3-amd64.iso."
+msgstr ""
+
+#: ../installation/update.rst:20
+msgid ""
+"The `add system image` command also supports installing new versions of "
+"VyOS through an optional given VRF. Also if URL in question requires "
+"authentication, you can specify an optional username and password via the"
+" commandline which will be passed as \"Basic-Auth\" to the server."
+msgstr ""
+
+#: ../installation/update.rst:25
+msgid ""
+"If there is not enough **free disk space available**, the installation "
+"will be canceled. To delete images use the :opcmd:`delete system image` "
+"command."
+msgstr ""
+
+#: ../installation/update.rst:29
+msgid ""
+"VyOS configuration is associated to each image, and **each image has a "
+"unique copy of its configuration**. This is different than a traditional "
+"network router where the configuration is shared across all images."
+msgstr ""
+
+#: ../installation/update.rst:33
+msgid ""
+"If you have any personal files, like some scripts you created, and you "
+"don't want them to be lost during the upgrade, make sure those files are "
+"stored in ``/config`` as this directory is always copied to newer "
+"installed images."
+msgstr ""
+
+#: ../installation/update.rst:38
+msgid ""
+"You can access files from a previous installation and copy them to your "
+"current image if they were located in the ``/config`` directory. This can"
+" be done using the :opcmd:`copy` command. So, for instance, in order to "
+"copy ``/config/config.boot`` from VyOS 1.2.1 image, you would use the "
+"following command:"
+msgstr ""
+
+#: ../installation/update.rst:50
+msgid "Example"
+msgstr ""
+
+#: ../installation/update.rst:76
+msgid ""
+"The most up-do-date Rolling Release for AMD64 can be accessed using the "
+"following URL:"
+msgstr ""
+
+#: ../installation/update.rst:79
+msgid "https://downloads.vyos.io/rolling/current/amd64/vyos-rolling-latest.iso"
+msgstr ""
+
+#: ../installation/update.rst:81
+msgid ""
+"After reboot you might want to verify the version you are running with "
+"the :opcmd:`show version` command."
+msgstr ""
+
+#: ../installation/virtual/eve-ng.rst:3
+msgid "EVE-NG"
+msgstr ""
+
+#: ../installation/virtual/eve-ng.rst:8
+msgid "https://www.eve-ng.net/"
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:5
+msgid "Running on GNS3"
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:7
+msgid ""
+"Sometimes you may want to test VyOS in a lab environment. `GNS3 "
+"<http://www.gns3.com>`__ is a network emulation software you might use "
+"for it."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:11
+msgid ""
+"This guide will provide the necessary steps for installing and setting up"
+" VyOS on GNS3."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:15
+msgid "Requirements"
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:17
+msgid "The following items are required:"
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:19
+msgid ""
+"A VyOS installation image (.iso file). You can find how to get it on the "
+":ref:`installation` page"
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:22
+msgid ""
+"A working GNS3 installation. For further information see the `GNS3 "
+"documentation <https://docs.gns3.com/>`__."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:28
+msgid "VM setup"
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:30
+msgid ""
+"First, a virtual machine (VM) for the VyOS installation must be created "
+"in GNS3."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:33
+msgid ""
+"Go to the GNS3 **File** menu, click **New template** and choose select "
+"**Manually create a new Template**."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:38
+msgid "Select **Quemu VMs** and then click on the ``New`` button."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:42
+msgid "Write a name for your VM, for instance \"VyOS\", and click ``Next``."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:46
+msgid ""
+"Select **qemu-system-x86_64** as Quemu binary, then **512MB** of RAM and "
+"click ``Next``."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:51
+msgid "Select **telnet** as your console type and click ``Next``."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:55
+msgid ""
+"Select **New image** for the base disk image of your VM and click "
+"``Create``."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:60
+msgid "Use the defaults in the **Binary and format** window and click ``Next``."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:65
+msgid "Use the defaults in the **Qcow2 options** window and click ``Next``."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:69
+msgid ""
+"Set the disk size to 2000 MiB, and click ``Finish`` to end the **Quemu "
+"image creator**."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:74
+msgid "Click ``Finish`` to end the **New QEMU VM template** wizard."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:78
+msgid "Now the VM settings have to be edited."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:80
+msgid ""
+"Being again at the **Preferences** window, having **Qemu VMs** selected "
+"and having our new VM selected, click the ``Edit`` button."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:85
+msgid ""
+"In the **General settings** tab of your **QEMU VM template "
+"configuration**, do the following:"
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:88
+msgid ""
+"Click on the ``Browse...`` button to choose the **Symbol** you want to "
+"have representing your VM."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:90
+msgid "In **Category** select in which group you want to find your VM."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:91
+msgid "Set the **Boot priority** to **CD/DVD-ROM**."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:95
+msgid ""
+"At the **HDD** tab, change the Disk interface to **sata** to speed up the"
+" boot process."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:100
+msgid ""
+"At the **CD/DVD** tab click on ``Browse...`` and locate the VyOS image "
+"you want to install."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:105
+msgid ""
+"You probably will want to accept to copy the .iso file to your default "
+"image directory when you are asked."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:108
+msgid ""
+"In the **Network** tab,  set **0** as the number of adapters, set the "
+"**Name format** to **eth{0}** and the **Type** to **Paravirtualized "
+"Network I/O (virtio-net-pci)**."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:114
+msgid ""
+"In the **Advanced** tab, unmark the checkbox **Use as a linked base VM** "
+"and click ``OK``, which will save and close the **QEMU VM template "
+"configuration** window."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:120
+msgid "At the general **Preferences** window, click ``OK`` to save and close."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:128
+msgid "VyOS installation"
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:130
+msgid "Create a new project."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:131
+msgid "Drag the newly created VyOS VM into it."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:132
+msgid "Start the VM."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:133
+msgid ""
+"Open a console. The console should show the system booting. It will ask "
+"for the login credentials, you are at the VyOS live system."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:136
+msgid ""
+"`Install VyOS <https://docs.vyos.io/en/latest/install.html#install>`__ as"
+" normal (that is, using the ``install image`` command)."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:139
+msgid ""
+"After a successful installation, shutdown the VM with the ``poweroff`` "
+"command."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:142
+msgid "**Delete the VM** from the GNS3 project."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:144
+msgid ""
+"The *VyOS-hda.qcow2* file now contains a working VyOS image and can be "
+"used as a template. But it still needs some fixes before we can deploy "
+"VyOS in our labs."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:151
+msgid "VyOS VM configuration"
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:153
+msgid ""
+"To turn the template into a working VyOS machine, further steps are "
+"necessary as outlined below:"
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:156
+msgid "**General settings** tab: Set the boot priority to **HDD**"
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:160
+msgid ""
+"**CD/DVD** tab: Unmount the installation image file by clearing the "
+"**Image** entry field."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:165
+msgid "Set the number of required network adapters, for example **4**."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:169
+msgid ""
+"**Advanced** settings tab: Mark the checkbox **Use as a linked base VM** "
+"and click ``OK`` to save the changes."
+msgstr ""
+
+#: ../installation/virtual/gns3.rst:174
+msgid "The VyOS VM is now ready to be deployed."
+msgstr ""
+
+#: ../installation/virtual/index.rst:3
+msgid "Running VyOS in Virtual Environments"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:5
+msgid "Running on Libvirt Qemu/KVM"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:7
+msgid ""
+"Libvirt is an open-source API, daemon and management tool for managing "
+"platform virtualization. There are several ways to deploy VyOS on libvirt"
+" kvm. Use Virt-manager and native CLI. In an example we will be use use 4"
+" gigabytes of memory, 2 cores CPU and default network virbr0."
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:13
+msgid "CLI"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:16
+#: ../installation/virtual/libvirt.rst:104
+msgid "Deploy from ISO"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:18
+msgid ""
+"Create VM name ``vyos_r1``. You must specify the path to the ``ISO`` "
+"image, the disk ``qcow2`` will be created automatically. The ``default`` "
+"network is the virtual network (type Virtio) created by the hypervisor "
+"with NAT."
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:37
+msgid "Connect to VM  with command ``virsh console vyos_r1``"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:51
+msgid ""
+"After installation - exit from the console using the key combination "
+"``Ctrl + ]`` and reboot the system."
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:55
+#: ../installation/virtual/libvirt.rst:134
+msgid "Deploy from qcow2"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:56
+msgid ""
+"The convenience of using :abbr:`KVM (Kernel-based Virtual Machine)` "
+"images is that they don't need to be installed. Download predefined "
+"VyOS.qcow2 image for ``KVM``"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:64
+msgid "Create VM with ``import`` qcow2 disk option."
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:81
+msgid "Connect to VM  with command ``virsh console vyos_r2``"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:95
+msgid "The system is fully operational."
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:98
+msgid "Virt-manager"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:99
+msgid ""
+"The virt-manager application is a desktop user interface for managing "
+"virtual machines through libvirt. On the linux open :abbr:`VMM (Virtual "
+"Machine Manager)`."
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:106
+#: ../installation/virtual/libvirt.rst:143
+msgid ""
+"Open :abbr:`VMM (Virtual Machine Manager)` and Create a new :abbr:`VM "
+"(Virtual Machine)`"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:109
+msgid "Choose ``Local install media`` (ISO)"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:113
+msgid "Choose path to iso vyos.iso. Operating System can be any Debian based."
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:117
+#: ../installation/virtual/libvirt.rst:155
+msgid "Choose Memory and CPU"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:121
+msgid "Disk size"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:125
+#: ../installation/virtual/libvirt.rst:159
+msgid "Name of VM and network selection"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:129
+#: ../installation/virtual/libvirt.rst:163
+msgid "Then you will be taken to the console."
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:136
+msgid "Download predefined VyOS.qcow2 image for ``KVM``"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:146
+msgid "Choose ``Import existing disk`` image"
+msgstr ""
+
+#: ../installation/virtual/libvirt.rst:150
+msgid ""
+"Choose the path to the image ``vyos_kvm.qcow2`` that was previously "
+"downloaded . Operation System can be any Debian based."
+msgstr ""
+
+#: ../installation/virtual/proxmox.rst:3
+msgid "Proxmox"
+msgstr ""
+
+#: ../installation/virtual/proxmox.rst:8
+msgid "https://www.proxmox.com/en/proxmox-ve"
+msgstr ""
+
+#: ../installation/virtual/vmware.rst:4
+msgid "Running on VMware ESXi"
+msgstr ""
+
+#: ../installation/virtual/vmware.rst:7
+msgid "ESXi 5.5 or later"
+msgstr ""
+
+#: ../installation/virtual/vmware.rst:9
+msgid ""
+".ova files are available for supporting users, and a VyOS can also be "
+"stood up using a generic Linux instance, and attaching the bootable ISO "
+"file and installing from the ISO using the normal process around `install"
+" image`."
+msgstr ""
+
+#: ../installation/virtual/vmware.rst:13
+msgid ""
+"There have been previous documented issues with GRE/IPSEC tunneling using"
+" the E1000 adapter on the VyOS guest, and use of the VMXNET3 has been "
+"advised."
+msgstr ""
+
+#: ../installation/virtual/vmware.rst:18
+msgid "Memory Contention Considerations"
+msgstr ""
+
+#: ../installation/virtual/vmware.rst:19
+#, python-format
+msgid ""
+"When the underlying ESXi host is approaching ~92% memory utilisation it "
+"will start the balloon process in s a 'soft' state to start reclaiming "
+"memory from guest operating systems. This causes an artificial pressure "
+"using the vmmemctl driver on memory usage on the virtual guest. As VyOS "
+"by default does not have a swap file, this vmmemctl pressure is unable to"
+" force processes to move in memory data to the paging file, and blindly "
+"consumes memory forcing the virtual guest into a low memory state with no"
+" way to escape. The balloon can expand to 65% of guest allocated memory, "
+"so a VyOS guest running >35% of memory usage, can encounter an out of "
+"memory situation, and trigger the kernel oom_kill process. At this point "
+"a weighted lottery favouring memory hungry processes will be run with the"
+" unlucky winner being terminated by the kernel."
+msgstr ""
+
+#: ../installation/virtual/vmware.rst:31
+msgid ""
+"It is advised that VyOS routers are configured in a resource group with "
+"adequate memory reservations so that ballooning is not inflicted on "
+"virtual VyOS guests."
+msgstr ""
+
+#: ../installation/virtual/vmware.rst:44
+msgid ""
+"https://muralidba.blogspot.com/2018/03/how-does-linux-out-of-memory-oom-"
+"killer.html"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:5
+msgid "Running on Bare Metal"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:8
+msgid "Supermicro A2SDi (Atom C3000)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:10
+msgid ""
+"I opted to get one of the new Intel Atom C3000 CPUs to spawn VyOS on it. "
+"Running VyOS on an UEFI only device is supported as of VyOS release 1.2."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:14
+#: ../installation/vyos-on-baremetal.rst:97
+msgid "Shopping Cart"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:16
+msgid "1x Supermicro CSE-505-203B (19\" 1U chassis, inkl. 200W PSU)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:17
+msgid "1x Supermicro MCP-260-00085-0B (I/O Shield for A2SDi-2C-HLN4F)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:18
+msgid ""
+"1x Supermicro A2SDi-2C-HLN4F (Intel Atom C3338, 2C/2T, 4MB cache, Quad "
+"LAN with Intel C3000 SoC 1GbE)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:20
+msgid "1x Crucial CT4G4DFS824A (4GB DDR4 RAM 2400 MT/s, PC4-19200)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:21
+msgid "1x SanDisk Ultra Fit 32GB (USB-A 3.0 SDCZ43-032G-G46 mass storage for OS)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:22
+msgid "1x Supermicro MCP-320-81302-0B (optional FAN tray)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:25
+msgid "Optional (10GE)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:26
+msgid ""
+"If you want to get additional ethernet ports or even 10GE connectivity "
+"the following optional parts will be required:"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:29
+msgid "1x Supermicro RSC-RR1U-E8 (Riser Card)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:30
+msgid "1x Supermicro MCP-120-00063-0N (Riser Card Bracket)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:32
+msgid ""
+"Latest VyOS rolling releases boot without any problem on this board. You "
+"also receive a nice IPMI interface realized with an ASPEED AST2400 BMC "
+"(no information about `OpenBMC <https://www.openbmc.org/>`_ so far on "
+"this motherboard)."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:38
+#: ../installation/vyos-on-baremetal.rst:228
+msgid "Pictures"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:80
+msgid "PC Engines APU4"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:82
+msgid ""
+"As this platform seems to be quite common in terms of noise, cost, power "
+"and performance it makes sense to write a small installation manual."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:85
+msgid "This guide was developed using an APU4C4 board with the following specs:"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:87
+msgid ""
+"AMD Embedded G series GX-412TC, 1 GHz quad Jaguar core with 64 bit and "
+"AES-NI support, 32K data + 32K instruction cache per core, shared 2MB L2 "
+"cache."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:89
+msgid "4 GB DDR3-1333 DRAM, with optional ECC support"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:90
+msgid "About 6 to 10W of 12V DC power depending on CPU load"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:91
+msgid "2 miniPCI express (one with SIM socket for 3G modem)."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:92
+msgid "4 Gigabit Ethernet channels using Intel i211AT NICs"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:94
+msgid ""
+"The board can be powered via 12V from the front or via a 5V onboard "
+"connector."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:99
+msgid "1x apu4c4 = 4 i211AT LAN / AMD GX-412TC CPU / 4 GB DRAM / dual SIM"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:100
+msgid "1x Kingston SUV500MS/120G"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:101
+msgid "1x VARIA Group Item 326745 19\" dual rack for APU4"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:103
+msgid ""
+"The 19\" enclosure can accommodate up to two APU4 boards - there is a "
+"single and dual front cover."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:107
+msgid "Extension Modules"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:110
+msgid "WiFi"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:112
+msgid ""
+"Refer to :ref:`wireless-interface` for additional information, below "
+"listed modules have been tested successfully on this Hardware platform:"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:115
+msgid "Compex WLE900VX mini-PCIe WiFi module, only supported in mPCIe slot 1."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:118
+msgid "WWAN"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:120
+msgid ""
+"Refer to :ref:`wwan-interface` for additional information, below listed "
+"modules have been tested successfully on this Hardware platform using "
+"VyOS 1.3 (equuleus):"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:124
+msgid "Sierra Wireless AirPrime MC7304 miniPCIe card (LTE)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:125
+msgid "Sierra Wireless AirPrime MC7430 miniPCIe card (LTE)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:126
+msgid "Sierra Wireless AirPrime MC7455 miniPCIe card (LTE)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:127
+msgid "Sierra Wireless AirPrime MC7710 miniPCIe card (LTE)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:128
+msgid "Huawei ME909u-521 miniPCIe card (LTE)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:131
+msgid "VyOS 1.2 (crux)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:133
+msgid ""
+"Depending on the VyOS versions you intend to install there is a "
+"difference in the serial port settings (:vytask:`T1327`)."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:136
+msgid "Create a bootable USB pendrive using e.g. Rufus_ on a Windows machine."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:138
+msgid ""
+"Connect serial port to a PC through null modem cable (RXD / TXD crossed "
+"over). Set terminal emulator to 115200 8N1."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:162
+msgid ""
+"Now boot from the ``USB MSC Drive Generic Flash Disk 8.07`` media by "
+"pressing ``2``, the VyOS boot menu will appear, just wait 10 seconds or "
+"press ``Enter`` to continue."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:176
+msgid "The image will be loaded and the last lines you will get will be:"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:183
+msgid ""
+"The Kernel will now spin up using a different console setting. Set "
+"terminal emulator to 9600 8N1 and after a while your console will show:"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:194
+msgid ""
+"You can now proceed with a regular image installation as described in "
+":ref:`installation`."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:197
+msgid ""
+"As the APU board itself still used a serial setting of 115200 8N1 it is "
+"strongly recommended that you change the VyOS serial interface settings "
+"after your first successful boot."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:201
+msgid "Use the following command to adjust the :ref:`serial-console` settings:"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:207
+msgid ""
+"Once you ``commit`` the above changes access to the serial interface is "
+"lost until you set your terminal emulator to 115200 8N1 again."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:218
+msgid "VyOS 1.2 (rolling)"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:220
+msgid ""
+"Installing the rolling release on an APU2 board does not require any "
+"change on the serial console from your host side as :vytask:`T1327` was "
+"successfully implemented."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:224
+msgid ""
+"Simply proceed with a regular image installation as described in "
+":ref:`installation`."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:230
+msgid "Both device types operate without any moving parts and emit zero noise."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:234
+msgid "Rack Mount"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:257
+msgid "VyOS custom print"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:264
+msgid "Desktop / Bench Top"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:285
+msgid "Qotom Q355G4"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:287
+msgid ""
+"The install on this Q355G4 box is pretty much plug and play. The port "
+"numbering the OS does might differ from the labels on the outside, but "
+"the UEFI firmware has a port blink test built in with MAC addresses so "
+"you can very quickly identify which is which. MAC labels are on the "
+"inside as well, and this test can be done from VyOS or plain Linux too. "
+"Default settings in the UEFI will make it boot, but depending on your "
+"installation wishes (i.e. storage type, boot type, console type) you "
+"might want to adjust them. This Qotom company seems to be the real "
+"OEM/ODM for many other relabelling companies like Protectli."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:298
+msgid "Hardware"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:300
+msgid ""
+"There are a number of other options, but they all seem to be close to "
+"Intel reference designs, with added features like more serial ports, more"
+" network interfaces and the likes. Because they don't deviate too much "
+"from standard designs all the hardware is well-supported by mainline. It "
+"accepts one LPDDR3 SO-DIMM, but chances are that if you need more than "
+"that, you'll also want something even beefier than an i5. There are "
+"options for antenna holes, and SIM slots, so you could in theory add an "
+"LTE/Cell modem (not tested so far)."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:308
+msgid ""
+"The chassis is a U-shaped alu extrusion with removable I/O plates and "
+"removable bottom plate. Cooling is completely passive with a heatsink on "
+"the SoC with internal and external fins, a flat interface surface, "
+"thermal pad on top of that, which then directly attaches to the chassis, "
+"which has fins as well. It comes with mounting hardware and rubber feet, "
+"so you could place it like a desktop model or mount it on a VESA mount, "
+"or even wall mount it with the provided mounting plate. The closing plate"
+" doubles as internal 2.5\" mounting place for an HDD or SSD, and comes "
+"supplied with a small SATA cable and SATA power cable."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:318
+msgid ""
+"Power supply is a 12VDC barrel jack, and included switching power supply,"
+" which is why SATA power regulation is on-board. Internally it has a NUC-"
+"board-style on-board 12V input header as well, the molex locking style."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:322
+msgid ""
+"There are WDT options and auto-boot on power enable, which is great for "
+"remote setups. Firmware is reasonably secure (no backdoors found, "
+"BootGuard is enabled in enforcement mode, which is good but also means no"
+" coreboot option), yet has most options available to configure (so it's "
+"not locked out like most firmwares are)."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:328
+msgid ""
+"An external RS232 serial port is available, internally a GPIO header as "
+"well. It does have Realtek based audio on board for some reason, but you "
+"can disable that. Booting works on both USB2 and USB3 ports. Switching "
+"between serial BIOS mode and HDMI BIOS mode depends on what is connected "
+"at startup; it goes into serial mode if you disconnect HDMI and plug in "
+"serial, in all other cases it's HDMI mode."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:336
+msgid "Partaker i5"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:340
+msgid ""
+"I believe this is actually the same hardware as the Protectli. I "
+"purchased it in June 2018. It came pre-loaded with pfSense."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:343
+msgid ""
+"`Manufacturer product page "
+"<http://www.inctel.com.cn/product/detail/338.html>`_."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:348
+msgid "Write VyOS ISO to USB drive of some sort"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:349
+msgid "Plug in VGA, power, USB keyboard, and USB drive"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:350
+msgid ""
+"Press \"SW\" button on the front (this is the power button; I don't know "
+"what \"SW\" is supposed to mean)."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:352
+msgid ""
+"Begin rapidly pressing delete on the keyboard. The boot prompt is very "
+"quick, but with a few tries you should be able to get into the BIOS."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:354
+msgid ""
+"Chipset > South Bridge > USB Configuration: set XHCI to Disabled and USB "
+"2.0 (EHCI) to Enabled. Without doing this, the USB drive won't boot."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:356
+msgid "Boot to the VyOS installer and install as usual."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:358
+msgid ""
+"Warning the interface labels on my device are backwards; the left-most "
+"\"LAN4\" port is eth0 and the right-most \"LAN1\" port is eth3."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:362
+msgid "Acrosser AND-J190N1"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:368
+msgid ""
+"This microbox network appliance was build to create OpenVPN bridges. It "
+"can saturate a 100Mbps link. It is a small (serial console only) PC with "
+"6 Gb LAN http://www.acrosser.com/upload/AND-J190_J180N1-2.pdf"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:372
+msgid ""
+"You may have to add your own RAM and HDD/SSD. There is no VGA connector. "
+"But Acrosser provides a DB25 adapter for the VGA header on the "
+"motherboard (not used)."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:377
+msgid "BIOS Settings:"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:379
+msgid ""
+"First thing you want to do is getting a more user friendly console to "
+"configure BIOS. Default VT100 brings a lot of issues. Configure VT100+ "
+"instead."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:382
+msgid ""
+"For practical issues change speed from 115200 to 9600. 9600 is the "
+"default speed at which both linux kernel and VyOS will reconfigure the "
+"serial port when loading."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:386
+msgid ""
+"Connect to serial (115200bps). Power on the appliance and press Del in "
+"the console when requested to enter BIOS settings."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:389
+msgid "Advanced > Serial Port Console Redirection > Console Redirection Settings:"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:391
+msgid "Terminal Type : VT100+"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:392
+msgid "Bits per second : 9600"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:394
+msgid "Save, reboot and change serial speed to 9600 on your client."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:396
+msgid ""
+"Some options have to be changed for VyOS to boot correctly. With XHCI "
+"enabled the installer can’t access the USB key. Enable EHCI instead."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:399
+msgid "Reboot into BIOS, Chipset > South Bridge > USB Configuration:"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:401
+msgid "Disable XHCI"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:402
+msgid "Enable USB 2.0 (EHCI) Support"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:405
+msgid "Install VyOS:"
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:407
+msgid ""
+"Create a VyOS bootable USB key. I used the 64-bit ISO (VyOS 1.1.7) and "
+"`LinuxLive USB Creator <http://www.linuxliveusb.com/>`_."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:410
+msgid ""
+"I'm not sure if it helps the process but I changed default option to "
+"live-serial (line “default xxxx”) on the USB key under "
+"syslinux/syslinux.cfg."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:413
+msgid ""
+"I connected the key to one black USB port on the back and powered on. The"
+" first VyOS screen has some readability issues. Press :kbd:`Enter` to "
+"continue."
+msgstr ""
+
+#: ../installation/vyos-on-baremetal.rst:416
+msgid "Then VyOS should boot and you can perform the ``install image``"
+msgstr ""
+

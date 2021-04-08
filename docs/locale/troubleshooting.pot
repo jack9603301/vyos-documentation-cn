@@ -1,0 +1,298 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, VyOS maintainers and contributors
+# This file is distributed under the same license as the VyOS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VyOS 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-08 11:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../troubleshooting/index.rst:5
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../troubleshooting/index.rst:7
+msgid "Sometimes things break or don't work as expected. This section describes several troubleshooting tools provided by VyOS that can help when something goes wrong."
+msgstr ""
+
+#: ../troubleshooting/index.rst:13
+msgid "Connectivity Tests"
+msgstr ""
+
+#: ../troubleshooting/index.rst:16
+msgid "Basic Connectivity Tests"
+msgstr ""
+
+#: ../troubleshooting/index.rst:18
+msgid "Verifying connectivity can be done with the familiar `ping` and `traceroute` commands. The options for each are shown (the options for each command were displayed using the built-in help as described in the :ref:`cli` section and are omitted from the output here):"
+msgstr ""
+
+#: ../troubleshooting/index.rst:25
+msgid "Send ICMP echo requests to destination host. There are multiple options to ping, inkl. VRF support."
+msgstr ""
+
+#: ../troubleshooting/index.rst:58
+msgid "Trace path to target."
+msgstr ""
+
+#: ../troubleshooting/index.rst:72
+msgid "Advanced Connectivity Tests"
+msgstr ""
+
+#: ../troubleshooting/index.rst:76
+msgid "However, another helper is available which combines ping and traceroute into a single tool. An example of its output is shown:"
+msgstr ""
+
+#: ../troubleshooting/index.rst:93
+msgid "The output consumes the screen and will replace your command prompt."
+msgstr ""
+
+#: ../troubleshooting/index.rst:96
+msgid "Several options are available for changing the display output. Press `h` to invoke the built in help system. To quit, just press `q` and you'll be returned to the VyOS command prompt."
+msgstr ""
+
+#: ../troubleshooting/index.rst:101
+msgid "IPv6 Topology Discovery"
+msgstr ""
+
+#: ../troubleshooting/index.rst:103
+msgid "IPv6 uses different techniques to discover its Neighbors/topology."
+msgstr ""
+
+#: ../troubleshooting/index.rst:106
+msgid "Router Discovery"
+msgstr ""
+
+#: ../troubleshooting/index.rst:110
+msgid "Discover routers via eth0."
+msgstr ""
+
+#: ../troubleshooting/index.rst:112
+#: ../troubleshooting/index.rst:149
+msgid "Example:"
+msgstr ""
+
+#: ../troubleshooting/index.rst:144
+msgid "Neighbor Discovery"
+msgstr ""
+
+#: ../troubleshooting/index.rst:161
+msgid "Interface names"
+msgstr ""
+
+#: ../troubleshooting/index.rst:163
+msgid "If you find the names of your interfaces have changed, this could be because your MAC addresses have changed."
+msgstr ""
+
+#: ../troubleshooting/index.rst:166
+msgid "For example, you have a VyOS VM with 4 Ethernet interfaces named eth0, eth1, eth2 and eth3. Then, you migrate your VyOS VM to a different host and find your interfaces now are eth4, eth5, eth6 and eth7."
+msgstr ""
+
+#: ../troubleshooting/index.rst:170
+msgid "One way to fix this issue **taking control of the MAC addresses** is:"
+msgstr ""
+
+#: ../troubleshooting/index.rst:172
+msgid "Log into VyOS and run this command to display your interface settings."
+msgstr ""
+
+#: ../troubleshooting/index.rst:178
+msgid "Take note of MAC addresses."
+msgstr ""
+
+#: ../troubleshooting/index.rst:180
+msgid "Now, in order to update a MAC address in the configuration, run this command specifying the interface name and MAC address you want."
+msgstr ""
+
+#: ../troubleshooting/index.rst:187
+msgid "If it is a VM, go into the settings of the host and set the MAC address to the settings found in the config.boot file. You can also set the MAC to static if the host allows so."
+msgstr ""
+
+#: ../troubleshooting/index.rst:192
+msgid "Another example could be when cloning VyOS VMs in GNS3 and you get into the same issue: interface names have changed."
+msgstr ""
+
+#: ../troubleshooting/index.rst:195
+msgid "And **a more generic way to fix it** is just deleting every MAC address at the configuration file of the cloned machine. They will be correctly regenerated automatically."
+msgstr ""
+
+#: ../troubleshooting/index.rst:202
+msgid "Monitoring"
+msgstr ""
+
+#: ../troubleshooting/index.rst:204
+msgid "VyOS features several monitoring tools."
+msgstr ""
+
+#: ../troubleshooting/index.rst:239
+msgid "Traffic Dumps"
+msgstr ""
+
+#: ../troubleshooting/index.rst:241
+msgid "To monitor interface traffic, issue the :code:`monitor traffic interface <name>` command, replacing `<name>` with your chosen interface."
+msgstr ""
+
+#: ../troubleshooting/index.rst:259
+msgid "To quit monitoring, press `Ctrl-c` and you'll be returned to the VyOS command prompt."
+msgstr ""
+
+#: ../troubleshooting/index.rst:262
+msgid "Traffic can be filtered and saved."
+msgstr ""
+
+#: ../troubleshooting/index.rst:274
+msgid "Interface Bandwidth Usage"
+msgstr ""
+
+#: ../troubleshooting/index.rst:276
+msgid "to take a quick view on the used bandwidth of an interface use the ``monitor bandwidth`` command"
+msgstr ""
+
+#: ../troubleshooting/index.rst:283
+msgid "show the following:"
+msgstr ""
+
+#: ../troubleshooting/index.rst:306
+msgid "Interface Performance"
+msgstr ""
+
+#: ../troubleshooting/index.rst:308
+msgid "To take a look on the network bandwidth between two nodes, the ``monitor bandwidth-test`` command is used to run iperf."
+msgstr ""
+
+#: ../troubleshooting/index.rst:318
+msgid "The ``accept`` command opens a listening iperf server on TCP Port 5001"
+msgstr ""
+
+#: ../troubleshooting/index.rst:319
+msgid "The ``initiate`` command connects to that server to perform the test."
+msgstr ""
+
+#: ../troubleshooting/index.rst:331
+msgid "Monitor command"
+msgstr ""
+
+#: ../troubleshooting/index.rst:333
+msgid "The ``monitor command`` command allows you to repeatedly run a command to view a continuously refreshed output. The command is run and output every 2 seconds, allowing you to monitor the output continuously without having to re-run the command. This can be useful to follow routing adjacency formation."
+msgstr ""
+
+#: ../troubleshooting/index.rst:342
+msgid "Will clear the screen and show you the output of ``show interfaces`` every 2 seconds."
+msgstr ""
+
+#: ../troubleshooting/index.rst:361
+msgid "Terminal/Console"
+msgstr ""
+
+#: ../troubleshooting/index.rst:363
+msgid "Sometimes you need to clear counters or statistics to troubleshoot better."
+msgstr ""
+
+#: ../troubleshooting/index.rst:365
+msgid "To do this use the ``clear`` command in Operational mode."
+msgstr ""
+
+#: ../troubleshooting/index.rst:367
+msgid "to clear the console output"
+msgstr ""
+
+#: ../troubleshooting/index.rst:373
+msgid "to clear interface counters"
+msgstr ""
+
+#: ../troubleshooting/index.rst:382
+msgid "The command follow the same logic as the ``set`` command in configuration mode."
+msgstr ""
+
+#: ../troubleshooting/index.rst:392
+msgid "to clear counters on firewall rulesets or single rules"
+msgstr ""
+
+#: ../troubleshooting/index.rst:405
+msgid "System Information"
+msgstr ""
+
+#: ../troubleshooting/index.rst:410
+msgid "Boot Steps"
+msgstr ""
+
+#: ../troubleshooting/index.rst:412
+msgid "VyOS 1.2 uses `Debian Jessie`_ as the base Linux operating system. Jessie was the first version of Debian that uses systemd_ as the default init system."
+msgstr ""
+
+#: ../troubleshooting/index.rst:415
+msgid "These are the boot steps for VyOS 1.2"
+msgstr ""
+
+#: ../troubleshooting/index.rst:417
+msgid "The BIOS loads Grub (or isolinux for the Live CD)"
+msgstr ""
+
+#: ../troubleshooting/index.rst:418
+msgid "Grub then starts the Linux boot and loads the Linux Kernel ``/boot/vmlinuz``"
+msgstr ""
+
+#: ../troubleshooting/index.rst:419
+msgid "Kernel Launches Systemd ``/lib/systemd/systemd``"
+msgstr ""
+
+#: ../troubleshooting/index.rst:420
+msgid "Systemd loads the VyOS service file ``/lib/systemd/system/vyos-router.service``"
+msgstr ""
+
+#: ../troubleshooting/index.rst:422
+msgid "The service file launches the VyOS router init script ``/usr/libexec/vyos/init/vyos-router`` - this is part of the vyatta-cfg_ Debian package"
+msgstr ""
+
+#: ../troubleshooting/index.rst:426
+msgid "Starts FRR_ - successor to `GNU Zebra`_ and Quagga_"
+msgstr ""
+
+#: ../troubleshooting/index.rst:428
+msgid "Initialises the boot configuration file - copies over ``config.boot.default`` if there is no configuration"
+msgstr ""
+
+#: ../troubleshooting/index.rst:430
+msgid "Runs the configuration migration, if the configuration is for an older version of VyOS"
+msgstr ""
+
+#: ../troubleshooting/index.rst:432
+msgid "Runs The pre-config script, if there is one ``/config/scripts/vyos-preconfig-bootup.script``"
+msgstr ""
+
+#: ../troubleshooting/index.rst:434
+msgid "If the config file was upgraded, runs any post upgrade scripts ``/config/scripts/post-upgrade.d``"
+msgstr ""
+
+#: ../troubleshooting/index.rst:436
+msgid "Starts ``rl-system`` and ``firewall``"
+msgstr ""
+
+#: ../troubleshooting/index.rst:437
+msgid "Mounts the ``/boot`` partition"
+msgstr ""
+
+#: ../troubleshooting/index.rst:438
+msgid "The boot configuration file is then applied by ``/opt/vyatta/sbin/ vyatta-boot-config-loader/opt/vyatta/etc/config/config.boot``"
+msgstr ""
+
+#: ../troubleshooting/index.rst:441
+msgid "The config loader script writes log entries to ``/var/log/vyatta-config-loader.log``"
+msgstr ""
+
+#: ../troubleshooting/index.rst:444
+msgid "Runs ``telinit q`` to tell the init system to reload ``/etc/inittab``"
+msgstr ""
+
+#: ../troubleshooting/index.rst:445
+msgid "Finally it runs the post-config script ``/config/scripts/vyos-postconfig-bootup.script``"
+msgstr ""

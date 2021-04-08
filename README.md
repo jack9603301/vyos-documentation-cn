@@ -4,6 +4,39 @@ to ReadTheDocs. Documentation can be accessed via the following URL: https://doc
 Our old WiKi can still be accessed from the
 [Wayback Machine](https://web.archive.org/web/20200225171529/https://wiki.vyos.net/wiki/Main_Page)
 
+# translate
+
+## Required environment
+
+- sphinx
+- sphinx_intl
+- recommonmark
+- sphinx_rtd_theme
+
+## Prepare environment
+
+Execute the following command to install the environment:
+
+```
+sudo pip install sphinx sphinx_intl recommonmark sphinx_rtd_theme
+```
+
+## Translation work
+
+Usually, you just need to edit the pot file and execute the following code:
+
+```
+cd docs
+rm -rf locale/zh_CN
+sphinx-intl update -p locale -l zh_CN
+```
+
+Update translation pots to perform these:
+
+```
+sphinx-build -b gettext . locale
+```
+
 # Build
 
 [![Documentation Status](https://readthedocs.org/projects/vyos/badge/?version=latest)](https://docs.vyos.io/en/latest/?badge=latest)

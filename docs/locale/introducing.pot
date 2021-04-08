@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, VyOS maintainers and contributors
+# This file is distributed under the same license as the VyOS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VyOS 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-08 11:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../introducing/about.rst:5
+msgid "About"
+msgstr ""
+
+#: ../introducing/about.rst:7
+msgid "VyOS is an open source network operating system based on Debian GNU/Linux."
+msgstr ""
+
+#: ../introducing/about.rst:9
+msgid "VyOS provides a free routing platform that competes directly with other commercially available solutions from well known network providers. Because VyOS is run on standard amd64, i586 and ARM systems, it is able to be used as a router and firewall platform for cloud deployments."
+msgstr ""
+
+#: ../introducing/about.rst:14
+msgid "We use multiple live versions of our manual hosted thankfully by https://readthedocs.org. We will provide one version of the manual for every VyOS major version starting with VyOS 1.2 which will receive Long-term support (LTS)."
+msgstr ""
+
+#: ../introducing/about.rst:19
+msgid "The manual version is selected/specified by it's Git branch name. You can switch between versions of the documentation by selecting the appropriate branch on the bottom left corner."
+msgstr ""
+
+#: ../introducing/about.rst:23
+msgid "VyOS CLI syntax may change between major (and sometimes minor) versions. Please always refer to the documentation matching your current, running installation. If a change in the CLI is required, VyOS will ship a so called migration script which will take care of adjusting the syntax. No action needs to be taken by you."
+msgstr ""
+
+#: ../introducing/history.rst:5
+msgid "History"
+msgstr ""
+
+#: ../introducing/history.rst:7
+msgid "VyOS is a Linux-based network operating system that provides software-based network routing, firewall, and VPN functionality."
+msgstr ""
+
+#: ../introducing/history.rst:10
+msgid "The VyOS project was started in late 2013 as a community fork of the `GPL <https://en.wikipedia.org/wiki/GNU_General_Public_License>`_ portions of Vyatta Core 6.6R1 with the goal of maintaining a free and open source network operating system in response to the decision to discontinue the community edition of Vyatta. Here everyone loves learning, older managers and new users."
+msgstr ""
+
+#: ../introducing/history.rst:16
+msgid "VyOS is primarily based on `Debian GNU/Linux <https://www.debian.org/>`_ and the `Quagga <http://www.nongnu.org/quagga/>`_ routing engine. Its configuration syntax and :ref:`cli` are loosely derived from Juniper JUNOS as modelled by the `XORP project <http://www.xorp.org/>`_, which was the original routing engine for Vyatta."
+msgstr ""
+
+#: ../introducing/history.rst:22
+msgid "In the 4.0 release of Vyatta, the routing engine was changed to Quagga. As of VyOS version 1.2, VyOS now uses `FRRouting <https://frrouting.org/>`_ as the routing engine."
+msgstr ""
+
+#: ../introducing/history.rst:26
+msgid "How is VyOS different from any other router distributions and platform?"
+msgstr ""
+
+#: ../introducing/history.rst:28
+msgid "It's more than just a firewall and VPN, VyOS includes extended routing capabilities like OSPFv2, OSPFv3, BGP, VRRP, and extensive route policy mapping and filtering"
+msgstr ""
+
+#: ../introducing/history.rst:31
+msgid "Unified command line interface in the style of hardware routers."
+msgstr ""
+
+#: ../introducing/history.rst:32
+msgid "Scriptable CLI"
+msgstr ""
+
+#: ../introducing/history.rst:33
+msgid "Stateful configuration system: prepare changes and commit at once or discard, view previous revisions or rollback to them, archive revisions to remote server and execute hooks at commit time"
+msgstr ""
+
+#: ../introducing/history.rst:36
+msgid "Image-based upgrade: keep multiple versions on the same system and revert to previous image if a problem arises"
+msgstr ""
+
+#: ../introducing/history.rst:38
+msgid "Multiple VPN capabilities: OpenVPN, IPSec, Wireguard, DPMVPN, IKEv2 and more"
+msgstr ""
+
+#: ../introducing/history.rst:39
+msgid "DHCP, TFTP, mDNS repeater, broadcast relay and DNS forwarding support"
+msgstr ""
+
+#: ../introducing/history.rst:40
+msgid "Both IPv4 and IPv6 support"
+msgstr ""
+
+#: ../introducing/history.rst:41
+msgid "Runs on physical and virtual platforms alike: small x86 boards, big servers, KVM, Xen, VMware, Hyper-V, and more"
+msgstr ""
+
+#: ../introducing/history.rst:43
+msgid "Completely free and open source, with documented internal APIs and build procedures"
+msgstr ""
+
+#: ../introducing/history.rst:45
+msgid "Community driven. Patches are welcome and all code, bugs, and nightly builds are publicly accessible"
+msgstr ""

@@ -1,0 +1,1741 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, VyOS maintainers and contributors
+# This file is distributed under the same license as the VyOS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VyOS 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-08 11:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../configexamples/azure-vpn-bgp.rst:4
+msgid "Route-Based Site-to-Site VPN to Azure (BGP over IKEv2/IPsec)"
+msgstr "基于路由的站点到站点VPN到Azure（IKEv2/IPsec上的BGP）"
+
+#: ../configexamples/azure-vpn-bgp.rst:6
+msgid ""
+"This guide shows an example of a route-based IKEv2 site-to-site VPN to "
+"Azure using VTI and BGP for dynamic routing updates."
+msgstr "本指南展示了一个使用VTI和BGP进行动态路由更新的IKEv2到Azure的站点到站点VPN路由示例。"
+
+#: ../configexamples/azure-vpn-bgp.rst:9
+msgid ""
+"For redundant / active-active configurations see :ref:`examples-azure-"
+"vpn-dual-bgp`"
+msgstr "有关冗余/有源配置，请参阅"
+
+#: ../configexamples/azure-vpn-bgp.rst:14
+#: ../configexamples/azure-vpn-dual-bgp.rst:11
+#: ../configexamples/tunnelbroker-ipv6.rst:13
+msgid "Prerequisites"
+msgstr "先决条件"
+
+#: ../configexamples/azure-vpn-bgp.rst:16
+msgid ""
+"A pair of Azure VNet Gateways deployed in active-passive configuration "
+"with BGP enabled."
+msgstr "一对在启用BGP的主动-被动配置中部署的Azure VNet网关"
+
+#: ../configexamples/azure-vpn-bgp.rst:19
+#: ../configexamples/azure-vpn-dual-bgp.rst:16
+msgid ""
+"A local network gateway deployed in Azure representing the Vyos device, "
+"matching the below Vyos settings except for address space, which only "
+"requires the Vyos private IP, in this example 10.10.0.5/32"
+msgstr "部署在Azure中的本地网络网关，表示Vyos设备，与下面的Vyos设置匹配，除了地址空间，它只需要Vyos专用IP，在本例中为10.10.0.5/32"
+
+#: ../configexamples/azure-vpn-bgp.rst:24
+#: ../configexamples/azure-vpn-dual-bgp.rst:21
+msgid ""
+"A connection resource deployed in Azure linking the Azure VNet gateway "
+"and the local network gateway representing the Vyos device."
+msgstr "部署在Azure中的连接资源，用于链接Azure VNet网关和表示Vyos设备的本地网络网关。"
+
+#: ../configexamples/azure-vpn-bgp.rst:29
+#: ../configexamples/azure-vpn-dual-bgp.rst:26
+msgid "Example"
+msgstr "例"
+
+#: ../configexamples/azure-vpn-bgp.rst:32
+#: ../configexamples/azure-vpn-dual-bgp.rst:29
+msgid "WAN Interface"
+msgstr "WAN 接口"
+
+#: ../configexamples/azure-vpn-bgp.rst:32
+#: ../configexamples/azure-vpn-dual-bgp.rst:29
+msgid "eth0"
+msgstr ""
+
+#: ../configexamples/azure-vpn-bgp.rst:34
+#: ../configexamples/azure-vpn-dual-bgp.rst:31
+msgid "On-premises address space"
+msgstr "本地地址空间"
+
+#: ../configexamples/azure-vpn-bgp.rst:34
+#: ../configexamples/azure-vpn-dual-bgp.rst:31
+msgid "10.10.0.0/16"
+msgstr ""
+
+#: ../configexamples/azure-vpn-bgp.rst:36
+#: ../configexamples/azure-vpn-dual-bgp.rst:33
+msgid "Azure address space"
+msgstr "Azure地址空间"
+
+#: ../configexamples/azure-vpn-bgp.rst:36
+#: ../configexamples/azure-vpn-dual-bgp.rst:33
+msgid "10.0.0.0/16"
+msgstr ""
+
+#: ../configexamples/azure-vpn-bgp.rst:38
+#: ../configexamples/azure-vpn-dual-bgp.rst:35
+msgid "Vyos public IP"
+msgstr "Vyos公共IP"
+
+#: ../configexamples/azure-vpn-bgp.rst:38
+#: ../configexamples/azure-vpn-dual-bgp.rst:35
+msgid "198.51.100.3"
+msgstr ""
+
+#: ../configexamples/azure-vpn-bgp.rst:40
+#: ../configexamples/azure-vpn-dual-bgp.rst:37
+msgid "Vyos private IP"
+msgstr "Vyos私有IP"
+
+#: ../configexamples/azure-vpn-bgp.rst:40
+#: ../configexamples/azure-vpn-dual-bgp.rst:37
+msgid "10.10.0.5"
+msgstr ""
+
+#: ../configexamples/azure-vpn-bgp.rst:42
+msgid "Azure VNet Gateway public IP"
+msgstr "Azure VNet网关公共IP"
+
+#: ../configexamples/azure-vpn-bgp.rst:42
+#: ../configexamples/azure-vpn-dual-bgp.rst:39
+msgid "203.0.113.2"
+msgstr ""
+
+#: ../configexamples/azure-vpn-bgp.rst:44
+#: ../configexamples/azure-vpn-dual-bgp.rst:43
+msgid "Azure VNet Gateway BGP IP"
+msgstr "Azure VNet网关BGP IP"
+
+#: ../configexamples/azure-vpn-bgp.rst:44
+msgid "10.0.0.4"
+msgstr ""
+
+#: ../configexamples/azure-vpn-bgp.rst:46
+#: ../configexamples/azure-vpn-dual-bgp.rst:45
+msgid "Pre-shared key"
+msgstr "预共享密钥"
+
+#: ../configexamples/azure-vpn-bgp.rst:46
+#: ../configexamples/azure-vpn-dual-bgp.rst:45
+msgid "ch00s3-4-s3cur3-psk"
+msgstr ""
+
+#: ../configexamples/azure-vpn-bgp.rst:48
+#: ../configexamples/azure-vpn-dual-bgp.rst:47
+msgid "Vyos ASN"
+msgstr ""
+
+#: ../configexamples/azure-vpn-bgp.rst:48
+#: ../configexamples/azure-vpn-dual-bgp.rst:47
+msgid "64499"
+msgstr ""
+
+#: ../configexamples/azure-vpn-bgp.rst:50
+#: ../configexamples/azure-vpn-dual-bgp.rst:49
+msgid "Azure ASN"
+msgstr ""
+
+#: ../configexamples/azure-vpn-bgp.rst:50
+#: ../configexamples/azure-vpn-dual-bgp.rst:49
+msgid "65540"
+msgstr ""
+
+#: ../configexamples/azure-vpn-bgp.rst:54
+#: ../configexamples/azure-vpn-dual-bgp.rst:53
+msgid "Vyos configuration"
+msgstr "Vyos配置"
+
+#: ../configexamples/azure-vpn-bgp.rst:56
+#: ../configexamples/azure-vpn-dual-bgp.rst:55
+msgid ""
+"Configure the IKE and ESP settings to match a subset of those supported "
+"by Azure:"
+msgstr "配置IKE和ESP设置，以匹配Azure支持的子集："
+
+#: ../configexamples/azure-vpn-bgp.rst:78
+#: ../configexamples/azure-vpn-dual-bgp.rst:77
+msgid "Enable IPsec on eth0"
+msgstr "在eth0上启用IPsec"
+
+#: ../configexamples/azure-vpn-bgp.rst:84
+msgid "Configure a VTI with a dummy IP address"
+msgstr "使用虚拟IP地址配置VTI"
+
+#: ../configexamples/azure-vpn-bgp.rst:91
+#: ../configexamples/azure-vpn-dual-bgp.rst:93
+msgid "Clamp the VTI's MSS to 1350 to avoid PMTU blackholes."
+msgstr "夹紧VTI的MSS至1350以避免PMTU黑洞。"
+
+#: ../configexamples/azure-vpn-bgp.rst:97
+msgid "Configure the VPN tunnel"
+msgstr "配置VPN隧道"
+
+#: ../configexamples/azure-vpn-bgp.rst:113
+msgid "**Important**: Add an interface route to reach Azure's BGP listener"
+msgstr "**重要提示**：添加一个接口路由以到达Azure的BGP侦听器"
+
+#: ../configexamples/azure-vpn-bgp.rst:119
+#: ../configexamples/azure-vpn-dual-bgp.rst:135
+msgid "Configure your BGP settings"
+msgstr "配置BGP设置"
+
+#: ../configexamples/azure-vpn-bgp.rst:128
+msgid "**Important**: Disable connected check \\"
+msgstr "**重要提示**：禁用连接检查 \\"
+
+#: ../configexamples/azure-vpn-dual-bgp.rst:4
+msgid "Route-Based Redundant Site-to-Site VPN to Azure (BGP over IKEv2/IPsec)"
+msgstr "到Azure的基于路由的冗余站点到站点VPN（IKEv2/IPsec上的BGP）"
+
+#: ../configexamples/azure-vpn-dual-bgp.rst:6
+msgid ""
+"This guide shows an example of a redundant (active-active) route-based "
+"IKEv2 site-to-site VPN to Azure using VTI and BGP for dynamic routing "
+"updates."
+msgstr "本指南展示了一个基于IKEv2站点到站点VPN到Azure的冗余（主动）路由的示例，使用VTI和BGP进行动态路由更新。"
+
+#: ../configexamples/azure-vpn-dual-bgp.rst:13
+msgid ""
+"A pair of Azure VNet Gateways deployed in active-active configuration "
+"with BGP enabled."
+msgstr "一对Azure VNet网关，部署在启用BGP的活动配置中。"
+
+#: ../configexamples/azure-vpn-dual-bgp.rst:39
+msgid "Azure VNet Gateway 1 public IP"
+msgstr "Azure VNet网关1公用IP"
+
+#: ../configexamples/azure-vpn-dual-bgp.rst:41
+msgid "Azure VNet Gateway 2 public IP"
+msgstr "Azure VNet网关2公共IP"
+
+#: ../configexamples/azure-vpn-dual-bgp.rst:41
+msgid "203.0.113.3"
+msgstr ""
+
+#: ../configexamples/azure-vpn-dual-bgp.rst:43
+msgid "10.0.0.4,10.0.0.5"
+msgstr ""
+
+#: ../configexamples/azure-vpn-dual-bgp.rst:83
+msgid "Configure two VTIs with a dummy IP address each"
+msgstr "配置两个VTI，每个VTI都有一个虚拟IP地址"
+
+#: ../configexamples/azure-vpn-dual-bgp.rst:100
+msgid "Configure the VPN tunnels"
+msgstr "配置VPN隧道"
+
+#: ../configexamples/azure-vpn-dual-bgp.rst:128
+msgid "**Important**: Add an interface route to reach both Azure's BGP listeners"
+msgstr "**重要提示**：添加接口路由，以访问Azure的BGP侦听器"
+
+#: ../configexamples/azure-vpn-dual-bgp.rst:149
+msgid ""
+"**Important**: Disable connected check, otherwise the routes learned from"
+" Azure will not be imported into the routing table."
+msgstr "**重要提示**：禁用连接检查，否则从Azure学习的路由将不会导入路由表。"
+
+#: ../configexamples/bgp-ipv6-unnumbered.rst:5
+msgid "BGP IPv6 unnumbered with extended nexthop"
+msgstr "BGP IPv6未编号，带有扩展的nexthop"
+
+#: ../configexamples/bgp-ipv6-unnumbered.rst:7
+msgid "General information can be found in the :ref:`bgp` chapter."
+msgstr "一般信息可在 :ref:`bgp` chapter。"
+
+#: ../configexamples/bgp-ipv6-unnumbered.rst:10
+#: ../configexamples/dhcp-relay-through-gre-bridge.rst:16
+#: ../configexamples/ospf-unnumbered.rst:10
+msgid "Configuration"
+msgstr "配置"
+
+#: ../configexamples/bgp-ipv6-unnumbered.rst:12
+#: ../configexamples/bgp-ipv6-unnumbered.rst:53
+#: ../configexamples/ospf-unnumbered.rst:12
+#: ../configexamples/ospf-unnumbered.rst:50
+msgid "Router A:"
+msgstr "路由器A"
+
+#: ../configexamples/bgp-ipv6-unnumbered.rst:31
+#: ../configexamples/bgp-ipv6-unnumbered.rst:114
+#: ../configexamples/ospf-unnumbered.rst:29
+#: ../configexamples/ospf-unnumbered.rst:85
+msgid "Router B:"
+msgstr "路由器B"
+
+#: ../configexamples/bgp-ipv6-unnumbered.rst:51
+#: ../configexamples/ospf-unnumbered.rst:48
+msgid "Results"
+msgstr "结果"
+
+#: ../configexamples/dhcp-relay-through-gre-bridge.rst:5
+msgid "DHCP Relay through a GRE bridge"
+msgstr "通过GRE网桥的DHCP中继"
+
+#: ../configexamples/dhcp-relay-through-gre-bridge.rst:8
+msgid "Diagram"
+msgstr "图"
+
+#: ../configexamples/dhcp-relay-through-gre-bridge.rst:19
+msgid "DHCP Server"
+msgstr "DHCP服务器"
+
+#: ../configexamples/dhcp-relay-through-gre-bridge.rst:45
+msgid "In-Between Router"
+msgstr "中间路由器"
+
+#: ../configexamples/dhcp-relay-through-gre-bridge.rst:56
+msgid "DHCP Relay"
+msgstr "DHCP代理"
+
+#: ../configexamples/ha.rst:3
+msgid "High Availability Walkthrough"
+msgstr "高可用性演练"
+
+#: ../configexamples/ha.rst:5
+msgid ""
+"This document walks you through a complete HA setup of two VyOS machines."
+" This design is based on a VM as the primary router, and a physical "
+"machine as a backup, using VRRP, BGP, OSPF and conntrack sharing."
+msgstr "本文档将引导您完成两台VyOS机器的完整HA设置。本设计以虚拟机为主路由器，物理机为备份，采用VRRP、BGP、OSPF和conntrack共享。"
+
+#: ../configexamples/ha.rst:9
+msgid ""
+"The aim of this document is to walk you through setting everything up so "
+"you and up at a point where you can reboot any machine and not lose more "
+"than a few seconds worth of connectivity."
+msgstr "本文档的目的是指导您完成所有设置，以便您和您能够重新启动任何计算机，并且不会丢失超过几秒的连接。"
+
+#: ../configexamples/ha.rst:14
+msgid "Design"
+msgstr "设计"
+
+#: ../configexamples/ha.rst:16
+msgid ""
+"This is based on a real life, in production design. One of the complex "
+"issues is ensuring you have redundant data INTO your network. We do this "
+"with a pair of Cisco Nexus switches, and using Virtual PortChannels that "
+"are spanned across them. This as an added bonus, also allows for complete"
+" switch failure without an outage. How you achieve this yourself is left "
+"as an exercise to the reader but our setup is documented here."
+msgstr ""
+"这是基于现实生活，在生产设计。其中一个复杂的问题是确保网络中有冗余数据。我们使用一对Cisco "
+"Nexus交换机，并使用跨它们的虚拟端口通道来实现这一点。这是一个额外的好处，还允许完全开关故障而不停机。如何实现这一点留给读者练习，但我们的设置在这里有记录。"
+
+#: ../configexamples/ha.rst:24
+msgid "Walkthrough suggestion"
+msgstr "演练建议"
+
+#: ../configexamples/ha.rst:26
+msgid ""
+"The ``commit`` command is implied after every section. If you make an "
+"error, ``commit`` will warn you and you can fix it before getting too far"
+" into things. Please ensure you commit early and commit often."
+msgstr ""
+"``commit`` 命令隐含在每个节之后。如果你犯了一个错误，``commit`` "
+"会警告你，你可以在做太多事情之前纠正它。请确保你早承诺，多承诺。"
+
+#: ../configexamples/ha.rst:30
+msgid ""
+"If you are following through this document, it is strongly suggested you "
+"complete the entire document, ONLY doing the virtual router1 steps, and "
+"then come back and walk through it AGAIN on the backup hardware router."
+msgstr "如果您正在阅读本文档，强烈建议您完成整个文档，只执行virtual router1步骤，然后回来在备份硬件路由器上再次阅读。"
+
+#: ../configexamples/ha.rst:34
+msgid ""
+"This ensures you don't go to fast, or miss a step. However, it will make "
+"your life easier to configure the fixed IP address and default route now "
+"on the hardware router."
+msgstr "这样可以确保你不会跑得太快，或者错过一步。不过，现在在硬件路由器上配置固定IP地址和默认路由将使您的生活更轻松。"
+
+#: ../configexamples/ha.rst:39
+msgid "Example Network"
+msgstr "示例网络"
+
+#: ../configexamples/ha.rst:41
+msgid ""
+"In this document, we have been allocated 203.0.113.0/24 by our upstream "
+"provider, which we are publishing on VLAN100."
+msgstr "在本文档中，我们的上游提供商为我们分配了203.0.113.0/24，我们正在VLAN100上发布。"
+
+#: ../configexamples/ha.rst:44
+msgid ""
+"They want us to establish a BGP session to their routers on 192.0.2.11 "
+"and 192.0.2.12 from our routers 192.0.2.21 and 192.0.2.22. They are AS "
+"65550 and we are AS65551."
+msgstr ""
+"他们想让我们从路由器192.0.2.21和192.0.2.22在192.0.2.11和192.0.2.12上建立一个BGP会话。他们是AS "
+"65550，我们是AS65551。"
+
+#: ../configexamples/ha.rst:48
+msgid ""
+"Our routers are going to have a floating IP address of 203.0.113.1, and "
+"use .2 and .3 as their fixed IPs."
+msgstr "我们的路由器将有一个203.0.113.1的浮动IP地址，并使用.2和.3作为它们的固定IP。"
+
+#: ../configexamples/ha.rst:51
+msgid "We are going to use 10.200.201.0/24 for an 'internal' network on VLAN201."
+msgstr "我们将使用10.200.201.0/24作为VLAN201上的“内部”网络。"
+
+#: ../configexamples/ha.rst:53
+msgid ""
+"When traffic is originated from the 10.200.201.0/24 network, it will be "
+"masqueraded to 203.0.113.1"
+msgstr "当流量来自10.200.201.0/24网络时，它将被伪装成203.0.113.1"
+
+#: ../configexamples/ha.rst:56
+msgid ""
+"For connection between sites, we are running a WireGuard link to two "
+"REMOTE routers, and using OSPF over those links to distribute routes. "
+"That remote site is expected to send traffic from anything in "
+"10.201.0.0/16"
+msgstr "对于站点之间的连接，我们正在运行一个到两个远程路由器的WireGuard链接，并在这些链接上使用OSPF来分发路由。该远程站点预计将从10.201.0.0/16中的任何内容发送流量"
+
+#: ../configexamples/ha.rst:61
+msgid "VLANs"
+msgstr ""
+
+#: ../configexamples/ha.rst:63
+msgid "These are the vlans we wll be using:"
+msgstr "我们将使用以下VLAN："
+
+#: ../configexamples/ha.rst:65
+msgid "50: Upstream, using the 192.0.2.0/24 network allocated by them."
+msgstr "50:上游，使用他们分配的192.0.2.0/24网络。"
+
+#: ../configexamples/ha.rst:66
+msgid "100: 'Public' network, using our 203.0.113.0/24 network."
+msgstr "100:“公共”网络，使用我们的203.0.113.0/24网络。"
+
+#: ../configexamples/ha.rst:67
+msgid "201: 'Internal' network, using 10.200.201.0/24"
+msgstr "201:“内部”网络，使用10.200.201.0/24"
+
+#: ../configexamples/ha.rst:70
+msgid "Hardware"
+msgstr "硬件"
+
+#: ../configexamples/ha.rst:72
+msgid "switch1 (Nexus 10gb Switch)"
+msgstr "交换机1（Nexus 10gb交换机）"
+
+#: ../configexamples/ha.rst:73
+msgid "switch2 (Nexus 10gb Switch)"
+msgstr "交换机2（Nexus 10gb交换机）"
+
+#: ../configexamples/ha.rst:74
+msgid "compute1 (VMware ESXi 6.5)"
+msgstr ""
+
+#: ../configexamples/ha.rst:75
+msgid "compute2 (VMware ESXi 6.5)"
+msgstr ""
+
+#: ../configexamples/ha.rst:76
+msgid "compute3 (VMware ESXi 6.5)"
+msgstr ""
+
+#: ../configexamples/ha.rst:77
+msgid "router2 (Random 1RU machine with 4 NICs)"
+msgstr "路由器2（随机1RU机器，带4个NIC）"
+
+#: ../configexamples/ha.rst:79
+msgid "Note that router1 is a VM that runs on one of the compute nodes."
+msgstr "请注意，router1是一个在其中一个计算节点上运行的VM。"
+
+#: ../configexamples/ha.rst:82
+msgid "Network Cabling"
+msgstr "网络布线"
+
+#: ../configexamples/ha.rst:84
+msgid ""
+"From Datacenter - This connects into port 1 on both switches, and is "
+"tagged as VLAN 50"
+msgstr "从数据中心-这连接到两个交换机上的端口1，并标记为VLAN 50"
+
+#: ../configexamples/ha.rst:86
+msgid "Cisco VPC Crossconnect - Ports 39 and 40 bonded between each switch"
+msgstr "Cisco VPC交叉连接-端口39和40连接在每个交换机之间"
+
+#: ../configexamples/ha.rst:87
+msgid "Hardware Router - Port 8 of each switch"
+msgstr "硬件路由器-每个交换机的端口8"
+
+#: ../configexamples/ha.rst:88
+msgid "compute1 - Port 9 of each switch"
+msgstr "compute1 - 交换机的端口9"
+
+#: ../configexamples/ha.rst:89
+msgid "compute2 - Port 10 of each switch"
+msgstr "compute2 - 交换机的端口10"
+
+#: ../configexamples/ha.rst:90
+msgid "compute3 - Port 11 of each switch"
+msgstr "compute3 - 交换机的端口11"
+
+#: ../configexamples/ha.rst:92
+msgid ""
+"This is ignoring the extra Out-of-band management networking, which "
+"should be on totally different switches, and a different feed into the "
+"rack, and is out of scope of this."
+msgstr "这就忽略了额外的带外管理网络，它应该在完全不同的交换机上，并且在机架中有不同的馈送，超出了这个范围。"
+
+#: ../configexamples/ha.rst:96
+msgid ""
+"Our implementation uses VMware's Distributed Port Groups, which allows "
+"VMware to use LACP. This is a part of the ENTERPRISE licence, and is not "
+"available on a Free licence. If you are implementing this and do not have"
+" access to DPGs, you should not use VMware, and use some other "
+"virtualization platform instead."
+msgstr ""
+"Our implementation uses VMware's Distributed Port Groups, which allows "
+"VMware to use LACP. This is a part of the ENTERPRISE licence, and is not "
+"available on a Free licence. If you are implementing this and do not have"
+" access to DPGs, you should not use VMware, and use some other "
+"virtualization platform instead."
+
+#: ../configexamples/ha.rst:104
+msgid "Basic Setup (via console)"
+msgstr "基本设置（通过控制台）"
+
+#: ../configexamples/ha.rst:106
+msgid ""
+"Create your router1 VM so it is able to withstand a VM Host failing, or a"
+" network link failing. Using VMware, this is achieved by enabling vSphere"
+" DRS, vSphere Availability, and creating a Distributed Port Group that "
+"uses LACP."
+msgstr ""
+"创建router1虚拟机，使其能够承受虚拟机主机故障或网络链接故障。使用VMware，这是通过启用vSphere "
+"DRS、vSphere可用性和创建使用LACP的分布式端口组来实现的。"
+
+#: ../configexamples/ha.rst:110
+msgid ""
+"Many other Hypervisors do this, and I'm hoping that this document will be"
+" expanded to document how to do this for others."
+msgstr "许多其他虚拟机监控程序都会这样做，我希望本文档能够扩展到文档中，说明如何为其他人执行此操作。"
+
+#: ../configexamples/ha.rst:113
+msgid ""
+"Create an 'All VLANs' network group, that passes all trunked traffic "
+"through to the VM. Attach this network group to router1 as eth0."
+msgstr "创建一个“所有VLAN”网络组，将所有集群流量传递到VM。将此网络组作为eth0附加到路由器1。"
+
+#: ../configexamples/ha.rst:116
+msgid ""
+"VMware: You must DISABLE SECURITY on this Port group. Make sure that "
+"``Promiscuous Mode``\\ , ``MAC address changes`` and ``Forged transmits``"
+" are enabled. All of these will be done as part of failover."
+msgstr ""
+"VMware:必须禁用此端口组的安全性。确保启用了``Promiscuous Mode``\\ 、``MAC address "
+"changes``和``Forged transmits``。所有这些都将作为故障转移的一部分来完成。"
+
+#: ../configexamples/ha.rst:121
+msgid "Bonding on Hardware Router"
+msgstr "硬件路由器上的键合"
+
+#: ../configexamples/ha.rst:123
+msgid ""
+"Create a LACP bond on the hardware router. We are assuming that eth0 and "
+"eth1 are connected to port 8 on both switches, and that those ports are "
+"configured as a Port-Channel."
+msgstr "在硬件路由器上创建LACP绑定。我们假设eth0和eth1连接到两个交换机上的端口8，并且这些端口配置为端口通道。"
+
+#: ../configexamples/ha.rst:137
+msgid "Assign external IP addresses"
+msgstr "分配外部IP地址"
+
+#: ../configexamples/ha.rst:139
+msgid ""
+"VLAN 100 and 201 will have floating IP addresses, but VLAN50 does not, as"
+" this is talking directly to upstream. Create our IP address on vlan50."
+msgstr "VLAN 100和201将具有浮动IP地址，但是VLAN50没有，因为这是直接与上游通信。在vlan50上创建我们的IP地址。"
+
+#: ../configexamples/ha.rst:142
+msgid ""
+"For the hardware router, replace ``eth0`` with ``bond0``. As (almost) "
+"every command is identical, this will not be specified unless different "
+"things need to be performed on different hosts."
+msgstr "对于硬件路由器，将``eth0``替换为``bond0``。由于（几乎）每个命令都是相同的，除非需要在不同的主机上执行不同的操作，否则不会指定此命令。"
+
+#: ../configexamples/ha.rst:150
+msgid "In this case, the hardware router has a different IP, so it would be"
+msgstr "在这种情况下，硬件路由器具有不同的IP，因此"
+
+#: ../configexamples/ha.rst:157
+msgid "Add (temporary) default route"
+msgstr "添加（临时）默认路由"
+
+#: ../configexamples/ha.rst:159
+msgid ""
+"It is assumed that the routers provided by upstream are capable of acting"
+" as a default router, add that as a static route."
+msgstr "假设上游提供的路由器能够充当默认路由器，并将其作为静态路由添加。"
+
+#: ../configexamples/ha.rst:170
+msgid "Enable SSH"
+msgstr "启用SSH"
+
+#: ../configexamples/ha.rst:172
+msgid ""
+"Enable SSH so you can now SSH into the routers, rather than using the "
+"console."
+msgstr "启用SSH，这样您现在就可以SSH到路由器，而不是使用控制台。"
+
+#: ../configexamples/ha.rst:180
+msgid ""
+"At this point you should be able to SSH into both of them, and will no "
+"longer need access to the console (unless you break something!)"
+msgstr "此时，您应该能够通过SSH连接到这两个控制台，并且不再需要访问控制台（除非您破坏了某些东西！）"
+
+#: ../configexamples/ha.rst:185
+msgid "VRRP Configuration"
+msgstr "VRRP配置"
+
+#: ../configexamples/ha.rst:187
+msgid ""
+"We are setting up VRRP so that it does NOT fail back when a machine "
+"returns into service, and it prioritizes router1 over router2."
+msgstr "我们正在设置VRRP，这样当一台机器返回服务时它就不会发生故障，并且它优先考虑router1而不是router2。"
+
+#: ../configexamples/ha.rst:191
+msgid "Internal Network"
+msgstr "内部网络"
+
+#: ../configexamples/ha.rst:193
+msgid ""
+"This has a floating IP address of 10.200.201.1/24, using virtual router "
+"ID 201. The difference between them is the interface name, hello-source-"
+"address, and peer-address."
+msgstr "它的浮动IP地址为10.200.201.1/24，使用虚拟路由器ID 201。它们之间的区别是接口名、hello源地址和对等地址。"
+
+#: ../configexamples/ha.rst:197 ../configexamples/ha.rst:233
+#: ../configexamples/ha.rst:365 ../configexamples/ha.rst:539
+msgid "**router1**"
+msgstr "**路由器1**"
+
+#: ../configexamples/ha.rst:211 ../configexamples/ha.rst:246
+#: ../configexamples/ha.rst:577
+msgid "**router2**"
+msgstr "**路由器2**"
+
+#: ../configexamples/ha.rst:226
+msgid "Public Network"
+msgstr "公共网络"
+
+#: ../configexamples/ha.rst:228
+msgid ""
+"This has a floating IP address of 203.0.113.1/24, using virtual router ID"
+" 113. The virtual router ID is just a random number between 1 and 254, "
+"and can be set to whatever you want. Best practices suggest you try to "
+"keep them unique enterprise-wide."
+msgstr ""
+"它的浮动IP地址为203.0.113.1/24，使用虚拟路由器ID "
+"113。虚拟路由器ID只是一个介于1和254之间的随机数，可以设置为您想要的任何值。最佳实践建议您在整个企业范围内保持它们的独特性。"
+
+#: ../configexamples/ha.rst:261
+msgid "Create VRRP sync-group"
+msgstr "创建VRRP同步组"
+
+#: ../configexamples/ha.rst:263
+msgid ""
+"The sync group is used to replicate connection tracking. It needs to be "
+"assigned to a random VRRP group, and we are creating a sync group called "
+"``sync`` using the vrrp group ``int``."
+msgstr "同步组用于复制连接跟踪。它需要分配给一个随机的VRRP组，我们正在使用VRRP组``int``创建一个名为``sync``的同步组``"
+
+#: ../configexamples/ha.rst:272 ../configexamples/ha.rst:336
+msgid "Testing"
+msgstr "测试"
+
+#: ../configexamples/ha.rst:274
+msgid ""
+"At this point, you should be able to see both IP addresses when you run "
+"``show interfaces``\\ , and ``show vrrp`` should show both interfaces in "
+"MASTER state (and SLAVE state on router2)."
+msgstr ""
+"此时，当运行``show interfaces``时，您应该能够看到这两个IP地址，并且``show "
+"vrrp``应该在主状态下显示这两个接口（在router2上显示从状态）。"
+
+#: ../configexamples/ha.rst:288
+msgid "You should be able to ping to and from all the IPs you have allocated."
+msgstr "您应该能够ping到和从您分配的所有ip。"
+
+#: ../configexamples/ha.rst:291
+msgid "NAT and conntrack-sync"
+msgstr "NAT和conntrack同步"
+
+#: ../configexamples/ha.rst:293
+msgid ""
+"Masquerade Traffic originating from 10.200.201.0/24 that is heading out "
+"the public interface."
+msgstr "来自10.200.201.0/24的伪装流量，该流量指向公共接口。"
+
+#: ../configexamples/ha.rst:296
+msgid ""
+"We explicitly exclude the primary upstream network so that BGP or OSPF "
+"traffic doesn't accidentally get NAT'ed."
+msgstr "我们明确排除了主要的上游网络，这样BGP或OSPF流量就不会意外地被NAT。"
+
+#: ../configexamples/ha.rst:308
+msgid "Configure conntrack-sync and disable helpers"
+msgstr "配置conntrack同步并禁用帮助程序"
+
+#: ../configexamples/ha.rst:310
+msgid ""
+"Most conntrack modules cause more problems than they're worth, especially"
+" in a complex network. Turn them off by default, and if you need to turn "
+"them on later, you can do so."
+msgstr "大多数conntrack模块会导致更多的问题，尤其是在复杂的网络中。默认情况下关闭它们，如果以后需要打开它们，可以这样做。"
+
+#: ../configexamples/ha.rst:323
+msgid ""
+"Now enable replication between nodes. Replace eth0.201 with bond0.201 on "
+"the hardware router."
+msgstr "现在启用节点之间的复制。将硬件路由器上的eth0.201替换为bond0.201。"
+
+#: ../configexamples/ha.rst:338
+msgid ""
+"The simplest way to test is to look at the connection tracking stats on "
+"the standby hardware router with the command ``show conntrack-sync "
+"statistics``. The numbers should be very close to the numbers on the "
+"primary router."
+msgstr ""
+"最简单的测试方法是使用命令show conntrack sync "
+"statistics查看备用硬件路由器上的连接跟踪统计数据。数字应该非常接近主路由器上的数字。"
+
+#: ../configexamples/ha.rst:342
+msgid ""
+"When you have both routers up, you should be able to establish a "
+"connection from a NAT'ed machine out to the internet, reboot the active "
+"machine, and that connection should be preserved, and will not drop out."
+msgstr "当两个路由器都启动时，您应该能够建立一个从NAT'ed机器到internet的连接，重新启动活动机器，并且该连接应该被保留，并且不会退出。"
+
+#: ../configexamples/ha.rst:347
+msgid "OSPF Over WireGuard"
+msgstr "基于Wireguard的OSPF"
+
+#: ../configexamples/ha.rst:349
+msgid ""
+"Wireguard doesn't have the concept of an up or down link, due to its "
+"design. This complicates AND simplifies using it for network transport, "
+"as for reliable state detection you need to use SOMETHING to detect when "
+"the link is down."
+msgstr "由于其设计，Wireguard没有向上或向下链接的概念。这使得在网络传输中使用它变得复杂和简单，而对于可靠的状态检测，您需要在链路中断时使用一些东西来检测。"
+
+#: ../configexamples/ha.rst:353
+msgid ""
+"If you use a routing protocol itself, you solve two problems at once. "
+"This is only a basic example, and is provided as a starting point."
+msgstr "如果您使用路由协议本身，您可以同时解决两个问题。这只是一个基本的例子，是作为一个起点提供的。"
+
+#: ../configexamples/ha.rst:357
+msgid "Configure Wireguard"
+msgstr "配置Wireguard"
+
+#: ../configexamples/ha.rst:359
+msgid ""
+"There is plenty of instructions and documentation on setting up "
+"Wireguard. The only important thing you need to remember is to only use "
+"one WireGuard interface per OSPF connection."
+msgstr "有很多关于设置Wireguard的说明和文档。您需要记住的唯一重要的一点是，每个OSPF连接只能使用一个WireGuard接口。"
+
+#: ../configexamples/ha.rst:363
+msgid "We use small /30's from 10.254.60/24 for the point-to-point links."
+msgstr "对于点到点链接，我们使用10.254.60/24中的小/30。"
+
+#: ../configexamples/ha.rst:367
+msgid "Replace the 203.0.113.3 with whatever the other router's IP address is."
+msgstr "用其他路由器的IP地址替换203.0.113.3。"
+
+#: ../configexamples/ha.rst:388
+msgid "**offsite1**"
+msgstr "**场外1**"
+
+#: ../configexamples/ha.rst:390
+msgid "This is connecting back to the STATIC IP of router1, not the floating."
+msgstr "这是连接回router1的静态IP，而不是浮动IP。"
+
+#: ../configexamples/ha.rst:411
+msgid "Test WireGuard"
+msgstr "测试WireGuard"
+
+#: ../configexamples/ha.rst:413
+msgid "Make sure you can ping 10.254.60.1 and .2 from both routers."
+msgstr "确保可以从两个路由器ping 10.254.60.1和.2。"
+
+#: ../configexamples/ha.rst:416
+msgid "Create Export Filter"
+msgstr "Create Export Filter"
+
+#: ../configexamples/ha.rst:418
+msgid ""
+"We only want to export the networks we know we should be exporting. "
+"Always whitelist your route filters, both importing and exporting. A good"
+" rule of thumb is **'If you are not the default router for a network, "
+"don't advertise it'**. This means we explicitly do not want to advertise "
+"the 192.0.2.0/24 network (but do want to advertise 10.200.201.0 and "
+"203.0.113.0, which we ARE the default route for). This filter is applied "
+"to ``redistribute connected``. If we WERE to advertise it, the remote "
+"machines would see 192.0.2.21 available via their default route, "
+"establish the connection, and then OSPF would say '192.0.2.0/24 is "
+"available via this tunnel', at which point the tunnel would break, OSPF "
+"would drop the routes, and then 192.0.2.0/24 would be reachable via "
+"default again. This is called 'flapping'."
+msgstr ""
+"我们只想出口我们知道我们应该出口的网络。始终将路由筛选器（导入和导出）白名单。一个好的经验法则是**“如果您不是网络的默认路由器，不要将其发布为”**。这意味着我们明确不想发布192.0.2.0/24网络（但确实要宣传10.200.201.0和203.0.113.0，这是我们的默认路由）。此筛选器应用于``redistribute"
+" "
+"connected``中。如果我们要宣传它，远程机器将通过默认路由看到192.0.2.21可用，建立连接，然后OSPF会说“192.0.2.0/24通过此隧道可用”，此时隧道将中断，OSPF将丢弃路由，然后192.0.2.0/24将通过默认情况再次访问。这叫“拍打”。"
+
+#: ../configexamples/ha.rst:447
+msgid "Create Import Filter"
+msgstr "创建导入筛选器"
+
+#: ../configexamples/ha.rst:449
+msgid ""
+"We only want to import networks we know about. Our OSPF peer should only "
+"be advertising networks in the 10.201.0.0/16 range. Note that this is an "
+"INVERSE MATCH. You deny in access-list 100 to accept the route."
+msgstr "我们只想导入我们知道的网络。我们的OSPF对等机应该只在10.201.0.0/16范围内的广告网络。请注意，这是反向匹配。您在访问列表100中拒绝接受路由。"
+
+#: ../configexamples/ha.rst:469
+msgid "Enable OSPF"
+msgstr "启用OSPF"
+
+#: ../configexamples/ha.rst:471
+msgid ""
+"Every router **must** have a unique router-id. The 'reference-bandwidth' "
+"is used because when OSPF was originally designed, the idea of a link "
+"faster than 1gbit was unheard of, and it does not scale correctly."
+msgstr "每个路由器**都必须**有一个唯一的路由器id。之所以使用“参考带宽”，是因为在最初设计OSPF时，链路速度超过1gbit的想法是闻所未闻的，而且它不能正确扩展。"
+
+#: ../configexamples/ha.rst:488
+msgid "Test OSPF"
+msgstr "测试OSPF"
+
+#: ../configexamples/ha.rst:490
+msgid ""
+"When you have enabled OSPF on both routers, you should be able to see "
+"each other with the command ``show ip ospf neighbour``. The state must be"
+" 'Full' or '2-Way', if it is not then there is a network connectivity "
+"issue between the hosts. This is often caused by NAT or MTU issues. You "
+"should not see any new routes (unless this is the second pass) in the "
+"output of ``show ip route``"
+msgstr ""
+"当您在两个路由器上都启用了OSPF时，您应该可以通过命令``show ip OSPF "
+"neighbor``看到对方。状态必须为“Full”或“2-Way”，如果不是，则表示主机之间存在网络连接问题。这通常是由NAT或MTU问题引起的。在``show"
+" ip route``的输出中不应该看到任何新路由（除非这是第二遍）"
+
+#: ../configexamples/ha.rst:497
+msgid "Advertise connected routes"
+msgstr "广告连接路由"
+
+#: ../configexamples/ha.rst:499
+msgid ""
+"As a reminder, only advertise routes that you are the default router for."
+" This is why we are NOT announcing the 192.0.2.0/24 network, because if "
+"that was announced into OSPF, the other routers would try to connect to "
+"that network over a tunnel that connects to that network!"
+msgstr "需要提醒的是，只发布你作为默认路由器的路由。这就是为什么我们不宣布192.0.2.0/24网络，因为如果宣布进入OSPF，其他路由器将尝试连接到该网络通过隧道连接到该网络!"
+
+#: ../configexamples/ha.rst:510
+msgid "You should now be able to see the advertised network on the other host."
+msgstr "现在您应该能够看到另一台主机上发布的网络。"
+
+#: ../configexamples/ha.rst:513
+msgid "Duplicate configuration"
+msgstr "重复的配置"
+
+#: ../configexamples/ha.rst:515
+msgid ""
+"At this pont you now need to create the X link between all four routers. "
+"Use a different /30 for each link."
+msgstr "在这个桥上，你现在需要创建所有四个路由器之间的X链接。每个链接使用不同的/30。"
+
+#: ../configexamples/ha.rst:519
+msgid "Priorities"
+msgstr "优先级"
+
+#: ../configexamples/ha.rst:521
+msgid ""
+"Set the cost on the secondary links to be 200. This means that they will "
+"not be used unless the primary links are down."
+msgstr "设置从链路的开销值为200。这意味着除非主链接断开，否则它们不会被使用。"
+
+#: ../configexamples/ha.rst:530
+msgid "This will be visible in 'show ip route'."
+msgstr "这将在``show ip route``中可见。"
+
+#: ../configexamples/ha.rst:533
+msgid "BGP"
+msgstr ""
+
+#: ../configexamples/ha.rst:535
+msgid "BGP is an extremely complex network protocol. An example is provided here."
+msgstr "BGP是一种极其复杂的网络协议。这里提供了一个示例。"
+
+#: ../configexamples/ha.rst:537
+msgid "Router id's must be unique."
+msgstr "路由器id必须是唯一的。"
+
+#: ../configexamples/ha.rst:542
+msgid ""
+"The ``redistribute ospf`` command is there purely as an example of how "
+"this can be expanded. In this walkthrough, it will be filtered by BGPOUT "
+"rule 10000, as it is not 203.0.113.0/24."
+msgstr ""
+"``redistribute "
+"ospf``命令纯粹是作为如何扩展的一个例子。在本演练中，它将被BGPOUT规则10000过滤，因为它不是203.0.113.0/24。"
+
+#: ../configexamples/ha.rst:579
+msgid ""
+"This is identical, but you use the BGPPREPENDOUT route-map to advertise "
+"the route with a longer path."
+msgstr "这是相同的，但是使用BGPPREPENDOUT route-map来发布更长的路径。"
+
+#: ../configexamples/index.rst:4
+msgid "Configuration Blueprints"
+msgstr "配置蓝图"
+
+#: ../configexamples/index.rst:6
+msgid "This chapter contains various configuration examples:"
+msgstr "本章包含各种配置举例:"
+
+#: ../configexamples/ospf-unnumbered.rst:5
+msgid "OSPF unnumbered with ECMP"
+msgstr ""
+
+#: ../configexamples/ospf-unnumbered.rst:7
+msgid "General information can be found in the :ref:`routing-ospf` chapter."
+msgstr "一般信息可以在:ref:`routing-ospf`章节中找到。"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:5
+msgid "PPPoE IPv6 Basic Setup for Home Network"
+msgstr "家庭网络PPPoE IPv6基本配置"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:7
+msgid ""
+"This document is to describe a basic setup using PPPoE with DHCPv6-PD + "
+"SLAAC to construct a typical home network. The user can follow steps "
+"described here to quickly setup a working network and use this as a "
+"starting point to further configure or fine tune other settings."
+msgstr ""
+"本文档主要介绍PPPoE与DHCPv6-PD + "
+"SLAAC的基本搭建，搭建一个典型的家庭网络。用户可以按照这里描述的步骤快速设置工作网络，并以此作为起点进一步配置或微调其他设置。"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:12
+msgid ""
+"To achieve this, your ISP is required to support DHCPv6-PD. If you're not"
+" sure, please contact your ISP for more information."
+msgstr "要实现这一点，您的ISP必须支持DHCPv6-PD。如果您不确定，请联系您的ISP获取更多信息。"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:16
+msgid "Network Topology"
+msgstr "网络拓扑"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:24
+msgid "Configurations"
+msgstr "配置"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:27
+msgid "PPPoE Setup"
+msgstr "PPPoE安装"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:36
+msgid "Fill ``password`` and ``user`` with the credential provided by your ISP."
+msgstr "用ISP提供的凭据填写``password``和``user``。"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:37
+msgid "``service-name`` can be an arbitrary string."
+msgstr "``service-name`` 可以是任意字符串。"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:40
+msgid "DHCPv6-PD Setup"
+msgstr "DHCPv6-PD 安装"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:42
+msgid ""
+"During address configuration, in addition to assigning an address to the "
+"WAN interface, ISP also provides a prefix to allow router to configure "
+"addresses of LAN interface and other nodes connecting to LAN, which is "
+"called prefix delegation (PD)."
+msgstr ""
+"ISP在配置地址时，除了为WAN接口分配地址外，还提供了一个前缀，允许路由器配置LAN接口和其他连接LAN的节点的地址，称为前缀委派(prefix"
+" delegation)。"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:52
+msgid ""
+"Here we use prefix to configure the address of eth1 (LAN) to form "
+"``<prefix>::64``, where ``64`` is hexadecimal of address 100."
+msgstr ""
+"这里我们使用prefix来配置eth1 "
+"(LAN)的地址，以形成``<prefix>::64``，其中``<prefix>::64``是地址100的十六进制。"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:54
+msgid ""
+"For home network users, most of time ISP only provides /64 prefix, hence "
+"there is no need to set SLA ID and prefix length. See :ref:`pppoe-"
+"interface` for more information."
+msgstr "对于家庭网络用户，ISP通常只提供/64前缀，因此不需要设置SLA ID和前缀长度。参见:ref:`pppoe-interface`获取更多信息。"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:59
+msgid "Router Advertisement"
+msgstr "路由器广告"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:61
+msgid ""
+"We need to enable router advertisement for LAN network so that PC can "
+"receive the prefix and use SLAAC to configure address automatically."
+msgstr "我们需要在局域网中启用路由器广告功能，使PC能够接收到前缀并使用SLAAC自动配置地址。"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:70
+msgid "Set MTU in advertisement to 1492 because of PPPoE header overhead."
+msgstr "由于PPPoE报文头的开销，在advertisement中将MTU设置为1492。"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:71
+msgid ""
+"Set DNS server address in advertisement so that clients can obtain it by "
+"using RDNSS option. Most operating systems (Windows, Linux, Mac) should "
+"already support it."
+msgstr "在通告中设置DNS服务器地址，使客户端可以通过RDNSS选项获取。大多数操作系统(Windows、Linux、Mac)应该已经支持它了。"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:74
+msgid ""
+"Here we set the prefix to ``::/64`` to indicate advertising any /64 "
+"prefix the LAN interface is assigned."
+msgstr "这里我们将前缀设置为``::/64``，以表示发布LAN接口分配的任何/64前缀。"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:76
+msgid ""
+"Since some ISPs disconnects continuous connection for every 2~3 days, we "
+"set ``valid-lifetime`` to 2 days to allow PC for phasing out old address."
+msgstr "由于一些网络服务供应商每2~3天就会断开连续的连接，所以我们将“有效-寿命”设置为2天，以允许电脑逐步淘汰旧的地址。"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:80
+msgid "Basic Firewall"
+msgstr "基本的防火墙"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:82
+msgid ""
+"To have basic protection while keeping IPv6 network functional, we need "
+"to:"
+msgstr "要有基本的保护，同时保持IPv6网络功能，我们需要:"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:84
+msgid "Allow all established and related traffic for router and LAN"
+msgstr "允许路由器和局域网的所有建立和相关的通信"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:85
+msgid "Allow all icmpv6 packets for router and LAN"
+msgstr "允许所有的icmpv6包为路由器和局域网"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:86
+msgid "Allow DHCPv6 packets for router"
+msgstr "允许DHCPv6报文进入路由器"
+
+#: ../configexamples/pppoe-ipv6-basic.rst:109
+msgid ""
+"Note to allow router to receive DHCPv6 response from ISP, we need to "
+"allow packets with source port 547 (server) and destination port 546 "
+"(client)."
+msgstr "说明为了让路由器能够接收ISP的DHCPv6响应，需要允许源端口号为547(服务器)、目的端口号为546(客户端)的报文通过。"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:7
+msgid "Tunnelbroker.net (IPv6)"
+msgstr ""
+
+#: ../configexamples/tunnelbroker-ipv6.rst:9
+msgid ""
+"This guides walks through the setup of https://www.tunnelbroker.net/ for "
+"an IPv6 Tunnel."
+msgstr "本指南介绍了为IPv6隧道设置https://www.tunnelbroker.net/的过程。"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:15
+msgid ""
+"A public, routable IPv4 address. This does not necessarily need to be "
+"static, but you will need to update the tunnel endpoint when/if your IP "
+"address changes, which can be done with a script and a scheduled task."
+msgstr "一个公共的、可路由的IPv4地址。这并不一定需要是静态的，但是当/如果您的IP地址更改时，您将需要更新隧道端点，这可以通过一个脚本和一个计划任务来完成。"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:18
+msgid "Account at https://www.tunnelbroker.net/"
+msgstr "在https://www.tunnelbroker.net/帐户"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:19
+msgid ""
+"Requested a \"Regular Tunnel\". You want to choose a location that is "
+"closest to your physical location for the best response time."
+msgstr "请求\"正常通道\"。为了获得最佳响应时间，您需要选择离物理位置最近的位置。"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:23
+msgid "Setup initial tunnel"
+msgstr "设置初始隧道"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:25
+msgid ""
+"Set up initial IPv6 tunnel. Replace the field below from the fields on "
+"the tunnel information page."
+msgstr "建立初始IPv6隧道。将隧道信息页面中的字段替换为下面的字段。"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:41
+msgid ""
+"If your WAN connection is over PPPoE, you may need to set the MTU on the "
+"above tunnel lower than 1472."
+msgstr "如果您的广域网连接是通过PPPoE，您可能需要将上述隧道的MTU设置为低于1472。"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:44
+msgid ""
+"At this point you should be able to ping an IPv6 address, try pinging "
+"Google:"
+msgstr "在这一点上你应该能够ping一个IPv6地址，尝试ping谷歌:"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:57
+msgid ""
+"Assuming the pings are successful, you need to add some DNS servers. Some"
+" options:"
+msgstr "假设ping通成功，则需要添加DNS服务器。一些选项:"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:68
+msgid "You should now be able to ping something by IPv6 DNS name:"
+msgstr "你现在应该能够通过IPv6 DNS名称ping一些东西:"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:81
+msgid "Assuming everything works, you can proceed to client configuration"
+msgstr "假设一切正常，您可以继续进行客户机配置"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:84
+msgid "LAN Configuration"
+msgstr "局域网配置"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:86
+msgid ""
+"At this point your VyOS install should have full IPv6, but now your LAN "
+"devices need access."
+msgstr "在这一点上，您的VyOS安装应该具有完全的IPv6，但现在您的局域网设备需要访问。"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:89
+msgid "With Tunnelbroker.net, you have two options:"
+msgstr "有了Tunnelbroker.net，你有两个选择:"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:91
+msgid ""
+"Routed /64. This is the default assignment. In IPv6-land, it's good for a"
+" single \"LAN\", and is somewhat equivalent to a /24. Example: "
+"`2001:470:xxxx:xxxx::/64`"
+msgstr ""
+"路由/64。这是默认的赋值。在IPv6-land中，它适用于单个\"LAN\"，在某种程度上相当于a /24。例子:`2001:470:xxxx:"
+" xxxx::/64`"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:94
+msgid ""
+"Routed /48. This is something you can request by clicking the \"Assign "
+"/48\" link in the Tunnelbroker.net tunnel config. It allows you to have "
+"up to 65k LANs. Example: `2001:470:xxxx::/48`"
+msgstr ""
+"路由/48。这是你可以通过点击Tunnelbroker.net隧道配置中的\"Assign "
+"/48\"链接来请求的。它允许您拥有多达65000个局域网。例如:`2001:470:xxxx:: / 48`"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:98
+msgid ""
+"Unlike IPv4, IPv6 is really not designed to be broken up smaller than "
+"/64. So if you ever want to have multiple LANs, VLANs, DMZ, etc, you'll "
+"want to ignore the assigned /64, and request the /48 and use that."
+msgstr "与IPv4不同的是，IPv6并不是被设计成小于/64的碎片。因此，如果您希望拥有多个lan、vlan、DMZ等，您将希望忽略分配的/64，并请求/48并使用它。"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:103
+msgid "Single LAN Setup"
+msgstr "单独的局域网设置"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:105
+msgid ""
+"Single LAN setup where eth1 is your LAN interface. Use the /64 (all the "
+"xxxx should be replaced with the information from your `Routed /64` "
+"tunnel):"
+msgstr "单一的局域网设置，eth1是您的局域网接口。使用/64(所有的xxxx都应该替换为来自`routing /64`隧道的信息):"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:115
+#: ../configexamples/tunnelbroker-ipv6.rst:162
+msgid ""
+"Please note, 'autonomous-flag' and 'on-link-flag' are enabled by default,"
+" 'valid-lifetime' and 'preferred-lifetime' are set to default values of "
+"30 days and 4 hours respectively."
+msgstr ""
+"请注意，“autonomous-flag”和“on-link-flag”是默认启用的，“valid-lifetime”和“preferred-"
+"lifetime”的默认值分别为30天和4小时。"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:119
+msgid "This accomplishes a few things:"
+msgstr "这实现了一些事情:"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:121
+msgid "Sets your LAN interface's IP address"
+msgstr "设置局域网接口的IP地址"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:122
+msgid ""
+"Enables router advertisements. This is an IPv6 alternative for DHCP "
+"(though DHCPv6 can still be used). With RAs, Your devices will "
+"automatically find the information they need for routing and DNS."
+msgstr "使路由器广告。这是DHCP的IPv6替代方案(尽管DHCPv6仍然可以使用)。使用RAs，您的设备将自动找到路由和DNS所需的信息。"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:127
+msgid "Multiple LAN/DMZ Setup"
+msgstr "多个局域网/ DMZ设置"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:129
+msgid ""
+"In this, you use the `Routed /48` information. This allows you to assign "
+"a different /64 to every interface, LAN, or even device. Or you could "
+"break your network into smaller chunks like /56 or /60."
+msgstr "在这里，您使用`Routed /48`信息。这允许你为每个接口、局域网甚至设备分配不同的/64。或者你可以把你的网络分成更小的块，如/56或/60。"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:133
+msgid "The format of these addresses:"
+msgstr "这些地址的格式:"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:135
+msgid ""
+"`2001:470:xxxx::/48`: The whole subnet. xxxx should come from "
+"Tunnelbroker."
+msgstr "`2001:470:xxxx::/48`: 整个子网。xxxx应该来自Tunnelbroker。"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:136
+msgid "`2001:470:xxxx:1::/64`: A subnet suitable for a LAN"
+msgstr "`2001:470:xxxx:1::/64`: 适用于局域网的子网"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:137
+msgid "`2001:470:xxxx:2::/64`: Another subnet"
+msgstr "`2001:470:xxxx:2::/64`: 另一个子网"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:138
+msgid "`2001:470:xxxx:ffff:/64`: The last usable /64 subnet."
+msgstr "`2001:470:xxxx:ffff:/64`: 最后一个可用的/64子网。"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:140
+msgid ""
+"In the above examples, 1,2,ffff are all chosen by you. You can use 1-ffff"
+" (1-65535)."
+msgstr "在上面的例子中，1,2和ffff都是由你选择的。您可以使用1-ffff(1-65535)。"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:143
+msgid ""
+"So, when your LAN is eth1, your DMZ is eth2, your cameras live on eth3, "
+"etc:"
+msgstr "所以，当你的LAN是eth1，你的DMZ是eth2，你的摄像头在eth3上，等等:"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:167
+msgid "Firewall"
+msgstr "防火墙"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:169
+msgid ""
+"Finally, don't forget the :ref:`firewall`. The usage is identical, except"
+" for instead of `set firewall name NAME`, you would use `set firewall "
+"ipv6-name NAME`."
+msgstr ""
+"最后，不要忘记:ref:`firewall`。用法是相同的，除了用`set firewall ipv6-name name`代替`set "
+"firewall ipv6-name name`。"
+
+#: ../configexamples/tunnelbroker-ipv6.rst:173
+msgid ""
+"Similarly, to attach the firewall, you would use `set interfaces ethernet"
+" eth0 firewall in ipv6-name` or `set zone-policy zone LOCAL from WAN "
+"firewall ipv6-name`."
+msgstr ""
+"类似地，要附加防火墙，您可以使用`set interfaces ethernet eth0 firewall in ipv6-name`或`set"
+" zone-policy zone LOCAL from WAN firewall ipv6-name`"
+
+#: ../configexamples/wan-load-balancing.rst:6
+msgid "WAN Load Balancer examples"
+msgstr "WAN负载均衡器示例"
+
+#: ../configexamples/wan-load-balancing.rst:10
+msgid "Example 1: Distributing load evenly"
+msgstr "例1:负载均匀分配"
+
+#: ../configexamples/wan-load-balancing.rst:12
+msgid "The setup used in this example is shown in the following diagram:"
+msgstr "本例中使用的设置如下图所示:"
+
+#: ../configexamples/wan-load-balancing.rst:21
+#: ../configexamples/wan-load-balancing.rst:71
+#: ../configexamples/wan-load-balancing.rst:98
+#: ../configexamples/wan-load-balancing.rst:126
+msgid "Overview"
+msgstr "概述"
+
+#: ../configexamples/wan-load-balancing.rst:22
+msgid ""
+"All traffic coming in trough eth2 is balanced between eth0 and eth1 on "
+"the router."
+msgstr "所有来自eth2的流量都在路由器的eth0和eth1之间进行均衡。"
+
+#: ../configexamples/wan-load-balancing.rst:24
+msgid ""
+"Pings will be sent to four targets for health testing (33.44.55.66, "
+"44.55.66.77, 55.66.77.88 and 66.77.88.99)."
+msgstr "ping将被发送到四个目标进行健康测试(33.44.55.66、44.55.66.77、55.66.77.88和66.77.88.99)。"
+
+#: ../configexamples/wan-load-balancing.rst:26
+msgid ""
+"All outgoing packets are assigned the source address of the assigned "
+"interface (SNAT)."
+msgstr "所有发送的数据包都被分配为指定接口的源地址(SNAT)。"
+
+#: ../configexamples/wan-load-balancing.rst:28
+msgid ""
+"eth0 is set to be removed from the load balancer's interface pool after 5"
+" ping failures, eth1 will be removed after 4 ping failures."
+msgstr "eth0设置为5次ping失败后从负载均衡器接口池移除，eth1设置为4次ping失败后被移除。"
+
+#: ../configexamples/wan-load-balancing.rst:32
+msgid "Create static routes to ping targets"
+msgstr "创建到ping目标的静态路由"
+
+#: ../configexamples/wan-load-balancing.rst:33
+msgid ""
+"Create static routes through the two ISPs towards the ping targets and "
+"commit the changes:"
+msgstr "创建静态路由，通过两个isp到达ping目标，并提交更改:"
+
+#: ../configexamples/wan-load-balancing.rst:44
+msgid "Configure the load balancer"
+msgstr "配置负载均衡器"
+
+#: ../configexamples/wan-load-balancing.rst:45
+msgid "Configure the WAN load balancer with the parameters described above:"
+msgstr "使用上述参数配置广域网负载均衡器:"
+
+#: ../configexamples/wan-load-balancing.rst:66
+msgid "Example 2: Failover based on interface weights"
+msgstr "例2:基于接口权重的故障切换"
+
+#: ../configexamples/wan-load-balancing.rst:68
+msgid "This examples uses the failover mode."
+msgstr "本例使用failover模式。"
+
+#: ../configexamples/wan-load-balancing.rst:72
+msgid ""
+"In this example eth0 is the primary interface and eth1 is the secondary "
+"interface to provide simple failover functionality. If eth0 fails, eth1 "
+"takes over."
+msgstr "在本例中，eth0是主要接口，eth1是提供简单故障转移功能的辅助接口。如果eth0故障，则eth1接管。"
+
+#: ../configexamples/wan-load-balancing.rst:77
+msgid "Create interface weight based configuration"
+msgstr "创建基于接口权重的配置"
+
+#: ../configexamples/wan-load-balancing.rst:78
+msgid ""
+"The configuration steps are the same as in the previous example, except "
+"rule 10 so we keep the configuration, remove rule 10 and add a new rule "
+"for the failover mode:"
+msgstr "配置步骤与前面的示例相同，除了第10条规则，因此我们保留配置，删除第10条规则，并为故障转移模式添加一条新规则:"
+
+#: ../configexamples/wan-load-balancing.rst:91
+msgid "Example 3: Failover based on rule order"
+msgstr "例3:基于规则顺序的故障转移"
+
+#: ../configexamples/wan-load-balancing.rst:93
+msgid ""
+"The previous example used the failover command to send traffic thorugh "
+"eth1 if eth0 fails. In this example failover functionality is provided by"
+" rule order."
+msgstr "前面的示例使用故障转移命令在eth0失败时通过eth1发送通信。在本例中，故障转移功能是由规则顺序提供的。"
+
+#: ../configexamples/wan-load-balancing.rst:99
+msgid ""
+"Two rules will be created, the first rule directs traffic coming in from "
+"eth2 to eth0 and the second rule directs the traffic to eth1. If eth0 "
+"fails the first rule is bypassed and the second rule matches, directing "
+"traffic to eth1."
+msgstr "将创建两条规则，第一条规则将来自eth2的流量引导到eth0，第二条规则将流量引导到eth1。如果eth0失败，则跳过第一个规则，第二个规则匹配，将流量引导到eth1。"
+
+#: ../configexamples/wan-load-balancing.rst:105
+msgid "Create rule order based configuration"
+msgstr "创建基于规则顺序的配置"
+
+#: ../configexamples/wan-load-balancing.rst:106
+msgid ""
+"We keep the configurtation from the previous example, delete rule 10 and "
+"create the two new rules as described:"
+msgstr "我们保留前面示例中的配置，删除规则10并创建两个新规则，如下所述:"
+
+#: ../configexamples/wan-load-balancing.rst:118
+msgid "Example 4: Failover based on rule order - priority traffic"
+msgstr "例4:基于规则顺序优先级的流量的故障转移"
+
+#: ../configexamples/wan-load-balancing.rst:120
+#: ../configexamples/wan-load-balancing.rst:127
+msgid ""
+"A rule order for prioritising traffic is useful in scenarios where the "
+"secondary link has a lower speed and should only carry high priority "
+"traffic. It is assumed for this example that eth1 is connected to a "
+"slower connection than eth0 and should prioritise VoIP traffic."
+msgstr "在二级链路速度较低且只承载高优先级流量的情况下，流量优先级规则顺序是有用的。本例假设eth1连接的连接比eth0慢，因此应该优先处理VoIP流量。"
+
+#: ../configexamples/wan-load-balancing.rst:133
+msgid "Create rule order based configuration with low speed secondary link"
+msgstr "创建基于规则顺序的低速从链路配置"
+
+#: ../configexamples/wan-load-balancing.rst:134
+msgid ""
+"We keep the configuration from the previous example, delete rule 20 and "
+"create a new rule as described:"
+msgstr "我们保留前面示例中的配置，删除规则20并创建一个新的规则，如下所示:"
+
+#: ../configexamples/wan-load-balancing.rst:147
+msgid "Example 5: Exclude traffic from load balancing"
+msgstr "例5:排除负载分担"
+
+#: ../configexamples/wan-load-balancing.rst:149
+msgid ""
+"In this example two LAN interfaces exist in different subnets instead of "
+"one like in the previous examples:"
+msgstr "在这个例子中，两个LAN接口存在于不同的子网中，而不是像前面的例子一样存在于一个子网中:"
+
+#: ../configexamples/wan-load-balancing.rst:158
+msgid "Adding a rule for the second interface"
+msgstr "为第二个接口添加规则"
+
+#: ../configexamples/wan-load-balancing.rst:160
+msgid ""
+"Based on the previous example, another rule for traffic from the second "
+"interface eth3 can be added to the load balancer. However, traffic meant "
+"to flow between the LAN subnets will be sent to eth0 and eth1 as well. To"
+" prevent this, another rule is required. This rule excludes traffic "
+"between the local subnets from the load balancer. It also excludes "
+"locally-sources packets (required for web caching with load balancing). "
+"eth+ is used as an alias that refers to all ethernet interfaces:"
+msgstr "根据前面的示例，另一个来自第二个接口eth3的流量规则可以添加到负载均衡器中。但是，打算在LAN子网之间流动的通信也将发送到eth0和eth1。为了防止这种情况发生，需要另一条规则。本子网间的流量不能进入负载均衡器。它还排除本地源数据包(具有负载均衡的web缓存所必需的)。eth+是所有以太网接口的别名:"
+
+#: ../configexamples/zone-policy.rst:4
+msgid "Zone-Policy example"
+msgstr "Zone-Policy例子"
+
+#: ../configexamples/zone-policy.rst:7
+msgid "Native IPv4 and IPv6"
+msgstr "本地IPv4和IPv6"
+
+#: ../configexamples/zone-policy.rst:9
+msgid "We have three networks."
+msgstr "我们有三个网络。"
+
+#: ../configexamples/zone-policy.rst:18
+msgid ""
+"**This specific example is for a router on a stick, but is very easily "
+"adapted for however many NICs you have**:"
+msgstr "**这个具体的例子是一个路由器在棍子上，但非常容易适应无论你有多少网卡**:"
+
+#: ../configexamples/zone-policy.rst:22
+msgid "Internet - 192.168.200.100 - TCP/80"
+msgstr ""
+
+#: ../configexamples/zone-policy.rst:23
+msgid "Internet - 192.168.200.100 - TCP/443"
+msgstr ""
+
+#: ../configexamples/zone-policy.rst:24
+msgid "Internet - 192.168.200.100 - TCP/25"
+msgstr ""
+
+#: ../configexamples/zone-policy.rst:25
+msgid "Internet - 192.168.200.100 - TCP/53"
+msgstr ""
+
+#: ../configexamples/zone-policy.rst:26
+msgid "VyOS actis as DHCP, DNS forwarder, NAT, router and firewall."
+msgstr "VyOS可作为DHCP、DNS转发器、NAT、路由器和防火墙。"
+
+#: ../configexamples/zone-policy.rst:27
+msgid ""
+"192.168.200.200/2001:0DB8:0:BBBB::200 is an internal/external DNS, web "
+"and mail (SMTP/IMAP) server."
+msgstr "192.168.200.200/2001:0DB8:0:BBBB::200是内部/外部DNS、web和mail (SMTP/IMAP)服务器。"
+
+#: ../configexamples/zone-policy.rst:29
+msgid ""
+"192.168.100.10/2001:0DB8:0:AAAA::10 is the administrator's console. It "
+"can SSH to VyOS."
+msgstr "192.168.100.10/2001:0DB8:0:AAAA::10为管理员控制台。它可以SSH到VyOS。"
+
+#: ../configexamples/zone-policy.rst:31
+msgid "LAN and DMZ hosts have basic outbound access: Web, FTP, SSH."
+msgstr "LAN和DMZ主机有基本的出站访问:Web、FTP、SSH。"
+
+#: ../configexamples/zone-policy.rst:32
+msgid "LAN can access DMZ resources."
+msgstr "LAN可以访问DMZ资源。"
+
+#: ../configexamples/zone-policy.rst:33
+msgid "DMZ cannot access LAN resources."
+msgstr "DMZ不能访问LAN资源。"
+
+#: ../configexamples/zone-policy.rst:34
+msgid "Inbound WAN connect to DMZ host."
+msgstr "入站WAN连接到DMZ主机。"
+
+#: ../configexamples/zone-policy.rst:41
+msgid ""
+"The VyOS interface is assigned the .1/:1 address of their respective "
+"networks. WAN is on VLAN 10, LAN on VLAN 20, and DMZ on VLAN 30."
+msgstr "VyOS接口被分配了他们各自网络的。1/:1地址。WAN在VLAN 10上，LAN在VLAN 20上，DMZ在VLAN 30上。"
+
+#: ../configexamples/zone-policy.rst:44
+msgid "It will look something like this:"
+msgstr "它看起来是这样的:"
+
+#: ../configexamples/zone-policy.rst:73
+msgid "Zones Basics"
+msgstr "Zones Basics"
+
+#: ../configexamples/zone-policy.rst:75
+msgid ""
+"Each interface is assigned to a zone. The interface can be physical or "
+"virtual such as tunnels (VPN, PPTP, GRE, etc) and are treated exactly the"
+" same."
+msgstr "每个接口都被分配到一个安全区域。接口可以是物理的，也可以是虚拟的，如隧道(VPN、PPTP、GRE等)，并且被完全相同的对待。"
+
+#: ../configexamples/zone-policy.rst:79
+msgid ""
+"Traffic flows from zone A to zone B. That flow is what I refer to as a "
+"zone-pair-direction. eg. A->B and B->A are two zone-pair-destinations."
+msgstr "从A区域到b区域的交通流就是我所说的区域对方向。如。A->B和B->A是两个区域对目的地。"
+
+#: ../configexamples/zone-policy.rst:82
+msgid "Ruleset are created per zone-pair-direction."
+msgstr "规则集是根据每个区域对-方向创建的。"
+
+#: ../configexamples/zone-policy.rst:84
+msgid ""
+"I name rule sets to indicate which zone-pair-direction they represent. "
+"eg. ZoneA-ZoneB or ZoneB-ZoneA. LAN-DMZ, DMZ-LAN."
+msgstr "我将规则集命名为表示它们所代表的区域对方向。如。ZoneA-ZoneB或ZoneB-ZoneA。LAN-DMZ DMZ-LAN。"
+
+#: ../configexamples/zone-policy.rst:87
+msgid ""
+"In VyOS, you have to have unique Ruleset names. In the event of overlap, "
+"I add a \"-6\" to the end of v6 rulesets. eg. LAN-DMZ, LAN-DMZ-6. This "
+"allows for each auto-completion and uniqueness."
+msgstr ""
+"在VyOS中，必须有唯一的规则集名称。如果出现重叠，我将在v6规则集的末尾添加一个\\“-6\\”。如。LAN-DMZ LAN-"
+"DMZ-6。这允许每个自动完成和唯一性。"
+
+#: ../configexamples/zone-policy.rst:91
+msgid ""
+"In this example we have 4 zones. LAN, WAN, DMZ, Local. The local zone is "
+"the firewall itself."
+msgstr "在本例中，我们有4个区域。LAN, WAN, DMZ, Local。本地区域是防火墙本身。"
+
+#: ../configexamples/zone-policy.rst:94
+msgid ""
+"If your computer is on the LAN and you need to SSH into your VyOS box, "
+"you would need a rule to allow it in the LAN-Local ruleset. If you want "
+"to access a webpage from your VyOS box, you need a rule to allow it in "
+"the Local-LAN ruleset."
+msgstr ""
+"如果您的计算机在LAN上，并且您需要SSH到您的VyOS框中，那么您需要一条规则在LAN- "
+"local规则集中允许它。如果您想从VyOS框访问一个网页，您需要一条规则在Local-LAN规则集中允许它。"
+
+#: ../configexamples/zone-policy.rst:99
+msgid ""
+"In rules, it is good to keep them named consistently. As the number of "
+"rules you have grows, the more consistency you have, the easier your life"
+" will be."
+msgstr "在规则中，保持它们名称的一致性是有好处的。随着规则数量的增加，你的一致性越强，你的生活就会越轻松。"
+
+#: ../configexamples/zone-policy.rst:117
+msgid ""
+"The first two rules are to deal with the idiosyncrasies of VyOS and "
+"iptables."
+msgstr "前两条规则用于处理VyOS和iptables的特性。"
+
+#: ../configexamples/zone-policy.rst:120
+msgid ""
+"Zones and Rulesets both have a default action statement. When using Zone-"
+"Policies, the default action is set by the zone-policy statement and is "
+"represented by rule 10000."
+msgstr "区域和规则集都有一个默认的动作语句。使用zone-policy时，缺省动作由zone-policy语句设置，由规则10000表示。"
+
+#: ../configexamples/zone-policy.rst:124
+msgid ""
+"It is good practice to log both accepted and denied traffic. It can save "
+"you significant headaches when trying to troubleshoot a connectivity "
+"issue."
+msgstr "记录接受和拒绝的流量是很好的做法。当您试图排除连接问题时，它可以为您节省大量的麻烦。"
+
+#: ../configexamples/zone-policy.rst:128
+msgid "To add logging to the default rule, do:"
+msgstr "要将日志记录添加到默认规则，执行以下操作:"
+
+#: ../configexamples/zone-policy.rst:135
+msgid ""
+"By default, iptables does not allow traffic for established session to "
+"return, so you must explicitly allow this. I do this by adding two rules "
+"to every ruleset. 1 allows established and related state packets through "
+"and rule 2 drops and logs invalid state packets. We place the "
+"established/related rule at the top because the vast majority of traffic "
+"on a network is established and the invalid rule to prevent invalid state"
+" packets from mistakenly being matched against other rules. Having the "
+"most matched rule listed first reduces CPU load in high volume "
+"environments. Note: I have filed a bug to have this added as a default "
+"action as well."
+msgstr "默认情况下，iptables不允许已建立会话的流量返回，因此必须显式允许返回。为此，我向每个规则集添加了两条规则。1允许建立的和相关的状态包通过，规则2丢弃并记录无效的状态包。我们将已建立的/相关的规则放在顶部，因为网络上的绝大多数流量都已建立，而无效规则是为了防止无效状态包被错误地与其他规则匹配。在高容量环境中，先列出最匹配的规则可以减少CPU负载。注意:我已经提交了一个bug，将此添加为默认操作。"
+
+#: ../configexamples/zone-policy.rst:146
+msgid ""
+"''It is important to note, that you do not want to add logging to the "
+"established state rule as you will be logging both the inbound and "
+"outbound packets for each session instead of just the initiation of the "
+"session. Your logs will be massive in a very short period of time.''"
+msgstr "“需要注意的是，您不希望将日志记录添加到已建立的状态规则中，因为您将记录每个会话的入站和出站包，而不仅仅是会话的启动。你的日志在很短的时间内就会非常庞大。”"
+
+#: ../configexamples/zone-policy.rst:151
+msgid ""
+"In VyOS you must have the interfaces created before you can apply it to "
+"the zone and the rulesets must be created prior to applying it to a zone-"
+"policy."
+msgstr "在VyOS中，在将接口应用到zone-policy之前，必须先创建接口，在将其应用到zone-policy之前，必须创建规则集。"
+
+#: ../configexamples/zone-policy.rst:155
+msgid ""
+"I create/configure the interfaces first. Build out the rulesets for each "
+"zone-pair-direction which includes at least the three state rules. Then I"
+" setup the zone-policies."
+msgstr ""
+"我首先创建/配置接口。为每个区域对方向(zone-pair-direction)构建规则集，其中至少包括三种状态规则。然后设置zone- "
+"policy。"
+
+#: ../configexamples/zone-policy.rst:159
+msgid ""
+"Zones do not allow for a default action of accept; either drop or reject."
+" It is important to remember this because if you apply an interface to a "
+"zone and commit, any active connections will be dropped. Specifically, if"
+" you are SSH’d into VyOS and add local or the interface you are "
+"connecting through to a zone and do not have rulesets in place to allow "
+"SSH and established sessions, you will not be able to connect."
+msgstr "区域不允许默认的accept动作;要么放弃，要么拒绝。记住这一点非常重要，因为如果您将接口应用到一个区域并提交，任何活动的连接都将被删除。具体来说，如果您通过SSH进入VyOS，并添加本地或连接到某个区域的接口，并且没有允许SSH和已建立会话的规则集，那么您将无法连接。"
+
+#: ../configexamples/zone-policy.rst:166
+msgid ""
+"The following are the rules that were created for this example (may not "
+"be complete), both in IPv4 and IPv6. If there is no IP specified, then "
+"the source/destination address is not explicit."
+msgstr "下面是在IPv4和IPv6中为这个例子创建的规则(可能不完整)。如果没有指定IP地址，则不显示源/目的地址。"
+
+#: ../configexamples/zone-policy.rst:220
+msgid "Since we have 4 zones, we need to setup the following rulesets."
+msgstr "因为我们有4个区域，所以需要设置以下规则集。"
+
+#: ../configexamples/zone-policy.rst:237
+msgid ""
+"Even if the two zones will never communicate, it is a good idea to create"
+" the zone-pair-direction rulesets and set enable-default-log. This will "
+"allow you to log attempts to access the networks. Without it, you will "
+"never see the connection attempts."
+msgstr ""
+"即使这两个区域永远不会通信，创建区域对-方向规则集并设置enable-default-"
+"log也是一个好主意。这将允许您记录访问网络的尝试。如果没有它，您将永远看不到连接尝试。"
+
+#: ../configexamples/zone-policy.rst:242
+msgid "This is an example of the three base rules."
+msgstr "这是三个基本规则的一个例子。"
+
+#: ../configexamples/zone-policy.rst:266
+msgid "Here is an example of an IPv6 DMZ-WAN ruleset."
+msgstr "下面是一个IPv6 DMZ-WAN规则集的例子。"
+
+#: ../configexamples/zone-policy.rst:339
+msgid ""
+"Once you have all of your rulesets built, then you need to create your "
+"zone-policy."
+msgstr "构建了所有规则集之后，就需要创建zone-policy。"
+
+#: ../configexamples/zone-policy.rst:342
+msgid "Start by setting the interface and default action for each zone."
+msgstr "首先为每个区域设置接口和缺省动作。"
+
+#: ../configexamples/zone-policy.rst:349
+msgid ""
+"In this case, we are setting the v6 ruleset that represents traffic "
+"sourced from the LAN, destined for the DMZ. Because the zone-policy "
+"firewall syntax is a little awkward, I keep it straight by thinking of it"
+" backwards."
+msgstr ""
+"在本例中，我们正在设置v6规则集，该规则集表示来自LAN的、目的地为DMZ的流量。由于zone-"
+"policy防火墙的语法有点笨拙，所以我把它向后考虑，以保持它的清晰。"
+
+#: ../configexamples/zone-policy.rst:358
+msgid ""
+"DMZ-LAN policy is LAN-DMZ. You can get a rhythm to it when you build out "
+"a bunch at one time."
+msgstr "DMZ-LAN策略是LAN-DMZ。 一次堆砌一堆时，您会感到有节奏。"
+
+#: ../configexamples/zone-policy.rst:361
+msgid ""
+"In the end, you will end up with something like this config. I took out "
+"everything but the Firewall, Interfaces, and zone-policy sections. It is "
+"long enough as is."
+msgstr "最后，您将获得类似此配置的内容。 我删除了防火墙，接口和区域策略部分中的所有内容。 它足够长了。"
+
+#: ../configexamples/zone-policy.rst:367
+msgid "IPv6 Tunnel"
+msgstr "IPv6隧道"
+
+#: ../configexamples/zone-policy.rst:369
+msgid ""
+"If you are using a IPv6 tunnel from HE.net or someone else, the basis is "
+"the same except you have two WAN interface. One for v4 and one for v6."
+msgstr "如果您使用的是来自HE.net或其他网站的IPv6隧道，则除了具有两个WAN接口外，其基础是相同的。 一个针对v4，另一个针对v6。"
+
+#: ../configexamples/zone-policy.rst:372
+msgid ""
+"You would have 5 zones instead of just 4 and you would configure your v6 "
+"ruleset between your tunnel interface and your LAN/DMZ zones instead of "
+"to the WAN."
+msgstr "您将拥有5个区域而不是4个区域，并且可以在隧道接口与LAN / DMZ区域（而不是WAN）之间配置v6规则集。"
+
+#: ../configexamples/zone-policy.rst:376
+msgid "LAN, WAN, DMZ, local and TUN (tunnel)"
+msgstr "LAN, WAN, DMZ, local and TUN (隧道)"
+
+#: ../configexamples/zone-policy.rst:378
+msgid "v6 pairs would be:"
+msgstr "v6对将是："
+
+#: ../configexamples/zone-policy.rst:395
+msgid "Notice, none go to WAN since WAN wouldn't have a v6 address on it."
+msgstr "请注意，没有人会去WAN，因为WAN上没有v6地址。"
+
+#: ../configexamples/zone-policy.rst:397
+msgid ""
+"You would have to add a couple of rules on your wan-local ruleset to "
+"allow protocol 41 in."
+msgstr "您必须在wan-local规则集上添加几个规则，以允许使用协议41。"
+
+#: ../configexamples/zone-policy.rst:400
+msgid "Something like:"
+msgstr "就像是："
+

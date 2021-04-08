@@ -1,0 +1,165 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, VyOS maintainers and contributors
+# This file is distributed under the same license as the VyOS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VyOS 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-08 11:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../quick-start.rst:5
+msgid "Quick Start"
+msgstr ""
+
+#: ../quick-start.rst:7
+msgid "This chapter will guide you on how to get up to speed quickly using your new VyOS system. It will show you a very basic configuration example that will provide a :ref:`nat` gateway for a device with two network interfaces (`eth0` and `eth1`)."
+msgstr ""
+
+#: ../quick-start.rst:15
+msgid "Configuration Mode"
+msgstr ""
+
+#: ../quick-start.rst:17
+msgid "By default, VyOS is in operational mode, and the command prompt displays a `$`. To configure VyOS, you will need to enter configuration mode, resulting in the command prompt displaying a `#`, as demonstrated below:"
+msgstr ""
+
+#: ../quick-start.rst:27
+msgid "Commit and Save"
+msgstr ""
+
+#: ../quick-start.rst:29
+msgid "After every configuration change, you need to apply the changes by using the following command:"
+msgstr ""
+
+#: ../quick-start.rst:36
+msgid "Once your configuration works as expected, you can save it permanently by using the following command:"
+msgstr ""
+
+#: ../quick-start.rst:44
+msgid "Interface Configuration"
+msgstr ""
+
+#: ../quick-start.rst:46
+msgid "Your outside/WAN interface will be `eth0`. It will receive its interface address via DHCP."
+msgstr ""
+
+#: ../quick-start.rst:48
+msgid "Your internal/LAN interface will be `eth1`. It will use a static IP address of `192.168.0.1/24`."
+msgstr ""
+
+#: ../quick-start.rst:51
+msgid "After switching to :ref:`quick-start-configuration-mode` issue the following commands:"
+msgstr ""
+
+#: ../quick-start.rst:63
+msgid "SSH Management"
+msgstr ""
+
+#: ../quick-start.rst:65
+msgid "After switching to :ref:`quick-start-configuration-mode` issue the following commands, and your system will listen on every interface for incoming SSH connections. You might want to check the :ref:`ssh` chapter on how to listen on specific addresses only."
+msgstr ""
+
+#: ../quick-start.rst:78
+msgid "DHCP/DNS quick-start"
+msgstr ""
+
+#: ../quick-start.rst:80
+msgid "The following settings will configure DHCP and DNS services on your internal/LAN network, where VyOS will act as the default gateway and DNS server."
+msgstr ""
+
+#: ../quick-start.rst:84
+msgid "The default gateway and DNS recursor address will be `192.168.0.1/24`"
+msgstr ""
+
+#: ../quick-start.rst:85
+msgid "The address range `192.168.0.2/24 - 192.168.0.8/24` will be reserved for static assignments"
+msgstr ""
+
+#: ../quick-start.rst:87
+msgid "DHCP clients will be assigned IP addresses within the range of `192.168.0.9 - 192.168.0.254` and have a domain name of `internal-network`"
+msgstr ""
+
+#: ../quick-start.rst:89
+msgid "DHCP leases will hold for one day (86400 seconds)"
+msgstr ""
+
+#: ../quick-start.rst:90
+msgid "VyOS will serve as a full DNS recursor, replacing the need to utilize Google, Cloudflare, or other public DNS servers (which is good for privacy)"
+msgstr ""
+
+#: ../quick-start.rst:92
+msgid "Only hosts from your internal/LAN network can use the DNS recursor"
+msgstr ""
+
+#: ../quick-start.rst:109
+msgid "NAT"
+msgstr ""
+
+#: ../quick-start.rst:111
+msgid "The following settings will configure :ref:`source-nat` rules for our internal/LAN network, allowing hosts to communicate through the outside/WAN network via IP masquerade."
+msgstr ""
+
+#: ../quick-start.rst:123
+msgid "Firewall"
+msgstr ""
+
+#: ../quick-start.rst:125
+msgid "Add a set of firewall policies for our outside/WAN interface."
+msgstr ""
+
+#: ../quick-start.rst:127
+msgid "This configuration creates a proper stateful firewall that blocks all traffic which was not initiated from the internal/LAN side first."
+msgstr ""
+
+#: ../quick-start.rst:146
+msgid "If you wanted to enable SSH access to your firewall from the outside/WAN interface, you could create some additional rules to allow that kind of traffic."
+msgstr ""
+
+#: ../quick-start.rst:150
+msgid "These rules allow SSH traffic and rate limit it to 4 requests per minute. This blocks brute-forcing attempts:"
+msgstr ""
+
+#: ../quick-start.rst:167
+msgid "Apply the firewall policies:"
+msgstr ""
+
+#: ../quick-start.rst:174
+msgid "Commit changes, save the configuration, and exit configuration mode:"
+msgstr ""
+
+#: ../quick-start.rst:187
+msgid "Hardening"
+msgstr ""
+
+#: ../quick-start.rst:189
+msgid "Especially if you are allowing SSH remote access from the outside/WAN interface, there are a few additional configuration steps that should be taken."
+msgstr ""
+
+#: ../quick-start.rst:192
+msgid "Replace the default `vyos` system user:"
+msgstr ""
+
+#: ../quick-start.rst:198
+msgid "Set up :ref:`ssh_key_based_authentication`:"
+msgstr ""
+
+#: ../quick-start.rst:205
+msgid "Finally, try and SSH into the VyOS install as your new user. Once you have confirmed that your new user can access your router without a password, delete the original ``vyos`` user and completely disable password authentication for :ref:`ssh`:"
+msgstr ""
+
+#: ../quick-start.rst:215
+msgid "As above, commit your changes, save the configuration, and exit configuration mode:"
+msgstr ""
+
+#: ../quick-start.rst:227
+msgid "You now should have a simple yet secure and functioning router to experiment with further. Enjoy!"
+msgstr ""

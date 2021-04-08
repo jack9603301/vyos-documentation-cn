@@ -1,0 +1,1446 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, VyOS maintainers and contributors
+# This file is distributed under the same license as the VyOS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VyOS 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-08 11:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../contributing/build-vyos.rst:5
+msgid "Build VyOS"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:9
+msgid "Prerequisites"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:11
+msgid "There are different ways you can build VyOS."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:13
+msgid "Building using a :ref:`build_docker` container, although not the only way, is the easiest way as all dependencies are managed for you. However, you can also set up your own build machine and run a :ref:`build_native`."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:17
+msgid "Starting with VyOS 1.2 the release model of VyOS has changed. VyOS is now **free as in speech, but not as in beer**. This means that while VyOS is still an open source project, the release ISOs are no longer free and can only be obtained via subscription, or by contributing to the community."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:23
+msgid "The source code remains public and an ISO can be built using the process outlined in this chapter."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:26
+msgid "This will guide you though the process of building a VyOS ISO using Docker_. This process has been tested on clean installs of Debian Jessie, Stretch, and Buster."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:33
+msgid "Docker"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:35
+msgid "Installing Docker_ and prerequisites:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:46
+msgid "To be able to use Docker_ without ``sudo``, the current non-root user must be added to the ``docker`` group by calling: ``sudo usermod -aG docker yourusername``."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:50
+msgid "Doing so grants privileges equivalent to the ``root`` user! It is recommended to remove the non-root user from the ``docker`` group after building the VyOS ISO. See also `Docker as non-root`_."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:54
+msgid "The build process needs to be built on a local file system, building on SMB or NFS shares will result in the container failing to build properly! VirtualBox Drive Share is also not an option as block device operations are not implemented and the drive is always mounted as \"nodev\""
+msgstr ""
+
+#: ../contributing/build-vyos.rst:60
+msgid "Build Container"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:62
+msgid "The container can built by hand or by fetching the pre-built one from DockerHub. Using the pre-built containers from the `VyOS DockerHub organisation`_ will ensure that the container is always up-to-date. A rebuild is triggered once the container changes (please note this will take 2-3 hours after pushing to the vyos-build repository)."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:73
+msgid "Dockerhub"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:75
+msgid "To manually download the container from DockerHub, run:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:83
+msgid "Build from source"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:85
+msgid "The container can also be built directly from source:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:98
+msgid "Since VyOS has switched to Debian (10) Buster in its ``current`` branch, you will require individual container for `current` and `crux` builds."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:103
+msgid "Tips and Tricks"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:105
+msgid "You can create yourself some handy Bash aliases to always launch the latest - per release train (`current` or `crux`) - container. Add the following to your ``.bash_aliases`` file:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:129
+msgid "Now you are prepared with two new aliases ``vybld`` and ``vybld_crux`` to spawn your development containers in your current working directory."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:135
+msgid "Native Build"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:137
+msgid "To build VyOS natively you require a properly configured build host with the following Debian versions installed:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:140
+msgid "Debian Jessie for VyOS 1.2 (crux)"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:141
+msgid "Debian Buster for VyOS 1.3 (equuleus, current) - aka the rolling release"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:143
+msgid "To start, clone the repository to your local machine:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:153
+msgid "For the packages required, you can refer to the ``docker/Dockerfile`` file in the repository_. The ``./configure`` script will also warn you if any dependencies are missing."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:157
+msgid "Once you have the required dependencies installed, you may proceed with the steps described in :ref:`build_iso`."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:165
+msgid "Build ISO"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:167
+msgid "Now as you are aware of the prerequisites we can continue and build our own ISO from source. For this we have to fetch the latest source code from GitHub. Please note as this will differ for both `current` and `crux`."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:179
+msgid "Now a fresh build of the VyOS ISO can begin. Change directory to the ``vyos-build`` directory and run:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:191
+msgid "Start the build:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:198
+msgid "When the build is successful, the resulting iso can be found inside the ``build`` directory as ``live-image-[architecture].hybrid.iso``."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:201
+msgid "Good luck!"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:203
+msgid "Attempting to use the Docker build image on MacOS will fail as Docker does not expose all the filesystem feature required to the container. Building within a VirtualBox server on Mac however possible."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:207
+msgid "Building VyOS on Windows WSL2 with Docker integrated into WSL2 will work like a charm. No problems are known so far!"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:216
+msgid "Customize"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:218
+msgid "This ISO can be customized with the following list of configure options. The full and current list can be generated with ``./configure --help``:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:263
+msgid "ISO Build Issues"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:265
+msgid "There are (rare) situations where building an ISO image is not possible at all due to a broken package feed in the background. APT is not very good at reporting the root cause of the issue. Your ISO build will likely fail with a more or less similar looking error message:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:288
+msgid "To debug the build process and gain additional information of what could be the root cause wou need to `chroot` into the build directry. This is explained in the following step by step procedure:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:296
+msgid "We now need to mount some required, volatile filesystems"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:304
+msgid "We now are free to run any command we would like to use for debugging, e.g. re-installing the failed package after updating the repository."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:339
+msgid "Now it's time to fix the package mirror and rerun the last step until the package installation succeeds again!"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:345
+msgid "Linux Kernel"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:347
+msgid "The Linux kernel used by VyOS is heavily tied to the ISO build process. The file ``data/defaults.json`` hosts a JSON definition of the kernel version used ``kernel_version`` and the ``kernel_flavor`` of the kernel which represents the kernel's LOCAL_VERSION. Both together form the kernel version variable in the system:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:358
+msgid "Other packages (e.g. vyos-1x) add dependencies to the ISO build procedure on e.g. the wireguard-modules package which itself adds a dependency on the kernel version used due to the module it ships. This may change (for WireGuard) in future kernel releases but as long as we have out-of-tree modules."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:363
+#: ../contributing/build-vyos.rst:552
+msgid "WireGuard"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:364
+#: ../contributing/build-vyos.rst:600
+msgid "Accel-PPP"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:365
+msgid "Intel NIC drivers"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:366
+msgid "Inter QAT"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:368
+msgid "Each of those modules holds a dependency on the kernel version and if you are lucky enough to receive an ISO build error which sounds like:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:386
+msgid "The most obvious reasons could be:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:388
+msgid "``vyos-build`` repo is outdated, please ``git pull`` to update to the latest release kernel version from us."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:391
+msgid "You have your own custom kernel `*.deb` packages in the `packages` folder but neglected to create all required out-of tree modules like Accel-PPP, WireGuard, Intel QAT, Intel NIC"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:396
+msgid "Building The Kernel"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:398
+msgid "The kernel build is quite easy, most of the required steps can be found in the ``vyos-build/packages/linux-kernel/Jenkinsfile`` but we will walk you through it."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:402
+msgid "Clone the kernel source to `vyos-build/packages/linux-kernel/`:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:409
+msgid "Check out the required kernel version - see ``vyos-build/data/defaults.json`` file (example uses kernel 4.19.146):"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:430
+msgid "Now we can use the helper script ``build-kernel.sh`` which does all the necessary voodoo by applying required patches from the `vyos-build/packages/linux-kernel/patches` folder, copying our kernel configuration ``x86_64_vyos_defconfig`` to the right location, and finally building the Debian packages."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:436
+msgid "Building the kernel will take some time depending on the speed and quantity of your CPU/cores and disk speed. Expect 20 minutes (or even longer) on lower end hardware."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:515
+msgid "In the end you will be presented with the kernel binary packages which you can then use in your custom ISO build process, by placing all the `*.deb` files in the vyos-build/packages folder where they will be used automatically when building VyOS as documented above."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:521
+msgid "Firmware"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:523
+msgid "If you upgrade your kernel or include new drivers you may need new firmware. Build a new ``vyos-linux-firmware`` package with the included helper scripts."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:533
+msgid "This tries to automatically detect which blobs are needed based on which drivers were built. If it fails to find the correct files you can add them manually to ``vyos-build/packages/linux-kernel/build-linux-firmware.sh``:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:543
+msgid "Building Out-Of-Tree Modules"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:545
+msgid "Building the kernel is one part, but now you also need to build the required out-of-tree modules so everything is lined up and the ABIs match. To do so, you can again take a look at ``vyos-build/packages/linux-kernel/Jenkinsfile`` to see all of the required modules and their selected versions. We will show you how to build all the current required modules."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:554
+#: ../contributing/build-vyos.rst:602
+msgid "First, clone the source code and check out the appropriate version by running:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:563
+#: ../contributing/build-vyos.rst:609
+msgid "We again make use of a helper script and some patches to make the build work. Just run the following command:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:595
+#: ../contributing/build-vyos.rst:636
+#: ../contributing/build-vyos.rst:665
+#: ../contributing/build-vyos.rst:700
+msgid "After compiling the packages you will find yourself the newly generated `*.deb` binaries in ``vyos-build/packages/linux-kernel`` from which you can copy them to the ``vyos-build/packages`` folder for inclusion during the ISO build."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:641
+msgid "Intel NIC"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:643
+msgid "The Intel NIC drivers do not come from a Git repository, instead we just fetch the tarballs from our mirror and compile them."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:646
+#: ../contributing/build-vyos.rst:675
+msgid "Simply use our wrapper script to build all of the driver modules."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:670
+msgid "Intel QAT"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:671
+msgid "The Intel QAT (Quick Assist Technology) drivers do not come from a Git repository, instead we just fetch the tarballs from 01.org, Intel's open-source website."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:706
+#: ../contributing/build-vyos.rst:775
+msgid "Packages"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:708
+msgid "If you are brave enough to build yourself an ISO image containing any modified package from our GitHub organisation - this is the place to be."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:711
+msgid "Any \"modified\" package may refer to an altered version of e.g. vyos-1x package that you would like to test before filing a pull request on GitHub."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:714
+msgid "Building an ISO with any customized package is in no way different then building a regular (customized or not) ISO image. Simply place your modified `*.deb` package inside the `packages` folder within `vyos-build`. The build process will then pickup your custom package and integrate it into your ISO."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:720
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:722
+msgid "Debian APT is not very verbose when it comes to errors. If your ISO build breaks for whatever reason and you suspect it's a problem with APT dependencies or installation you can add this small patch which increases the APT verbosity during ISO build."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:751
+msgid "Virtualization Platforms"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:754
+msgid "QEMU"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:756
+msgid "Run following command after building the ISO image."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:763
+msgid "VMware"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:765
+msgid "Run following command after building the QEMU image."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:777
+msgid "VyOS itself comes with a bunch of packages that are specific to our system and thus cannot be found in any Debian mirror. Those packages can be found at the `VyOS GitHub project`_ in their source format can easily be compiled into a custom Debian (`*.deb`) package."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:782
+msgid "The easiest way to compile your package is with the above mentioned :ref:`build_docker` container, it includes all required dependencies for all VyOS related packages."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:786
+msgid "Assume we want to build the vyos-1x package on our own and modify it to our needs. We first need to clone the repository from GitHub."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:794
+msgid "Build"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:796
+msgid "Launch Docker container and build package"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:809
+msgid "After a minute or two you will find the generated DEB packages next to the vyos-1x source directory:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:819
+msgid "Install"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:821
+msgid "To take your newly created package on a test drive you can simply SCP it to a running VyOS instance and install the new `*.deb` package over the current running one."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:825
+msgid "Just install using the following commands:"
+msgstr ""
+
+#: ../contributing/build-vyos.rst:836
+msgid "You can also place the generated `*.deb` into your ISO build environment to include it in a custom iso, see :ref:`build_custom_packages` for more information."
+msgstr ""
+
+#: ../contributing/build-vyos.rst:840
+msgid "Any packages in the packages directory will be added to the iso during build, replacing the upstream ones. Make sure you delete them (both the source directories and built deb packages) if you want to build an iso from purely upstream packages."
+msgstr ""
+
+#: ../contributing/development.rst:5
+msgid "Development"
+msgstr ""
+
+#: ../contributing/development.rst:7
+msgid "All VyOS source code is hosted on GitHub under the VyOS organization which can be found here: https://github.com/vyos"
+msgstr ""
+
+#: ../contributing/development.rst:10
+msgid "Our code is split into several modules. VyOS is composed of multiple individual packages, some of them are forks of upstream packages and are periodically synced with upstream, so keeping the whole source under a single repository would be very inconvenient and slow. There is now an ongoing effort to consolidate all VyOS-specific framework/config packages into vyos-1x package, but the basic structure is going to stay the same, just with fewer and fewer packages while the base code is rewritten from Perl/BASH into Python using and XML based interface definition for the CLI."
+msgstr ""
+
+#: ../contributing/development.rst:19
+msgid "The repository that contains all the ISO build scripts is: https://github.com/vyos/vyos-build"
+msgstr ""
+
+#: ../contributing/development.rst:22
+msgid "The README.md file will guide you to use the this top level repository."
+msgstr ""
+
+#: ../contributing/development.rst:25
+msgid "Submit a Patch"
+msgstr ""
+
+#: ../contributing/development.rst:27
+msgid "Patches are always more than welcome. To have a clean and easy to maintain repository we have some guidelines when working with Git. A clean repository eases the automatic generation of a changelog file."
+msgstr ""
+
+#: ../contributing/development.rst:31
+msgid "A good approach for writing commit messages is actually to have a look at the file(s) history by invoking ``git log path/to/file.txt``."
+msgstr ""
+
+#: ../contributing/development.rst:37
+msgid "Prepare patch/commit"
+msgstr ""
+
+#: ../contributing/development.rst:39
+msgid "In a big system, such as VyOS, that is comprised of multiple components, it's impossible to keep track of all the changes and bugs/feature requests in one's head. We use a bugtracker known as Phabricator_ for it (\"issue tracker\" would be a better term, but this one stuck)."
+msgstr ""
+
+#: ../contributing/development.rst:44
+msgid "The information is used in three ways:"
+msgstr ""
+
+#: ../contributing/development.rst:46
+msgid "Keep track of the progress (what we've already done in this branch and what we still need to do)."
+msgstr ""
+
+#: ../contributing/development.rst:49
+msgid "Prepare release notes for upcoming releases"
+msgstr ""
+
+#: ../contributing/development.rst:51
+msgid "Help future maintainers of VyOS (it could be you!) to find out why certain things have been changed in the codebase or why certain features have been added"
+msgstr ""
+
+#: ../contributing/development.rst:55
+msgid "To make this approach work, every change must be associated with a task number (prefixed with **T**) and a component. If there is no bug report/feature request for the changes you are going to make, you have to create a Phabricator_ task first. Once there is an entry in Phabricator_, you should reference its id in your commit message, as shown below:"
+msgstr ""
+
+#: ../contributing/development.rst:61
+msgid "``ddclient: T1030: auto create runtime directories``"
+msgstr ""
+
+#: ../contributing/development.rst:62
+msgid "``Jenkins: add current Git commit ID to build description``"
+msgstr ""
+
+#: ../contributing/development.rst:64
+msgid "If there is no Phabricator_ reference in the commits of your pull request, we have to ask you to amend the commit message. Otherwise we will have to reject it."
+msgstr ""
+
+#: ../contributing/development.rst:69
+msgid "Writing good commit messages"
+msgstr ""
+
+#: ../contributing/development.rst:71
+msgid "The format should be and is inspired by: https://git-scm.com/book/ch5-2.html It is also worth reading https://chris.beams.io/posts/git-commit/"
+msgstr ""
+
+#: ../contributing/development.rst:74
+msgid "A single, short, summary of the commit (recommended 50 characters or less, not exceeding 80 characters) containing a prefix of the changed component and the corresponding Phabricator_ reference e.g. ``snmp: T1111:`` or ``ethernet: T2222:`` - multiple components could be concatenated as in ``snmp: ethernet: T3333``"
+msgstr ""
+
+#: ../contributing/development.rst:80
+msgid "In some contexts, the first line is treated as the subject of an email and the rest of the text as the body. The blank line separating the summary from the body is critical (unless you omit the body entirely); tools like rebase can get confused if you run the two together."
+msgstr ""
+
+#: ../contributing/development.rst:85
+msgid "Followed by a message which describes all the details like:"
+msgstr ""
+
+#: ../contributing/development.rst:87
+msgid "What/why/how something has been changed, makes everyone's life easier when working with `git bisect`"
+msgstr ""
+
+#: ../contributing/development.rst:90
+msgid "All text of the commit message should be wrapped at 72 characters if possible which makes reading commit logs easier with ``git log`` on a standard terminal (which happens to be 80x25)"
+msgstr ""
+
+#: ../contributing/development.rst:94
+msgid "If applicable a reference to a previous commit should be made linking those commits nicely when browsing the history: ``After commit abcd12ef (\"snmp: this is a headline\") a Python import statement is missing, throwing the following exception: ABCDEF``"
+msgstr ""
+
+#: ../contributing/development.rst:99
+msgid "Always use the ``-x`` option to the ``git cherry-pick`` command when back or forward porting an individual commit. This automatically appends the line: ``(cherry picked from commit <ID>)`` to the original authors commit message making it easier when bisecting problems."
+msgstr ""
+
+#: ../contributing/development.rst:104
+msgid "Every change set must be consistent (self containing)! Do not fix multiple bugs in a single commit. If you already worked on multiple fixes in the same file use `git add --patch` to only add the parts related to the one issue into your upcoming commit."
+msgstr ""
+
+#: ../contributing/development.rst:109
+msgid "Limits:"
+msgstr ""
+
+#: ../contributing/development.rst:111
+msgid "We only accept bugfixes in packages other than https://github.com/vyos/vyos-1x as no new functionality should use the old style templates (``node.def`` and Perl/BASH code. Use the new style XML/Python interface instead."
+msgstr ""
+
+#: ../contributing/development.rst:115
+msgid "Please submit your patches using the well-known GitHub pull-request against our repositories found in the VyOS GitHub organisation at https://github.com/vyos"
+msgstr ""
+
+#: ../contributing/development.rst:120
+msgid "Determinine source package"
+msgstr ""
+
+#: ../contributing/development.rst:122
+msgid "Suppose you want to make a change in the webproxy script but yet you do not know which of the many VyOS packages ship this file. You can determine the VyOS package name in question by using Debian's ``dpkg -S`` command of your running VyOS installation."
+msgstr ""
+
+#: ../contributing/development.rst:132
+msgid "This means the file in question (``/opt/vyatta/sbin/vyatta-update-webproxy.pl``) is located in the ``vyatta-webproxy`` package which can be found here: https://github.com/vyos/vyatta-webproxy"
+msgstr ""
+
+#: ../contributing/development.rst:138
+msgid "Fork Repository and submit Patch"
+msgstr ""
+
+#: ../contributing/development.rst:140
+msgid "Forking the repository and submitting a GitHub pull-request is the preferred way of submitting your changes to VyOS. You can fork any VyOS repository to your very own GitHub account by just appending ``/fork`` to any repository's URL on GitHub. To e.g. fork the ``vyos-1x`` repository, open the following URL in your favourite browser: https://github.com/vyos/vyos-1x/fork"
+msgstr ""
+
+#: ../contributing/development.rst:146
+msgid "You then can proceed with cloning your fork or add a new remote to your local repository:"
+msgstr ""
+
+#: ../contributing/development.rst:149
+msgid "Clone: ``git clone https://github.com/<user>/vyos-1x.git``"
+msgstr ""
+
+#: ../contributing/development.rst:151
+msgid "Fork: ``git remote add myfork https://github.com/<user>/vyos-1x.git``"
+msgstr ""
+
+#: ../contributing/development.rst:153
+msgid "In order to record you as the author of the fix please identify yourself to Git by setting up your name and email. This can be done local for this one and only repository ``git config`` or globally using ``git config --global``."
+msgstr ""
+
+#: ../contributing/development.rst:162
+msgid "Make your changes and save them. Do the following for all changes files to record them in your created Git commit:"
+msgstr ""
+
+#: ../contributing/development.rst:165
+msgid "Add file to Git index using ``git add myfile``, or for a whole directory: ``git add somedir/*``"
+msgstr ""
+
+#: ../contributing/development.rst:168
+msgid "Commit the changes by calling ``git commit``. Please use a meaningful commit headline (read above) and don't forget to reference the Phabricator_ ID."
+msgstr ""
+
+#: ../contributing/development.rst:171
+msgid "Submit the patch ``git push`` and create the GitHub pull-request."
+msgstr ""
+
+#: ../contributing/development.rst:175
+msgid "Attach patch to Phabricator task"
+msgstr ""
+
+#: ../contributing/development.rst:177
+msgid "Follow the above steps on how to \"Fork repository to submit a Patch\". Instead of uploading \"pushing\" your changes to GitHub you can export the patches/ commits and send it to maintainers@vyos.net or attach it directly to the bug (preferred over email)"
+msgstr ""
+
+#: ../contributing/development.rst:182
+msgid "Export last commit to patch file: ``git format-patch`` or export the last two commits into its appropriate patch files: ``git format-patch -2``"
+msgstr ""
+
+#: ../contributing/development.rst:187
+msgid "Coding Guidelines"
+msgstr ""
+
+#: ../contributing/development.rst:189
+msgid "Like any other project we have some small guidelines about our source code, too. The rules we have are not there to punish you - the rules are in place to help us all. By having a consistent coding style it becomes very easy for new and also longtime contributors to navigate through the sources and all the implied logic of any one source file.."
+msgstr ""
+
+#: ../contributing/development.rst:195
+msgid "Python 3 **shall** be used. How long can we keep Python 2 alive anyway? No considerations for Python 2 compatibility **should** be taken at any time."
+msgstr ""
+
+#: ../contributing/development.rst:200
+msgid "Formatting"
+msgstr ""
+
+#: ../contributing/development.rst:202
+msgid "Python: Tabs **shall not** be used. Every indentation level should be 4 spaces"
+msgstr ""
+
+#: ../contributing/development.rst:203
+msgid "XML: Tabs **shall not** be used. Every indentation level should be 2 spaces"
+msgstr ""
+
+#: ../contributing/development.rst:205
+msgid "There are extensions to e.g. VIM (xmllint) which will help you to get your indention levels correct. Add to following to your .vimrc file: ``au FileType xml setlocal equalprg=xmllint\\ --format\\ --recover\\ -\\ 2>/dev/null`` now you can call the linter using ``gg=G`` in command mode."
+msgstr ""
+
+#: ../contributing/development.rst:212
+msgid "Text generation"
+msgstr ""
+
+#: ../contributing/development.rst:214
+msgid "Template processor **should** be used for generating config files. Built-in string formatting **may** be used for simple line-oriented formats where every line is self-contained, such as iptables rules. Template processor **must** be used for structured, multi-line formats such as those used by ISC DHCPd."
+msgstr ""
+
+#: ../contributing/development.rst:219
+msgid "The default template processor for VyOS code is Jinja2_."
+msgstr ""
+
+#: ../contributing/development.rst:223
+msgid "Summary"
+msgstr ""
+
+#: ../contributing/development.rst:225
+msgid "When modifying the source code, remember these rules of the legacy elimination campaign:"
+msgstr ""
+
+#: ../contributing/development.rst:228
+msgid "No new features in Perl"
+msgstr ""
+
+#: ../contributing/development.rst:229
+msgid "No old style command definitions"
+msgstr ""
+
+#: ../contributing/development.rst:230
+msgid "No code incompatible with Python3"
+msgstr ""
+
+#: ../contributing/development.rst:234
+msgid "Python"
+msgstr ""
+
+#: ../contributing/development.rst:236
+msgid "The switch to the Python programming language for new code is not merely a change of the language, but a chance to rethink and improve the programming approach."
+msgstr ""
+
+#: ../contributing/development.rst:240
+msgid "Let's face it: VyOS is full of spaghetti code where logic for reading the VyOS config, generating daemon configs, and restarting processes is all mixed up."
+msgstr ""
+
+#: ../contributing/development.rst:243
+msgid "Python (or any other language, for that matter) does not provide automatic protection from bad design, so we need to also devise design guidelines and follow them to keep the system extensible and maintainable."
+msgstr ""
+
+#: ../contributing/development.rst:247
+msgid "But we are here to assist you and want to guide you through how you can become a good VyOS contributor. The rules we have are not there to punish you - the rules are in place to help us all. What does it mean? By having a consistent coding style it becomes very easy for new contributors and also longtime contributors to navigate through the sources and all the implied logic of the spaghetti code."
+msgstr ""
+
+#: ../contributing/development.rst:254
+msgid "Please use the following template as good starting point when developing new modules or even rewrite a whole bunch of code in the new style XML/Pyhon interface."
+msgstr ""
+
+#: ../contributing/development.rst:260
+msgid "Configuration Script Structure and Behaviour"
+msgstr ""
+
+#: ../contributing/development.rst:262
+msgid "Your configuration script or operation mode script which is also written in Python3 should have a line break on 80 characters. This seems to be a bit odd nowadays but as some people also work remotely or program using vi(m) this is a fair good standard which I hope we can rely on."
+msgstr ""
+
+#: ../contributing/development.rst:267
+msgid "In addition this also helps when browsing the GitHub codebase on a mobile device if you happen to be a crazy scientist."
+msgstr ""
+
+#: ../contributing/development.rst:328
+msgid "The ``get_config()`` function must convert the VyOS config to an abstract, internal representation. No other function is allowed to call the ``vyos.config. Config`` object method directly. The rationale for it is that when config reads are mixed with other logic, it's very hard to change the config syntax since you need to weed out every occurrence of the old syntax. If syntax-specific code is confined to a single function, the rest of the code can be left untouched as long as the internal representation remains compatible."
+msgstr ""
+
+#: ../contributing/development.rst:336
+msgid "Another advantage is testability of the code. Mocking the entire config subsystem is hard, while constructing an internal representation by hand is way simpler."
+msgstr ""
+
+#: ../contributing/development.rst:340
+msgid "The ``verify()`` function takes your internal representation of the config and checks if it's valid, otherwise it must raise ``ConfigError`` with an error message that describes the problem and possibly suggests how to fix it. It must not make any changes to the system. The rationale for it is again testability and, in the future when the config backend is ready and every script is rewritten in this fashion, ability to execute commit dry run (\"commit test\" like in JunOS) and abort commit before making any changes to the system if an error is found in any component."
+msgstr ""
+
+#: ../contributing/development.rst:349
+msgid "The ``generate()`` function generates config files for system components."
+msgstr ""
+
+#: ../contributing/development.rst:351
+msgid "The ``apply()`` function applies the generated configuration to the live system. It should use non-disruptive reload whenever possible. It may execute disruptive operations such as daemon process restart if a particular component does not support non-disruptive reload, or when the expected service degradation is minimal (for example, in case of auxiliary services such as LLDPd). In case of high impact services such as VPN daemon and routing protocols, when non- disruptive reload is supported for some but not all types of configuration changes, scripts authors should make effort to determine if a configuration change can be done in a non-disruptive way and only resort to disruptive restart if it cannot be avoided."
+msgstr ""
+
+#: ../contributing/development.rst:362
+msgid "Unless absolutely necessary, configuration scripts should not modify the active configuration of system components directly. Whenever at all possible, scripts should generate a configuration file or files that can be applied with a single command such as reloading a service through systemd init. Inserting statements one by one is particularly discouraged, for example, when configuring netfilter rules, saving them to a file and loading it with iptables-restore should always be preferred to executing iptables directly."
+msgstr ""
+
+#: ../contributing/development.rst:370
+msgid "The ``apply()`` and ``generate()`` functions may ``raise ConfigError`` if, for example, the daemon failed to start with the updated config. It shouldn't be a substitute for proper config checking in the ``verify()`` function. All reasonable effort should be made to verify that generated configuration is valid and will be accepted by the daemon, including, when necessary, cross- checks with other VyOS configuration subtrees."
+msgstr ""
+
+#: ../contributing/development.rst:377
+msgid "Exceptions, including ``VyOSError`` (which is raised by ``vyos.config.Config`` on improper config operations, such as trying to use ``list_nodes()`` on a non-tag node) should not be silenced or caught and re-raised as config error. Sure this will not look pretty on user's screen, but it will make way better bug reports, and help users (and most VyOS users are IT professionals) do their own debugging as well."
+msgstr ""
+
+#: ../contributing/development.rst:384
+msgid "For easy orientation we suggest you take a look on the ``ntp.py`` or ``interfaces-bonding.py`` (for tag nodes) implementation. Both files can be found in the vyos-1x_ repository."
+msgstr ""
+
+#: ../contributing/development.rst:390
+msgid "XML (used for CLI definitions)"
+msgstr ""
+
+#: ../contributing/development.rst:392
+msgid "The bash (or better vbash) completion in VyOS is defined in *templates*. Templates are text files (called ``node.def``) stored in a directory tree. The directory names define the command names, and template files define the command behaviour. Before VyOS 1.2 (crux) this files were created by hand. After a complex redesign process_ the new style template are automatically generated from a XML input file."
+msgstr ""
+
+#: ../contributing/development.rst:399
+msgid "XML interface definitions for VyOS come with a RelaxNG schema and are located in the vyos-1x_ module. This schema is a slightly modified schema from VyConf_ alias VyOS 2.0 So VyOS 1.2.x interface definitions will be reusable in Nextgen VyOS Versions with very minimal changes."
+msgstr ""
+
+#: ../contributing/development.rst:404
+msgid "The great thing about schemas is not only that people can know the complete grammar for certain, but also that it can be automatically verified. The `scripts/build-command-templates` script that converts the XML definitions to old style templates also verifies them against the schema, so a bad definition will cause the package build to fail. I do agree that the format is verbose, but there is no other format now that would allow this. Besides, a specialized XML editor can alleviate the issue with verbosity."
+msgstr ""
+
+#: ../contributing/development.rst:412
+msgid "Example:"
+msgstr ""
+
+#: ../contributing/development.rst:490
+msgid "Command definitions are purely declarative, and cannot contain any logic. All logic for generating config files for target applications, restarting services and so on is implemented in configuration scripts instead."
+msgstr ""
+
+#: ../contributing/development.rst:495
+msgid "GNU Preprocessor"
+msgstr ""
+
+#: ../contributing/development.rst:497
+msgid "XML interface definition files use the `xml.in` file extension which was implemented in :vytask:`T1843`. XML interface definitions tend to have a lot of duplicated code in areas such as:"
+msgstr ""
+
+#: ../contributing/development.rst:501
+msgid "VIF (incl. VIF-S/VIF-C)"
+msgstr ""
+
+#: ../contributing/development.rst:502
+msgid "Address"
+msgstr ""
+
+#: ../contributing/development.rst:503
+msgid "Description"
+msgstr ""
+
+#: ../contributing/development.rst:504
+msgid "Enabled/Disabled"
+msgstr ""
+
+#: ../contributing/development.rst:506
+msgid "Instead of supplying all those XML nodes multiple times there are now include files with predefined features. Brief overview:"
+msgstr ""
+
+#: ../contributing/development.rst:509
+msgid "`IPv4, IPv6 and DHCP(v6)`_ address assignment"
+msgstr ""
+
+#: ../contributing/development.rst:510
+msgid "`IPv4, IPv6`_ address assignment"
+msgstr ""
+
+#: ../contributing/development.rst:511
+msgid "`VLAN (VIF)`_ definition"
+msgstr ""
+
+#: ../contributing/development.rst:512
+msgid "`MAC address`_ assignment"
+msgstr ""
+
+#: ../contributing/development.rst:514
+msgid "All interface definition XML input files (.in suffix) will be sent to the GCC preprocess and the output is stored in the `build/interface-definitions` folder. The previously mentioned `scripts/build-command-templates` script operates on the `build/interface-definitions` folder to generate all required CLI nodes."
+msgstr ""
+
+#: ../contributing/development.rst:535
+#: ../contributing/documentation.rst:14
+msgid "Guidelines"
+msgstr ""
+
+#: ../contributing/development.rst:538
+msgid "Use of numbers"
+msgstr ""
+
+#: ../contributing/development.rst:540
+msgid "Use of numbers in command names **should** be avoided unless a number is a part of a protocol name or similar. Thus, ``protocols ospfv3`` is perfectly fine, but something like ``server-1`` is questionable at best."
+msgstr ""
+
+#: ../contributing/development.rst:545
+msgid "Help String"
+msgstr ""
+
+#: ../contributing/development.rst:547
+msgid "To ensure uniform look and feel, and improve readability, we should follow a set of guidelines consistently."
+msgstr ""
+
+#: ../contributing/development.rst:551
+msgid "Capitalization and punctuation"
+msgstr ""
+
+#: ../contributing/development.rst:553
+msgid "The first word of every help string **must** be capitalized. There **must not** be a period at the end of help strings."
+msgstr ""
+
+#: ../contributing/development.rst:556
+msgid "Rationale: this seems to be the unwritten standard in network device CLIs, and a good aesthetic compromise."
+msgstr ""
+
+#: ../contributing/development.rst:559
+#: ../contributing/development.rst:571
+#: ../contributing/development.rst:580
+#: ../contributing/development.rst:591
+#: ../contributing/development.rst:602
+#: ../contributing/development.rst:616
+msgid "Examples:"
+msgstr ""
+
+#: ../contributing/development.rst:561
+msgid "Good: \"Frobnication algorithm\""
+msgstr ""
+
+#: ../contributing/development.rst:562
+msgid "Bad: \"frobnication algorithm\""
+msgstr ""
+
+#: ../contributing/development.rst:563
+msgid "Bad: \"Frobnication algorithm.\""
+msgstr ""
+
+#: ../contributing/development.rst:564
+msgid "Horrible: \"frobnication algorithm.\""
+msgstr ""
+
+#: ../contributing/development.rst:567
+msgid "Use of abbreviations and acronyms"
+msgstr ""
+
+#: ../contributing/development.rst:569
+msgid "Abbreviations and acronyms **must** be capitalized."
+msgstr ""
+
+#: ../contributing/development.rst:573
+#: ../contributing/development.rst:604
+msgid "Good: \"TCP connection timeout\""
+msgstr ""
+
+#: ../contributing/development.rst:574
+msgid "Bad: \"tcp connection timeout\""
+msgstr ""
+
+#: ../contributing/development.rst:575
+msgid "Horrible: \"Tcp connection timeout\""
+msgstr ""
+
+#: ../contributing/development.rst:577
+msgid "Acronyms also **must** be capitalized to visually distinguish them from normal words:"
+msgstr ""
+
+#: ../contributing/development.rst:582
+msgid "Good: RADIUS (as in remote authentication for dial-in user services)"
+msgstr ""
+
+#: ../contributing/development.rst:583
+msgid "Bad: radius (unless it's about the distance between a center of a circle and any of its points)"
+msgstr ""
+
+#: ../contributing/development.rst:586
+msgid "Some abbreviations are traditionally written in mixed case. Generally, if it contains words \"over\" or \"version\", the letter **should** be lowercase. If there's an accepted spelling (especially if defined by an RFC or another standard), it **must** be followed."
+msgstr ""
+
+#: ../contributing/development.rst:593
+msgid "Good: PPPoE, IPsec"
+msgstr ""
+
+#: ../contributing/development.rst:594
+msgid "Bad: PPPOE, IPSEC"
+msgstr ""
+
+#: ../contributing/development.rst:595
+msgid "Bad: pppoe, ipsec"
+msgstr ""
+
+#: ../contributing/development.rst:598
+msgid "Use of verbs"
+msgstr ""
+
+#: ../contributing/development.rst:600
+msgid "Verbs **should** be avoided. If a verb can be omitted, omit it."
+msgstr ""
+
+#: ../contributing/development.rst:605
+msgid "Bad: \"Set TCP connection timeout\""
+msgstr ""
+
+#: ../contributing/development.rst:607
+msgid "If a verb is essential, keep it. For example, in the help text of ``set system ipv6 disable-forwarding``, \"Disable IPv6 forwarding on all interfaces\" is a perfectly justified wording."
+msgstr ""
+
+#: ../contributing/development.rst:612
+msgid "Prefer infinitives"
+msgstr ""
+
+#: ../contributing/development.rst:614
+msgid "Verbs, when they are necessary, **should** be in their infinitive form."
+msgstr ""
+
+#: ../contributing/development.rst:618
+msgid "Good: \"Disable IPv6 forwarding\""
+msgstr ""
+
+#: ../contributing/development.rst:619
+msgid "Bad: \"Disables IPv6 forwarding\""
+msgstr ""
+
+#: ../contributing/development.rst:622
+msgid "Migrating old CLI"
+msgstr ""
+
+#: ../contributing/development.rst:628
+msgid "Old concept/syntax"
+msgstr ""
+
+#: ../contributing/development.rst:629
+msgid "New syntax"
+msgstr ""
+
+#: ../contributing/development.rst:630
+msgid "Notes"
+msgstr ""
+
+#: ../contributing/development.rst:631
+msgid "mynode/node.def"
+msgstr ""
+
+#: ../contributing/development.rst:632
+msgid "<node name=\"mynode\"> </node>"
+msgstr ""
+
+#: ../contributing/development.rst:633
+msgid "Leaf nodes (nodes with values) use <leafNode> tag instead"
+msgstr ""
+
+#: ../contributing/development.rst:634
+msgid "mynode/node.tag , tag:"
+msgstr ""
+
+#: ../contributing/development.rst:635
+msgid "<tagNode name=\"mynode> </node>"
+msgstr ""
+
+#: ../contributing/development.rst:637
+msgid "help: My node"
+msgstr ""
+
+#: ../contributing/development.rst:638
+msgid "<properties> <help>My node</help>"
+msgstr ""
+
+#: ../contributing/development.rst:640
+msgid "val_help: <format>; some string"
+msgstr ""
+
+#: ../contributing/development.rst:641
+msgid "<properties> <valueHelp> <format> format </format> <description> some string </description>"
+msgstr ""
+
+#: ../contributing/development.rst:643
+msgid "Do not add angle brackets around the format, they will be inserted automatically"
+msgstr ""
+
+#: ../contributing/development.rst:645
+msgid "syntax:expression: pattern"
+msgstr ""
+
+#: ../contributing/development.rst:646
+msgid "<properties> <constraint> <regex> ..."
+msgstr ""
+
+#: ../contributing/development.rst:647
+msgid "<constraintErrorMessage> will be displayed on failure"
+msgstr ""
+
+#: ../contributing/development.rst:648
+msgid "syntax:expression: $VAR(@) in \"foo\", \"bar\", \"baz\""
+msgstr ""
+
+#: ../contributing/development.rst:649
+#: ../contributing/development.rst:656
+#: ../contributing/development.rst:676
+#: ../contributing/development.rst:679
+#: ../contributing/development.rst:682
+msgid "None"
+msgstr ""
+
+#: ../contributing/development.rst:650
+msgid "Use regex"
+msgstr ""
+
+#: ../contributing/development.rst:651
+msgid "syntax:expression: exec ..."
+msgstr ""
+
+#: ../contributing/development.rst:652
+msgid "<properties> <constraint> <validator> <name =\"foo\" argument=\"bar\">"
+msgstr ""
+
+#: ../contributing/development.rst:653
+msgid "\"${vyos_libexecdir}/validators/foo bar $VAR(@)\" will be executed, <constraintErrorMessage> will be displayed on failure"
+msgstr ""
+
+#: ../contributing/development.rst:655
+msgid "syntax:expression: (arithmetic expression)"
+msgstr ""
+
+#: ../contributing/development.rst:657
+msgid "External arithmetic validator may be added if there's demand, complex validation is better left to commit-time scripts"
+msgstr ""
+
+#: ../contributing/development.rst:659
+msgid "priority: 999"
+msgstr ""
+
+#: ../contributing/development.rst:660
+msgid "<properties> <priority>999</priority>"
+msgstr ""
+
+#: ../contributing/development.rst:661
+msgid "Please leave a comment explaining why the priority was chosen (e.g. \"after interfaces are configured\")"
+msgstr ""
+
+#: ../contributing/development.rst:663
+msgid "multi:"
+msgstr ""
+
+#: ../contributing/development.rst:664
+msgid "<properties> <multi/>"
+msgstr ""
+
+#: ../contributing/development.rst:665
+msgid "Only applicable to leaf nodes"
+msgstr ""
+
+#: ../contributing/development.rst:666
+msgid "allowed: echo foo bar"
+msgstr ""
+
+#: ../contributing/development.rst:667
+msgid "<properties> <completionHelp> <list> foo bar </list>"
+msgstr ""
+
+#: ../contributing/development.rst:669
+msgid "allowed: cli-shell-api listNodes vpn ipsec esp-group"
+msgstr ""
+
+#: ../contributing/development.rst:670
+msgid "<properties> <completionHelp> <path> vpn ipsec esp-group </path> ..."
+msgstr ""
+
+#: ../contributing/development.rst:672
+msgid "allowed: /path/to/script"
+msgstr ""
+
+#: ../contributing/development.rst:673
+msgid "<properties> <completionHelp> <script> /path/to/script </script> ..."
+msgstr ""
+
+#: ../contributing/development.rst:675
+msgid "default:"
+msgstr ""
+
+#: ../contributing/development.rst:677
+msgid "Move default values to scripts"
+msgstr ""
+
+#: ../contributing/development.rst:678
+msgid "commit:expression:"
+msgstr ""
+
+#: ../contributing/development.rst:680
+msgid "All commit time checks should be in the verify() function of the script"
+msgstr ""
+
+#: ../contributing/development.rst:681
+msgid "begin:/create:/delete:"
+msgstr ""
+
+#: ../contributing/development.rst:683
+msgid "All logic should be in the scripts"
+msgstr ""
+
+#: ../contributing/development.rst:686
+msgid "Continuous Integration"
+msgstr ""
+
+#: ../contributing/development.rst:688
+msgid "VyOS makes use of Jenkins_ as our Continuous Integration (CI) service. Our CI server is publicly accessible here: https://ci.vyos.net. You can get a brief overview of all required components shipped in a VyOS ISO."
+msgstr ""
+
+#: ../contributing/development.rst:692
+msgid "To build our modules we utilize a CI/CD Pipeline script. Each and every VyOS component comes with it's own ``Jenkinsfile`` which is (more or less) a copy. The Pipeline utilizes the Docker container from the :ref:`build_iso` section - but instead of building it from source on every run, we rather always fetch a fresh copy (if needed) from Dockerhub_."
+msgstr ""
+
+#: ../contributing/development.rst:698
+msgid "Each module is build on demand if a new commit on the branch in question is found. After a successful run the resulting Debian Package(s) will be deployed to our Debian repository which is used during build time. It is located here: http://dev.packages.vyos.net/repositories/."
+msgstr ""
+
+#: ../contributing/documentation.rst:4
+msgid "Documentation"
+msgstr ""
+
+#: ../contributing/documentation.rst:6
+msgid "VyOS documentation is written in reStructuredText and generated to Read the Docs pages with Sphinx, as per the Python tradition, as well as PDF files for offline use through LaTeX."
+msgstr ""
+
+#: ../contributing/documentation.rst:10
+msgid "We welcome all sorts of contributions to the documentation. Not just new additions but also corrections to existing documentation."
+msgstr ""
+
+#: ../contributing/documentation.rst:16
+msgid "There are a few things to keep in mind when contributing to the documentation, for the sake of consistency and readability."
+msgstr ""
+
+#: ../contributing/documentation.rst:19
+msgid "Take a look at the :doc:`/documentation` page for an intricate explanation of the documentation process."
+msgstr ""
+
+#: ../contributing/documentation.rst:22
+msgid "The following is a quick summary of the rules:"
+msgstr ""
+
+#: ../contributing/documentation.rst:24
+msgid "Use American English at all times. It's always a good idea to run your text through a grammar and spell checker, such as `Grammarly`_."
+msgstr ""
+
+#: ../contributing/documentation.rst:26
+msgid "Don't forget to update ``index.rst`` when adding a new node."
+msgstr ""
+
+#: ../contributing/documentation.rst:27
+msgid "Try not to exceed 80 characters per line, but don't break URLs over this."
+msgstr ""
+
+#: ../contributing/documentation.rst:28
+msgid "Properly quote commands, filenames and brief code snippets with double backticks."
+msgstr ""
+
+#: ../contributing/documentation.rst:29
+msgid "Use literal blocks for longer snippets."
+msgstr ""
+
+#: ../contributing/documentation.rst:30
+msgid "Leave a newline before and after a header."
+msgstr ""
+
+#: ../contributing/documentation.rst:31
+msgid "Indent with two spaces."
+msgstr ""
+
+#: ../contributing/documentation.rst:32
+msgid "When in doubt, follow the style of existing documentation."
+msgstr ""
+
+#: ../contributing/documentation.rst:34
+msgid "And finally, remember that the reStructuredText files aren't exclusively for generating HTML and PDF. They should be human-readable and easily perused from a console."
+msgstr ""
+
+#: ../contributing/documentation.rst:39
+msgid "Building"
+msgstr ""
+
+#: ../contributing/documentation.rst:41
+msgid "The source is kept in the Git repository https://github.com/vyos/vyos-documentation"
+msgstr ""
+
+#: ../contributing/documentation.rst:44
+msgid "You can follow the instructions in the README to build and test your changes."
+msgstr ""
+
+#: ../contributing/documentation.rst:46
+msgid "You can either install Sphinx (and TeX Live for PDF output) and build the documentation locally, or use the `Dockerfile`_ to build it in a container."
+msgstr ""
+
+#: ../contributing/index.rst:3
+msgid "Contributing"
+msgstr ""
+
+#: ../contributing/issues-features.rst:5
+msgid "Issues/Feature requests"
+msgstr ""
+
+#: ../contributing/issues-features.rst:10
+msgid "Bug Report/Issue"
+msgstr ""
+
+#: ../contributing/issues-features.rst:12
+msgid "Issues or bugs are found in any software project. VyOS is not an exception."
+msgstr ""
+
+#: ../contributing/issues-features.rst:14
+msgid "All issues should be reported to the developers. This lets the developers know what is not working properly. Without this sort of feedback every developer will believe that everything is working correctly."
+msgstr ""
+
+#: ../contributing/issues-features.rst:19
+msgid "I have found a bug, what should I do?"
+msgstr ""
+
+#: ../contributing/issues-features.rst:21
+msgid "When you believe you have found a bug, it is always a good idea to verify the issue prior to opening a bug request."
+msgstr ""
+
+#: ../contributing/issues-features.rst:24
+msgid "Consult the documentation_ to ensure that you have configured your system correctly"
+msgstr ""
+
+#: ../contributing/issues-features.rst:26
+msgid "Get community support via Slack_ or our Forum_"
+msgstr ""
+
+#: ../contributing/issues-features.rst:29
+msgid "Ensure the problem is reproducible"
+msgstr ""
+
+#: ../contributing/issues-features.rst:31
+msgid "When you are able to verify that it is actually a bug, spend some time to document how to reproduce the issue. This documentation can be invaluable."
+msgstr ""
+
+#: ../contributing/issues-features.rst:34
+msgid "When you wish to have a developer fix a bug that you found, helping them reproduce the issue is beneficial to everyone. Be sure to include information about the hardware you are using, commands that you were running, any other activities that you may have been doing at the time. This additional information can be very useful."
+msgstr ""
+
+#: ../contributing/issues-features.rst:40
+msgid "What were you attempting to achieve?"
+msgstr ""
+
+#: ../contributing/issues-features.rst:41
+msgid "What was the configuration prior to the change?"
+msgstr ""
+
+#: ../contributing/issues-features.rst:42
+msgid "What commands did you use? Use e.g. ``run show configuration commands``"
+msgstr ""
+
+#: ../contributing/issues-features.rst:45
+msgid "Include output"
+msgstr ""
+
+#: ../contributing/issues-features.rst:47
+msgid "The output you get when you find a bug can provide lots of information. If you get an error message on the screen, copy it exactly. Having the exact message can provide detail that the developers can use. Like wise if you have any log messages that also are from the time of the issue, include those. They may also contain information that is helpful for the development team."
+msgstr ""
+
+#: ../contributing/issues-features.rst:54
+msgid "Report a Bug"
+msgstr ""
+
+#: ../contributing/issues-features.rst:56
+msgid "In order to open up a bug-report/feature request you need to create yourself an account on VyOS Phabricator_. On the left side of the specific project (VyOS 1.2 or VyOS 1.3) you will find quick-links for opening a bug-report/feature request."
+msgstr ""
+
+#: ../contributing/issues-features.rst:61
+msgid "Provide as much information as you can"
+msgstr ""
+
+#: ../contributing/issues-features.rst:62
+msgid "Which version of VyOS are you using? ``run show version``"
+msgstr ""
+
+#: ../contributing/issues-features.rst:63
+msgid "How can we reproduce this Bug?"
+msgstr ""
+
+#: ../contributing/issues-features.rst:68
+msgid "Feature Request"
+msgstr ""
+
+#: ../contributing/issues-features.rst:70
+msgid "You have an idea of how to make VyOS better or you are in need of a specific feature which all users of VyOS would benefit from? To send a feature request please search Phabricator_ if there is already a request pending. You can enhance it or if you don't find one, create a new one by use the quick link in the left side under the specific project."
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:4
+msgid "Upstream packages"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:6
+msgid "Many base system packages are pulled straight from Debian's main and contrib repositories, but there are exceptions."
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:9
+msgid "This chapter lists those exceptions and gives you a brief overview what we have done on those packages. If you only want to build yourself a fresh ISO you can completely skip this chapter. It may become interesting once you have a VyOS deep dive."
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:15
+msgid "vyos-netplug"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:17
+msgid "Due to issues in the upstream version that sometimes set interfaces down, a modified version is used."
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:20
+msgid "The source is located at https://github.com/vyos/vyos-netplug"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:22
+msgid "In the future, we may switch to using systemd infrastructure instead. Building it doesn't require a special procedure."
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:26
+msgid "keepalived"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:28
+msgid "Keepalived normally isn't updated to newer feature releases between Debian versions, so we are building it from source."
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:31
+msgid "Debian does keep their package in git, but it's upstream tarball imported into git without its original commit history. To be able to merge new tags in, we keep a fork of the upstream repository with packaging files imported from Debian at https://github.com/vyos/keepalived-upstream"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:37
+msgid "strongswan"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:39
+msgid "Our StrongSWAN build differs from the upstream:"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:41
+msgid "strongswan-nm package build is disabled since we don't use NetworkManager"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:42
+msgid "Patches for DMVPN are merged in"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:44
+msgid "The source is at https://github.com/vyos/vyos-strongswan"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:46
+msgid "DMVPN patches are added by this commit: https://github.com/vyos/vyos-strongswan/commit/1cf12b0f2f921bfc51affa3b81226"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:49
+msgid "Our op mode scripts use the python-vici module, which is not included in Debian's build, and isn't quite easy to integrate in that build. For this reason we debianize that module by hand now, using this procedure:"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:53
+msgid "Install https://pypi.org/project/stdeb/"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:54
+msgid "`cd vyos-strongswan`"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:55
+msgid "`./configure --enable-python-eggs`"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:56
+msgid "`cd src/libcharon/plugins/vici/python`"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:57
+msgid "`make`"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:58
+msgid "`python3 setup.py --command-packages=stdeb.command bdist_deb`"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:60
+msgid "The package ends up in deb_dist dir."
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:63
+msgid "mdns-repeater"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:65
+msgid "This package doesn't exist in Debian. A debianized fork is kept at https://github.com/vyos/mdns-repeater"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:68
+#: ../contributing/upstream-packages.rst:76
+msgid "No special build procedure is required."
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:71
+msgid "udp-broadcast-relay"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:73
+msgid "This package doesn't exist in Debian. A debianized fork is kept at https://github.com/vyos/udp-broadcast-relay"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:79
+msgid "hvinfo"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:81
+msgid "A fork with packaging changes for VyOS is kept at https://github.com/vyos/hvinfo"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:83
+msgid "The original repo is at https://github.com/dmbaturin/hvinfo"
+msgstr ""
+
+#: ../contributing/upstream-packages.rst:85
+msgid "It's an Ada program and requires GNAT and gprbuild for building, dependencies are properly specified so just follow debuild's suggestions."
+msgstr ""

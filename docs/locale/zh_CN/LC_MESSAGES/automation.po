@@ -1,0 +1,326 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, VyOS maintainers and contributors
+# This file is distributed under the same license as the VyOS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VyOS 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-08 11:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../automation/command-scripting.rst:4
+msgid "Command Scripting"
+msgstr ""
+
+#: ../automation/command-scripting.rst:6
+msgid ""
+"VyOS supports executing configuration and operational commands non-"
+"interactively from shell scripts."
+msgstr ""
+
+#: ../automation/command-scripting.rst:9
+msgid ""
+"To include VyOS specific functions and aliases you need to ``source "
+"/opt/vyatta/etc/functions/script-template`` files at the top of your "
+"script."
+msgstr ""
+
+#: ../automation/command-scripting.rst:19
+msgid "Run configuration commands"
+msgstr ""
+
+#: ../automation/command-scripting.rst:21
+msgid ""
+"Configuration commands are executed just like from a normal config "
+"session. For example, if you want to disable a BGP peer on VRRP "
+"transition to backup:"
+msgstr ""
+
+#: ../automation/command-scripting.rst:34
+msgid "Run operational commands"
+msgstr ""
+
+#: ../automation/command-scripting.rst:36
+msgid ""
+"Unlike a normal configuration sessions, all operational commands must be "
+"prepended with ``run``, even if you haven't created a session with "
+"configure."
+msgstr ""
+
+#: ../automation/command-scripting.rst:47
+msgid "Other script language"
+msgstr ""
+
+#: ../automation/command-scripting.rst:49
+msgid ""
+"If you want to script the configs in a language other than bash you can "
+"have your script output commands and then source them in a bash script."
+msgstr ""
+
+#: ../automation/command-scripting.rst:52
+msgid "Here is a simple example:"
+msgstr ""
+
+#: ../automation/command-scripting.rst:72
+msgid "Executing Configuration Scripts"
+msgstr ""
+
+#: ../automation/command-scripting.rst:74
+msgid ""
+"There is a pitfall when working with configuration scripts. It is "
+"tempting to call configuration scripts with \"sudo\" (i.e., temporary "
+"root permissions), because that's the common way on most Linux platforms "
+"to call system commands."
+msgstr ""
+
+#: ../automation/command-scripting.rst:78
+msgid ""
+"On VyOS this will cause the following problem: After modifying the "
+"configuration via script like this once, it is not possible to manually "
+"modify the config anymore:"
+msgstr ""
+
+#: ../automation/command-scripting.rst:88
+msgid ""
+"This will result in the following error message: ``Set failed`` If this "
+"happens, a reboot is required to be able to edit the config manually "
+"again."
+msgstr ""
+
+#: ../automation/command-scripting.rst:91
+msgid ""
+"To avoid these problems, the proper way is to call a script with the "
+"``vyattacfg`` group, e.g., by using the ``sg`` (switch group) command:"
+msgstr ""
+
+#: ../automation/command-scripting.rst:98
+msgid ""
+"To make sure that a script is not accidentally called without the "
+"``vyattacfg`` group, the script can be safeguarded like this:"
+msgstr ""
+
+#: ../automation/command-scripting.rst:108
+msgid "Postconfig on boot"
+msgstr ""
+
+#: ../automation/command-scripting.rst:110
+msgid ""
+"The ``/config/scripts/vyos-postconfig-bootup.script`` script is called on"
+" boot after the VyOS configuration is fully applied."
+msgstr ""
+
+#: ../automation/command-scripting.rst:113
+msgid ""
+"Any modifications done to work around unfixed bugs and implement "
+"enhancements which are not complete in the VyOS system can be placed "
+"here."
+msgstr ""
+
+#: ../automation/command-scripting.rst:116
+msgid "The default file looks like this:"
+msgstr ""
+
+#: ../automation/command-scripting.rst:125
+msgid ""
+"For configuration/upgrade management issues, modification of this script "
+"should be the last option. Always try to find solutions based on CLI "
+"commands first."
+msgstr ""
+
+#: ../automation/index.rst:3
+msgid "VyOS Automation"
+msgstr ""
+
+#: ../automation/index.rst:6
+msgid "Saltstack"
+msgstr ""
+
+#: ../automation/index.rst:7
+msgid "startup scripts"
+msgstr ""
+
+#: ../automation/vyos-ansible.rst:4
+msgid "Ansible"
+msgstr ""
+
+#: ../automation/vyos-ansible.rst:6
+msgid ""
+"VyOS supports configuration via ansible. Need to install ``ansible`` and "
+"``python3-paramiko`` module"
+msgstr ""
+
+#: ../automation/vyos-ansible.rst:9
+msgid "Structure of files"
+msgstr ""
+
+#: ../automation/vyos-ansible.rst:22
+msgid "File contents"
+msgstr ""
+
+#: ../automation/vyos-ansible.rst:24
+msgid "ansible.cfg"
+msgstr ""
+
+#: ../automation/vyos-ansible.rst:33
+msgid "id_rsa_docker.pub. Needs to declare only public key exactly."
+msgstr ""
+
+#: ../automation/vyos-ansible.rst:40
+msgid "hosts"
+msgstr ""
+
+#: ../automation/vyos-ansible.rst:54
+msgid "main.yml"
+msgstr ""
+
+#: ../automation/vyos-ansible.rst:78
+msgid "Run ansible"
+msgstr ""
+
+#: ../automation/vyos-api.rst:5
+msgid "VyOS API"
+msgstr ""
+
+#: ../automation/vyos-api.rst:7
+msgid "for configuration and enabling the API see :ref:`http-api`"
+msgstr ""
+
+#: ../automation/vyos-api.rst:11
+msgid "Authentication"
+msgstr ""
+
+#: ../automation/vyos-api.rst:13
+msgid ""
+"All Endpoint only listen on HTTP POST requests and the API KEY must set "
+"as ``key`` in the formdata."
+msgstr ""
+
+#: ../automation/vyos-api.rst:16
+msgid ""
+"Below see one example or curl and one for python. In the following, the "
+"documentation is reduced to curl."
+msgstr ""
+
+#: ../automation/vyos-api.rst:39
+msgid "API Endpoints"
+msgstr ""
+
+#: ../automation/vyos-api.rst:42
+msgid "/retrieve"
+msgstr ""
+
+#: ../automation/vyos-api.rst:44
+msgid "With the ``retrieve`` endpoint you get parts or the whole configuration."
+msgstr ""
+
+#: ../automation/vyos-api.rst:46
+msgid "To get the whole configuration, pass an empty list to the ``path`` field"
+msgstr ""
+
+#: ../automation/vyos-api.rst:77
+msgid "only get a part of the configuration, for example ``system syslog``."
+msgstr ""
+
+#: ../automation/vyos-api.rst:105
+msgid ""
+"if you just want the Value of a multi-valued node, use the "
+"``returnValues`` operation."
+msgstr ""
+
+#: ../automation/vyos-api.rst:108
+msgid "for example get the addresses of a ``dum0`` interface"
+msgstr ""
+
+#: ../automation/vyos-api.rst:128
+msgid "/image"
+msgstr ""
+
+#: ../automation/vyos-api.rst:130
+msgid "To add or delete an image, use the ``/image`` endpoint."
+msgstr ""
+
+#: ../automation/vyos-api.rst:132
+msgid "add an image"
+msgstr ""
+
+#: ../automation/vyos-api.rst:149
+msgid "delete an image, for example ``1.3-rolling-202006070117``"
+msgstr ""
+
+#: ../automation/vyos-api.rst:166
+msgid "/show"
+msgstr ""
+
+#: ../automation/vyos-api.rst:168
+msgid "The ``/show`` endpoint is to show everthing in operational mode"
+msgstr ""
+
+#: ../automation/vyos-api.rst:170
+msgid "for example which images are installed"
+msgstr ""
+
+#: ../automation/vyos-api.rst:190
+msgid "/generate"
+msgstr ""
+
+#: ../automation/vyos-api.rst:192
+msgid "to run a ``generate`` command use the"
+msgstr ""
+
+#: ../automation/vyos-api.rst:209
+msgid "/configure"
+msgstr ""
+
+#: ../automation/vyos-api.rst:211
+msgid ""
+"You can pass a ``set``, ``delete`` or ``comment`` command to the "
+"``/configure`` endpoint."
+msgstr ""
+
+#: ../automation/vyos-api.rst:214
+msgid "``set`` a single command"
+msgstr ""
+
+#: ../automation/vyos-api.rst:230
+msgid "``delete`` a single command"
+msgstr ""
+
+#: ../automation/vyos-api.rst:245
+msgid ""
+"The API push every request to a session and commit it. But some of VyOS "
+"components like DHCP and PPPoE Servers, IPSec, VXLAN, and other tunnels "
+"require full configuration for commit. The Endpoint will process multiple"
+" commands when you pass them as a list to the ``data`` field."
+msgstr ""
+
+#: ../automation/vyos-api.rst:266
+msgid "/config-file"
+msgstr ""
+
+#: ../automation/vyos-api.rst:268
+msgid "The endpoint ``/config-file`` is to save or load a configuration."
+msgstr ""
+
+#: ../automation/vyos-api.rst:270
+msgid ""
+"Save a running configuration to the startup configuration. When you don't"
+" specify the file when saving, it saves to ``/config/config.boot``."
+msgstr ""
+
+#: ../automation/vyos-api.rst:288
+msgid "Save a running configuration to a file."
+msgstr ""
+
+#: ../automation/vyos-api.rst:304
+msgid "To Load a configuration file."
+msgstr ""
+

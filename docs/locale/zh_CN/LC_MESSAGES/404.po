@@ -1,0 +1,37 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, VyOS maintainers and contributors
+# This file is distributed under the same license as the VyOS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VyOS 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-08 11:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../404.rst:4
+msgid "Page Not Found"
+msgstr "页面未找到"
+
+#: ../404.rst:6
+msgid ""
+"Sorry, We could not find a page. Try using the search box or go to the "
+"release homepage:"
+msgstr "抱歉，找不到页面。尝试使用搜索框或转到发布主页"
+
+#: ../404.rst:9
+msgid "`1.2.x (crux) <https://docs.vyos.io/en/crux/>`_"
+msgstr ""
+
+#: ../404.rst:10
+msgid "`rolling release (equuleus) <https://docs.vyos.io/en/latest/>`_"
+msgstr ""
+

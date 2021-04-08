@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, VyOS maintainers and contributors
+# This file is distributed under the same license as the VyOS package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: VyOS 1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-08 11:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../operation/boot-options.rst:6
+msgid "Boot Options"
+msgstr ""
+
+#: ../operation/boot-options.rst:8
+msgid ""
+"This function may be highly disruptive. It may cause major service "
+"interruption, so make sure you really need it and verify your input "
+"carefully."
+msgstr ""
+
+#: ../operation/boot-options.rst:14
+msgid ""
+"VyOS has several kernel command line options to modify the normal boot "
+"process. To add an option, select the desired image in GRUB menu at load "
+"time, press **e**, edit the first line, and press **Ctrl-x** to boot when"
+" ready."
+msgstr ""
+
+#: ../operation/boot-options.rst:26
+msgid "Specify custom config file"
+msgstr ""
+
+#: ../operation/boot-options.rst:28
+msgid ""
+"Tells the system to use specified file instead of "
+"``/config/config.boot``. If specified file does not exist or is not "
+"readable, fall back to default config. No additional verification is "
+"performed, so make sure you specify a valid config file."
+msgstr ""
+
+#: ../operation/boot-options.rst:37
+msgid "To load the *factory default* config, use:"
+msgstr ""
+
+#: ../operation/boot-options.rst:45
+msgid "Disable specific boot process steps"
+msgstr ""
+
+#: ../operation/boot-options.rst:47
+msgid ""
+"These options disable some boot steps. Make sure you understand the "
+":ref:`boot process <boot-steps>` well before using them!"
+msgstr ""
+
+#: ../operation/boot-options.rst:51
+msgid "no-vyos-migrate"
+msgstr ""
+
+#: ../operation/boot-options.rst:53
+msgid "Do not perform config migration."
+msgstr ""
+
+#: ../operation/boot-options.rst:54
+msgid "no-vyos-firewall"
+msgstr ""
+
+#: ../operation/boot-options.rst:56
+msgid ""
+"Do not initialize default firewall chains, renders any firewall "
+"configuration unusable."
+msgstr ""
+
+#: ../operation/index.rst:3
+msgid "Operation Mode"
+msgstr ""
+
+#: ../operation/information.rst:5
+msgid "Information"
+msgstr ""
+
+#: ../operation/information.rst:7
+msgid ""
+"VyOS features a rich set of operational level commands to retrieve "
+"arbitrary information about your running system."
+msgstr ""
+
+#: ../operation/information.rst:12
+msgid "Hardware"
+msgstr ""
+
+#: ../operation/information.rst:17
+msgid "USB"
+msgstr ""
+
+#: ../operation/information.rst:19
+msgid ""
+"In the past serial interface have been defined as ttySx and ttyUSBx where"
+" x was an instance number of the serial interface. It was discovered that"
+" from system boot to system boot the mapping of USB based serial "
+"interfaces will differ, depending which driver was loaded first by the "
+"operating system. This will become rather painful if you not only have "
+"serial interfaces for a console server connected but in addition also a "
+"serial backed :ref:`wwan-interface`."
+msgstr ""
+
+#: ../operation/information.rst:26
+#, python-format
+msgid ""
+"To overcome this issue and the fact that in almost 50% of all cheap USB "
+"to serial converters there is no serial number programmed, the USB to "
+"serial interface is now directly identified by the USB root bridge and "
+"bus it connects to. This somehow mimics the new network interface "
+"definitions we see in recend Linux distributions."
+msgstr ""
+
+#: ../operation/information.rst:32
+msgid ""
+"For additional details you can refer to "
+"https://phabricator.vyos.net/T2490."
+msgstr ""
+
+#: ../operation/information.rst:36
+msgid "Retrieve a tree like representation of all connected USB devices."
+msgstr ""
+
+#: ../operation/information.rst:38
+msgid ""
+"If a device is unplugged and re-plugged it will receive a new Port, Dev, "
+"If identification."
+msgstr ""
+
+#: ../operation/information.rst:72
+msgid ""
+"Retrieve a list and description of all connected USB serial devices. The "
+"device name displayed, e.g. `usb0b2.4p1.0` can be directly used when "
+"accessing the serial console as console-server device."
+msgstr ""
+
