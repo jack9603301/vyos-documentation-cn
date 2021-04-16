@@ -31,7 +31,7 @@ rm -rf locale/zh_CN
 sphinx-intl update -p locale -l zh_CN
 ```
 
-Update translation pots to perform these:
+If you need to update the pot files, you can do the following:
 
 ```
 sphinx-build -b gettext . locale
