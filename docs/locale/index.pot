@@ -19,18 +19,18 @@ msgstr ""
 #: ../index.rst:15
 #: ../index.rst:15
 msgid "First Steps"
-msgstr ""
+msgstr "第一步"
 
 #: ../index.rst:24
 #: ../index.rst:24
 msgid "Adminguide"
-msgstr ""
+msgstr "管理指南"
 
 #: ../index.rst:37
 #: ../index.rst:37
 msgid "Development"
-msgstr ""
+msgstr "开发"
 
 #: ../index.rst:5
 msgid "VyOS User Guide"
-msgstr ""
+msgstr "Vyos 用户指南"
