@@ -18,59 +18,59 @@ msgstr ""
 
 #: ../quick-start.rst:5
 msgid "Quick Start"
-msgstr ""
+msgstr "快速开始"
 
 #: ../quick-start.rst:7
 msgid "This chapter will guide you on how to get up to speed quickly using your new VyOS system. It will show you a very basic configuration example that will provide a :ref:`nat` gateway for a device with two network interfaces (`eth0` and `eth1`)."
-msgstr ""
+msgstr "这一章会指导你如何快速使用你的新VyOs系统。这里展示了一个简单的配置样例供你学习，样例提供了一个带有两个网络接口（eth0 和 eth1）的设备作为一个:ref:'nat'网关的配置方法。"
 
 #: ../quick-start.rst:15
 msgid "Configuration Mode"
-msgstr ""
+msgstr "配置模式"
 
 #: ../quick-start.rst:17
 msgid "By default, VyOS is in operational mode, and the command prompt displays a `$`. To configure VyOS, you will need to enter configuration mode, resulting in the command prompt displaying a `#`, as demonstrated below:"
-msgstr ""
+msgstr "Vyos默认处于操作模式，此时命令行会显示一个`$`符号。配置Vyos需要进入配置模式，进入该模式后命令行会显示一个`#`符号，如下所示："
 
 #: ../quick-start.rst:27
 msgid "Commit and Save"
-msgstr ""
+msgstr "提交和保存"
 
 #: ../quick-start.rst:29
 msgid "After every configuration change, you need to apply the changes by using the following command:"
-msgstr ""
+msgstr "每次配置更改之后，需要使用下面的命令来应用更改："
 
 #: ../quick-start.rst:36
 msgid "Once your configuration works as expected, you can save it permanently by using the following command:"
-msgstr ""
+msgstr "当你的配置能够达到预期的效果时，可以使用下面的命令来永久保存："
 
 #: ../quick-start.rst:44
 msgid "Interface Configuration"
-msgstr ""
+msgstr "接口配置"
 
 #: ../quick-start.rst:46
 msgid "Your outside/WAN interface will be `eth0`. It will receive its interface address via DHCP."
-msgstr ""
+msgstr "系统外部/WAN口为eth0。该接口的地址通过DHCP获得。"
 
 #: ../quick-start.rst:48
 msgid "Your internal/LAN interface will be `eth1`. It will use a static IP address of `192.168.0.1/24`."
-msgstr ""
+msgstr "系统内部/Lan口为eth1。该接口使用静态地址 192.168.0.1/24"
 
 #: ../quick-start.rst:51
 msgid "After switching to :ref:`quick-start-configuration-mode` issue the following commands:"
-msgstr ""
+msgstr "切换到配置模式后，输入下列命令："
 
 #: ../quick-start.rst:63
 msgid "SSH Management"
-msgstr ""
+msgstr "SSH 管理"
 
 #: ../quick-start.rst:65
 msgid "After switching to :ref:`quick-start-configuration-mode` issue the following commands, and your system will listen on every interface for incoming SSH connections. You might want to check the :ref:`ssh` chapter on how to listen on specific addresses only."
-msgstr ""
+msgstr "切换到 :ref:`quick-start-configuration-mode`之后，输入下列命令，此时系统将会监听每一个接口上进来的SSH连接。你也可查看:ref:`ssh`章节学习如何只监听指定地址。"
 
 #: ../quick-start.rst:78
 msgid "DHCP/DNS quick-start"
-msgstr ""
+msgstr "DHCP/DNS 快速开始"
 
 #: ../quick-start.rst:80
 msgid "The following settings will configure DHCP and DNS services on your internal/LAN network, where VyOS will act as the default gateway and DNS server."
