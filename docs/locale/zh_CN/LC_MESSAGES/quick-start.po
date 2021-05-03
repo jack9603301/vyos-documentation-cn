@@ -103,17 +103,17 @@ msgid ""
 "The following settings will configure DHCP and DNS services on your "
 "internal/LAN network, where VyOS will act as the default gateway and DNS "
 "server."
-msgstr ""
+msgstr "下列设置会在你的本地/LAN网络上配置DHCP和域名服务， 在该网络中VyOS会作为默认的网关和DNS服务器。"
 
 #: ../quick-start.rst:84
 msgid "The default gateway and DNS recursor address will be `192.168.0.1/24`"
-msgstr ""
+msgstr "默认的网关和DNS地址为 `192.168.0.1/24`"
 
 #: ../quick-start.rst:85
 msgid ""
 "The address range `192.168.0.2/24 - 192.168.0.8/24` will be reserved for "
 "static assignments"
-msgstr ""
+msgstr "地址段 `192.168.0.2/24 - 192.168.0.8/24` 会被保留作静态分配用"
 
 #: ../quick-start.rst:87
 msgid ""
@@ -121,21 +121,23 @@ msgid ""
 "`192.168.0.9 - 192.168.0.254` and have a domain name of `internal-"
 "network`"
 msgstr ""
+"DHCP客户端会被分配一个地址段 `192.168.0.9 - 192.168.0.254` 中的地址，以及一个名为 `internal-"
+"network` 的域名"
 
 #: ../quick-start.rst:89
 msgid "DHCP leases will hold for one day (86400 seconds)"
-msgstr ""
+msgstr "DHCP租期为1天 （86400秒）"
 
 #: ../quick-start.rst:90
 msgid ""
 "VyOS will serve as a full DNS recursor, replacing the need to utilize "
 "Google, Cloudflare, or other public DNS servers (which is good for "
 "privacy)"
-msgstr ""
+msgstr "VyOS 会作为一个完全的DNS服务器，无需再利用Google， Clouldflare 或其他公共DNS服务器（这样做对隐私比较好）"
 
 #: ../quick-start.rst:92
 msgid "Only hosts from your internal/LAN network can use the DNS recursor"
-msgstr ""
+msgstr "只有本地/LAN网络中的主机可以使用DNS"
 
 #: ../quick-start.rst:109
 msgid "NAT"
