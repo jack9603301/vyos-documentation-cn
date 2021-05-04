@@ -19,46 +19,46 @@ msgstr ""
 
 #: ../installation/cloud/aws.rst:3
 msgid "Amazon AWS"
-msgstr ""
+msgstr "亚马逊 AWS"
 
 #: ../installation/cloud/aws.rst:6 ../installation/cloud/azure.rst:6
 #: ../installation/cloud/gcp.rst:6
 msgid "Deploy VM"
-msgstr ""
+msgstr "部署虚拟机"
 
 #: ../installation/cloud/aws.rst:8
 msgid "Deploy VyOS on Amazon :abbr:`AWS (Amazon Web Services)`"
-msgstr ""
+msgstr "在AWS上部署VyOS"
 
 #: ../installation/cloud/aws.rst:10
 msgid "Click to ``Instances`` and ``Launch Instance``"
-msgstr ""
+msgstr "点击 ``Instance`` 查看实例，然后点 ``Launch Instance`` 来启动实例"
 
 #: ../installation/cloud/aws.rst:14
 msgid "On the marketplace search \"VyOS\""
-msgstr ""
+msgstr "在市场中搜索 \"VyOS\""
 
 #: ../installation/cloud/aws.rst:18
 msgid "Choose the instance type. Minimum recommendation start from ``m3.medium``"
-msgstr ""
+msgstr "选择实例类型。最低推荐 ``m3.medium`` 起步"
 
 #: ../installation/cloud/aws.rst:22
 msgid ""
 "Configure instance for your requirements. Select number of instances / "
 "network / subnet"
-msgstr ""
+msgstr "根据你的需求配置实例。选择实例数量、网络及子网"
 
 #: ../installation/cloud/aws.rst:27
 msgid ""
 "Additional storage. You can remove additional storage ``/dev/sdb``. First"
 " root device will be ``/dev/xvda``. You can skeep this step."
-msgstr ""
+msgstr "额外存储。你可以移除额外的存储 ``/dev/sdb`` 。第一个根设备为 ``/dev/xvda`` 。这一步也可以跳过"
 
 #: ../installation/cloud/aws.rst:32
 msgid ""
 "Configure Security Group. It's recommended that you configure ssh access "
 "only from certain address sources. Or permit any (by default)."
-msgstr ""
+msgstr "配置安全组。强烈建议你配置仅允许从特定的源地址进行SSH连接，否则默认为允许所有SSH连接。"
 
 #: ../installation/cloud/aws.rst:37
 msgid "Select SSH key pair and click ``Launch Instances``"

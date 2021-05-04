@@ -19,24 +19,24 @@ msgstr ""
 
 #: ../cli.rst:5
 msgid "Command Line Interface"
-msgstr ""
+msgstr "命令行接口"
 
 #: ../cli.rst:7
 msgid ""
 "The VyOS :abbr:`CLI (Command-Line Interface)` comprises an operational "
 "and a configuration mode."
-msgstr ""
+msgstr "VyOS :abbr:`CLI (命令行接口)` 由操作模式和配置模式构成。"
 
 #: ../cli.rst:11
 msgid "Operational Mode"
-msgstr ""
+msgstr "操作模式"
 
 #: ../cli.rst:13
 msgid ""
 "Operational mode allows for commands to perform operational system tasks "
 "and view system and service status, while configuration mode allows for "
 "the modification of system configuration."
-msgstr ""
+msgstr "操作模式允许使用命令执行操作型的系统任务，以及查看系统和服务的状态；而配置模式允许修改系统配置。"
 
 #: ../cli.rst:17
 msgid ""
@@ -45,6 +45,8 @@ msgid ""
 "complete commands and will present the help system upon a conflict or "
 "unknown value."
 msgstr ""
+"CLI 提供了内置帮助系统。在CLI中， ``？`` 键可以用来显示可用的命令。 ``TAB`` "
+"键可以用来自动补全命令，以及在有冲突和无法识别的值时调出帮助系统。"
 
 #: ../cli.rst:21
 msgid ""
@@ -52,16 +54,18 @@ msgid ""
 "``show``. Pressing ``TAB`` a second time will display the possible sub-"
 "commands of the ``show`` command."
 msgstr ""
+"比如输入 ``sh`` 后按下 ``TAB`` 会自动补全命令为 ``show``。 再次按下 ``TAB`` 会显示所有可用的 ``show``"
+" 子命令。"
 
 #: ../cli.rst:30
 msgid "Example showing possible show commands:"
-msgstr ""
+msgstr "显示可能的 show 子命令的例子："
 
 #: ../cli.rst:58
 msgid ""
 "You can scroll up with the keys ``[Shift]+[PageUp]`` and scroll down with"
 " ``[Shift]+[PageDown]``."
-msgstr ""
+msgstr "可以使用 ``[Shift]+[PageUp]`` 向上翻页，以及 ``[Shift]+[PageDown]`` 向下翻页。"
 
 #: ../cli.rst:61
 msgid ""

@@ -58,7 +58,7 @@ msgstr "系统内部/Lan口为eth1。该接口使用静态地址 192.168.0.1/24"
 
 #: ../quick-start.rst:51
 msgid "After switching to :ref:`quick-start-configuration-mode` issue the following commands:"
-msgstr "切换到 :ref:`配置模式` 后，输入下列命令："
+msgstr "切换到 :ref:`quick-start-configuration-mode` 后，输入下列命令："
 
 #: ../quick-start.rst:63
 msgid "SSH Management"
@@ -66,7 +66,7 @@ msgstr "SSH 管理"
 
 #: ../quick-start.rst:65
 msgid "After switching to :ref:`quick-start-configuration-mode` issue the following commands, and your system will listen on every interface for incoming SSH connections. You might want to check the :ref:`ssh` chapter on how to listen on specific addresses only."
-msgstr "切换到 :ref:`配置模式` 之后，输入下列命令，此时系统将会监听每一个接口上进来的SSH连接。你也可查看 :ref:`ssh` 章节学习如何只监听指定地址。"
+msgstr "切换到 :ref:`quick-start-configuration-mode` 之后，输入下列命令，此时系统将会监听每一个接口上进来的SSH连接。你也可查看 :ref:`ssh` 章节学习如何只监听指定地址。"
 
 #: ../quick-start.rst:78
 msgid "DHCP/DNS quick-start"
@@ -106,60 +106,60 @@ msgstr "NAT"
 
 #: ../quick-start.rst:111
 msgid "The following settings will configure :ref:`source-nat` rules for our internal/LAN network, allowing hosts to communicate through the outside/WAN network via IP masquerade."
-msgstr "下列设置会为我们的本地/LAN网络配置 :ref: `source-nat` 规则， 允许主机通过IP伪装与外部/WAN网络进行通信。"
+msgstr "下列设置会为我们的本地/LAN网络配置 :ref:`source-nat` 规则， 允许主机通过IP伪装与外部/WAN网络进行通信。"
 
 #: ../quick-start.rst:123
 msgid "Firewall"
-msgstr ""
+msgstr "防火墙"
 
 #: ../quick-start.rst:125
 msgid "Add a set of firewall policies for our outside/WAN interface."
-msgstr ""
+msgstr "为外部/WAN口添加一组防火墙策略。"
 
 #: ../quick-start.rst:127
 msgid "This configuration creates a proper stateful firewall that blocks all traffic which was not initiated from the internal/LAN side first."
-msgstr ""
+msgstr "下面的配置将创建一个合适的有状态的防火墙，可以阻止所有最初不是从本地/LAN侧发出的流量"
 
 #: ../quick-start.rst:146
 msgid "If you wanted to enable SSH access to your firewall from the outside/WAN interface, you could create some additional rules to allow that kind of traffic."
-msgstr ""
+msgstr "如果想启用从外部/WAN口通过SSH访问防火墙的话，可以创建一些额外的规则来允许这一类的流量"
 
 #: ../quick-start.rst:150
 msgid "These rules allow SSH traffic and rate limit it to 4 requests per minute. This blocks brute-forcing attempts:"
-msgstr ""
+msgstr "下列规则可以允许SSH流量并将请求频率限制在4次/分钟，这样可以阻止暴力尝试："
 
 #: ../quick-start.rst:167
 msgid "Apply the firewall policies:"
-msgstr ""
+msgstr "应用防火墙规则"
 
 #: ../quick-start.rst:174
 msgid "Commit changes, save the configuration, and exit configuration mode:"
-msgstr ""
+msgstr "提交更改，保存配置然后推出配置模式"
 
 #: ../quick-start.rst:187
 msgid "Hardening"
-msgstr ""
+msgstr "加固"
 
 #: ../quick-start.rst:189
 msgid "Especially if you are allowing SSH remote access from the outside/WAN interface, there are a few additional configuration steps that should be taken."
-msgstr ""
+msgstr "特别是当你允许从外部/WAN口远程SSH连接时， 下面几个额外的配置步骤是很有必要的。"
 
 #: ../quick-start.rst:192
 msgid "Replace the default `vyos` system user:"
-msgstr ""
+msgstr "替换默认的 `vyos` 系统用户："
 
 #: ../quick-start.rst:198
 msgid "Set up :ref:`ssh_key_based_authentication`:"
-msgstr ""
+msgstr "设置 :ref:`ssh_key_based_authentication` "
 
 #: ../quick-start.rst:205
 msgid "Finally, try and SSH into the VyOS install as your new user. Once you have confirmed that your new user can access your router without a password, delete the original ``vyos`` user and completely disable password authentication for :ref:`ssh`:"
-msgstr ""
+msgstr "最后，尝试以新用户SSH连接到VyOS。确认新的用户可以不使用密码访问路由器之后删除原来的 ``vyos`` 用户，然后完全禁止使用密码验证的方式进行 :ref:`ssh`："
 
 #: ../quick-start.rst:215
 msgid "As above, commit your changes, save the configuration, and exit configuration mode:"
-msgstr ""
+msgstr "上述操作之后，提交更改、保存配置然后退出配置模式："
 
 #: ../quick-start.rst:227
 msgid "You now should have a simple yet secure and functioning router to experiment with further. Enjoy!"
-msgstr ""
+msgstr "现在你应该有一个简单但安全，且正常工作的路由器来进行后续的玩耍了。尽情享受吧！"
